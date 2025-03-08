@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client SSE Minimal</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #log {
+            height: 300px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .message {
+            margin-bottom: 5px;
+            border-left: 3px solid #ccc;
+            padding-left: 10px;
+        }
+        .error {
+            color: red;
+            border-left-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client SSE Minimal pour MCP</h1>
+    
+    <div>
+        <p>URL du serveur: <input type="text" id="serverUrl" value="http://localhost:8000" style="width: 300px;"></p>
+        <button id="connectBtn">Connexion</button>
+        <button id="disconnectBtn" disabled>Déconnexion</button>
+    </div>
+    
+    <div>
+        <p>Client ID: <span id="clientId">-</span></p>
+        <p>État: <span id="status">Non connecté</span></p>
+    </div>
+    
+    <div>
+        <h3>Journal des événements</h3>
+        <div id="log"></div>
+    </div>
+    
+    <div>
+        <h3>Envoyer une commande</h3>
+        <input type="text" id="commandInput" placeholder="Entrez une commande..." style="width: 80%;" disabled>
+        <button id="sendBtn" disabled>Envoyer</button>
+    </div>
+
+    <script>
+        // Éléments DOM
+        const connectBtn = document.getElementById('connectBtn');
+        const disconnectBtn = document.getElementById('disconnectBtn');
+        const serverUrlInput = document.getElementById('serverUrl');
+        const clientIdSpan = document.getElementById('clientId');
+        const statusSpan = document.getElementById('status');
+        const logDiv = document.getElementById('log');
+        const commandInput = document.getElementById('commandInput');
+        const sendBtn = document.getElementById('sendBtn');
+        
+        // Variables
+        let eventSource = null;
+        let clientId = null;
+        
+        // Fonctions
+        function log(message, isError = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            if (isError) {
+                messageElement.classList.add('error');
+            }
+            messageElement.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            logDiv.appendChild(messageElement);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function updateStatus(status) {
+            statusSpan.textContent = status;
+        }
+        
+        function connect() {
+            const serverUrl = serverUrlInput.value.trim();
+            if (!serverUrl) {
+                log('URL du serveur invalide', true);
+                return;
+            }
+            
+            try {
+                log(`Connexion à ${serverUrl}/sse/connect...`);
+                updateStatus('Connexion en cours...');
+                
+                // Création d'une nouvelle connexion EventSource
+                eventSource = new EventSource(`${serverUrl}/sse/connect`);
+                
+                // Gestionnaire d'événements de connexion
+                eventSource.onopen = () => {
+                    log('Connexion établie');
+                    updateStatus('Connecté (en attente du client ID)');
+                };
+                
+                // Gestionnaire d'erreurs
+                eventSource.onerror = (error) => {
+                    log(`Erreur de connexion SSE: ${JSON.stringify(error)}`, true);
+                    updateStatus('Erreur de connexion');
+                    disconnect();
+                };
+                
+                // Gestionnaire pour l'événement "connected"
+                eventSource.addEventListener('connected', (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        clientId = data.client_id;
+                        clientIdSpan.textContent = clientId;
+                        
+                        log(`Client ID reçu: ${clientId}`);
+                        updateStatus('Connecté');
+                        
+                        // Activer les contrôles
+                        disconnectBtn.disabled = false;
+                        connectBtn.disabled = true;
+                        commandInput.disabled = false;
+                        sendBtn.disabled = false;
+                    } catch (e) {
+                        log(`Erreur lors du traitement de l'événement connected: ${e}`, true);
+                    }
+                });
+                
+                // Gestionnaire pour d'autres types d'événements
+                const eventTypes = ['ping', 'result', 'error', 'command_received', 'processing', 'complete'];
+                eventTypes.forEach(type => {
+                    eventSource.addEventListener(type, (event) => {
+                        try {
+                            log(`Événement ${type} reçu: ${event.data}`);
+                        } catch (e) {
+                            log(`Erreur lors du traitement de l'événement ${type}: ${e}`, true);
+                        }
+                    });
+                });
+                
+                // Gestionnaire pour les messages sans type d'événement
+                eventSource.onmessage = (event) => {
+                    log(`Message sans type: ${event.data}`);
+                };
+                
+            } catch (error) {
+                log(`Erreur lors de la création de la connexion SSE: ${error}`, true);
+                updateStatus('Non connecté');
+            }
+        }
+        
+        function disconnect() {
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+            }
+            
+            // Réinitialiser l'état
+            clientId = null;
+            clientIdSpan.textContent = '-';
+            updateStatus('Non connecté');
+            
+            // Désactiver les contrôles
+            disconnectBtn.disabled = true;
+            connectBtn.disabled = false;
+            commandInput.disabled = true;
+            sendBtn.disabled = true;
+            
+            log('Déconnecté');
+        }
+        
+        async function sendCommand() {
+            const command = commandInput.value.trim();
+            if (!command) {
+                log('Commande vide', true);
+                return;
+            }
+            
+            if (!clientId) {
+                log('Non connecté', true);
+                return;
+            }
+            
+            try {
+                const serverUrl = serverUrlInput.value.trim();
+                
+                log(`Envoi de la commande: ${command}`);
+                
+                // Désactiver le bouton pendant l'envoi
+                sendBtn.disabled = true;
+                
+                // Envoyer la commande
+                const response = await fetch(`${serverUrl}/command/sse`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        client_id: clientId,
+                        command: command
+                    })
+                });
+                
+                const result = await response.json();
+                log(`Réponse: ${JSON.stringify(result)}`);
+                
+                // Réactiver le bouton
+                sendBtn.disabled = false;
+                
+                // Effacer le champ de commande
+                commandInput.value = '';
+                
+            } catch (error) {
+                log(`Erreur lors de l'envoi de la commande: ${error}`, true);
+                sendBtn.disabled = false;
+            }
+        }
+        
+        // Gestionnaires d'événements
+        connectBtn.addEventListener('click', connect);
+        disconnectBtn.addEventListener('click', disconnect);
+        sendBtn.addEventListener('click', sendCommand);
+        
+        // Permettre l'envoi avec Enter
+        commandInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendCommand();
+            }
+        });
+        
+        // Message initial
+        log('Client SSE prêt. Cliquez sur "Connexion" pour commencer.');
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+# WordPress module for MCP

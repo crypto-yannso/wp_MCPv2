@@ -1,0 +1,901 @@
+2025-03-08 01:51:37,057 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 01:51:39,202 - wordpress.connector - ERROR - Failed to connect to WordPress: <ProtocolError for jess-jeff.fr/RPC2: 404 Not Found>
+2025-03-08 01:56:48,056 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 01:56:48,057 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 01:59:19,038 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 01:59:19,039 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:01:51,451 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 02:01:51,451 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:02:02,970 - api.main - INFO - GET / - 200 - 0.08s
+2025-03-08 02:02:03,801 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-08 02:05:34,028 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 02:05:34,701 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-08 02:11:28,935 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 02:11:28,936 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:13:51,552 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-08 02:13:51,553 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-08 02:13:51,571 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-08 02:13:51,601 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-08 02:17:01,084 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 02:17:01,085 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:19:57,650 - api.main - INFO - New SSE connection with generated ID: 160bb5d3-7ec2-4da0-8282-696c5ad67748
+2025-03-08 02:19:57,652 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:20:44,957 - api.main - INFO - Client 160bb5d3-7ec2-4da0-8282-696c5ad67748 disconnected
+2025-03-08 02:22:30,378 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 02:22:30,378 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:25:45,123 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:28:28,734 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:36:54,928 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 02:36:54,928 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 02:40:32,754 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:42:30,905 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-08 02:42:54,152 - api.main - INFO - New SSE connection with generated ID: 92cf1d05-23ba-4bd6-bf44-f143233c2cbb
+2025-03-08 02:42:54,155 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:48:34,422 - api.main - INFO - New SSE connection with generated ID: ed4dafcb-5122-485b-b239-1f48f8ece42a
+2025-03-08 02:48:34,423 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:54:06,537 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:55:41,344 - api.main - INFO - Client 92cf1d05-23ba-4bd6-bf44-f143233c2cbb disconnected
+2025-03-08 02:55:41,344 - api.main - INFO - Client ed4dafcb-5122-485b-b239-1f48f8ece42a disconnected
+2025-03-08 02:55:44,353 - api.main - INFO - New SSE connection with generated ID: 1fba5d8d-9fe8-44c4-8390-8979f9107d71
+2025-03-08 02:55:44,353 - api.main - INFO - New SSE connection with generated ID: 5c435cb3-a92e-4d56-82c9-5f9dd3ac053c
+2025-03-08 02:55:44,355 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:55:44,355 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:55:56,499 - api.main - INFO - Client 1fba5d8d-9fe8-44c4-8390-8979f9107d71 disconnected
+2025-03-08 02:55:56,499 - api.main - INFO - Client 5c435cb3-a92e-4d56-82c9-5f9dd3ac053c disconnected
+2025-03-08 02:55:59,508 - api.main - INFO - New SSE connection with generated ID: 2c4e68e6-816f-4944-b209-c9326a63d61e
+2025-03-08 02:55:59,510 - api.main - INFO - New SSE connection with generated ID: e3bb8824-2018-49ab-8052-b3c15ea1e620
+2025-03-08 02:55:59,510 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:55:59,512 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:56:03,870 - api.main - INFO - Client 2c4e68e6-816f-4944-b209-c9326a63d61e disconnected
+2025-03-08 02:56:03,870 - api.main - INFO - Client e3bb8824-2018-49ab-8052-b3c15ea1e620 disconnected
+2025-03-08 02:56:06,881 - api.main - INFO - New SSE connection with generated ID: b736e9de-a429-4fcf-8976-8a7eca660714
+2025-03-08 02:56:06,882 - api.main - INFO - New SSE connection with generated ID: 25fd0b1a-58dd-4107-aeca-127383e3a1c6
+2025-03-08 02:56:06,884 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:56:06,885 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:56:11,250 - api.main - INFO - Client b736e9de-a429-4fcf-8976-8a7eca660714 disconnected
+2025-03-08 02:56:11,251 - api.main - INFO - Client 25fd0b1a-58dd-4107-aeca-127383e3a1c6 disconnected
+2025-03-08 02:59:36,199 - api.main - INFO - New SSE connection with generated ID: c7294e95-946f-4330-a28d-3ed8d6935eed
+2025-03-08 02:59:36,200 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:59:48,662 - api.main - INFO - New SSE connection with generated ID: 7152e75d-6012-456a-8ab4-17de189bf4be
+2025-03-08 02:59:48,664 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 02:59:48,670 - api.main - INFO - New SSE connection with generated ID: 681ba26a-dc22-4230-a42f-d00398f333a4
+2025-03-08 02:59:48,671 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:00:37,025 - api.main - INFO - Client c7294e95-946f-4330-a28d-3ed8d6935eed disconnected
+2025-03-08 03:00:37,025 - api.main - INFO - Client 7152e75d-6012-456a-8ab4-17de189bf4be disconnected
+2025-03-08 03:00:37,025 - api.main - INFO - Client 681ba26a-dc22-4230-a42f-d00398f333a4 disconnected
+2025-03-08 03:03:56,992 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:03:56,992 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:04:02,849 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:04:02,850 - api.main - INFO - New SSE connection with generated ID: 0f147921-3be0-4df0-b35c-b2da0b682022
+2025-03-08 03:04:02,850 - api.main - INFO - Registering client 0f147921-3be0-4df0-b35c-b2da0b682022 in sse_clients dictionary
+2025-03-08 03:04:02,851 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:05:20,221 - api.main - INFO - Client 0f147921-3be0-4df0-b35c-b2da0b682022 disconnected - connection cancelled
+2025-03-08 03:05:20,221 - api.main - INFO - Removing client 0f147921-3be0-4df0-b35c-b2da0b682022 from sse_clients dictionary
+2025-03-08 03:05:23,235 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:05:23,235 - api.main - INFO - New SSE connection with generated ID: 0991cc72-c176-44ae-9f52-f13859e31f1e
+2025-03-08 03:05:23,236 - api.main - INFO - Registering client 0991cc72-c176-44ae-9f52-f13859e31f1e in sse_clients dictionary
+2025-03-08 03:05:23,237 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:05:54,978 - api.main - INFO - Client 0991cc72-c176-44ae-9f52-f13859e31f1e disconnected - connection cancelled
+2025-03-08 03:05:54,978 - api.main - INFO - Removing client 0991cc72-c176-44ae-9f52-f13859e31f1e from sse_clients dictionary
+2025-03-08 03:05:57,989 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:05:57,990 - api.main - INFO - New SSE connection with generated ID: 0a3549cc-0f73-4e10-b81f-6efc98f72c8d
+2025-03-08 03:05:57,990 - api.main - INFO - Registering client 0a3549cc-0f73-4e10-b81f-6efc98f72c8d in sse_clients dictionary
+2025-03-08 03:05:57,991 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:06:03,804 - api.main - INFO - Client 0a3549cc-0f73-4e10-b81f-6efc98f72c8d disconnected - connection cancelled
+2025-03-08 03:06:03,805 - api.main - INFO - Removing client 0a3549cc-0f73-4e10-b81f-6efc98f72c8d from sse_clients dictionary
+2025-03-08 03:06:06,813 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:06:06,813 - api.main - INFO - New SSE connection with generated ID: e9f29ba5-8042-4e75-aa5b-a82e02508e40
+2025-03-08 03:06:06,814 - api.main - INFO - Registering client e9f29ba5-8042-4e75-aa5b-a82e02508e40 in sse_clients dictionary
+2025-03-08 03:06:06,815 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:06:40,260 - api.main - INFO - SSE connect called with Accept header: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-08 03:06:40,264 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-08 03:08:10,109 - api.main - INFO - Client e9f29ba5-8042-4e75-aa5b-a82e02508e40 disconnected - connection cancelled
+2025-03-08 03:08:10,109 - api.main - INFO - Removing client e9f29ba5-8042-4e75-aa5b-a82e02508e40 from sse_clients dictionary
+2025-03-08 03:08:18,407 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:08:18,408 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:08:23,199 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:08:23,200 - api.main - INFO - New SSE connection with generated ID: 3bea7215-1856-4ce9-b789-593565bac5e8
+2025-03-08 03:08:23,200 - api.main - INFO - Registering client 3bea7215-1856-4ce9-b789-593565bac5e8 in sse_clients dictionary
+2025-03-08 03:08:23,201 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:08:29,426 - api.main - INFO - Client 3bea7215-1856-4ce9-b789-593565bac5e8 disconnected - connection cancelled
+2025-03-08 03:08:29,426 - api.main - INFO - Removing client 3bea7215-1856-4ce9-b789-593565bac5e8 from sse_clients dictionary
+2025-03-08 03:08:29,427 - api.main - INFO - Ping task cancelled for client 3bea7215-1856-4ce9-b789-593565bac5e8
+2025-03-08 03:08:32,442 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:08:32,442 - api.main - INFO - New SSE connection with generated ID: c218de2f-59c3-40ad-86a6-c1c7523eb0be
+2025-03-08 03:08:32,444 - api.main - INFO - Registering client c218de2f-59c3-40ad-86a6-c1c7523eb0be in sse_clients dictionary
+2025-03-08 03:08:32,445 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:08:40,967 - api.main - INFO - Client c218de2f-59c3-40ad-86a6-c1c7523eb0be disconnected - connection cancelled
+2025-03-08 03:08:40,967 - api.main - INFO - Removing client c218de2f-59c3-40ad-86a6-c1c7523eb0be from sse_clients dictionary
+2025-03-08 03:08:40,968 - api.main - INFO - Ping task cancelled for client c218de2f-59c3-40ad-86a6-c1c7523eb0be
+2025-03-08 03:08:43,979 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:08:43,979 - api.main - INFO - New SSE connection with generated ID: dac5d50b-4941-44ef-b61a-a9fb2e4dc7ea
+2025-03-08 03:08:43,980 - api.main - INFO - Registering client dac5d50b-4941-44ef-b61a-a9fb2e4dc7ea in sse_clients dictionary
+2025-03-08 03:08:43,981 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:10:29,421 - api.main - INFO - Client dac5d50b-4941-44ef-b61a-a9fb2e4dc7ea disconnected - connection cancelled
+2025-03-08 03:10:29,421 - api.main - INFO - Removing client dac5d50b-4941-44ef-b61a-a9fb2e4dc7ea from sse_clients dictionary
+2025-03-08 03:10:29,421 - api.main - INFO - Ping task cancelled for client dac5d50b-4941-44ef-b61a-a9fb2e4dc7ea
+2025-03-08 03:10:32,775 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:10:32,775 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:10:35,440 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:10:35,441 - api.main - INFO - New SSE connection with generated ID: d53b0413-d576-40af-be33-106b0c472c81
+2025-03-08 03:10:35,441 - api.main - INFO - Registering client d53b0413-d576-40af-be33-106b0c472c81 in sse_clients dictionary
+2025-03-08 03:10:35,442 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:10:52,266 - api.main - INFO - Client d53b0413-d576-40af-be33-106b0c472c81 disconnected - connection cancelled
+2025-03-08 03:10:52,266 - api.main - INFO - Removing client d53b0413-d576-40af-be33-106b0c472c81 from sse_clients dictionary
+2025-03-08 03:10:52,266 - api.main - INFO - Ping task cancelled for client d53b0413-d576-40af-be33-106b0c472c81
+2025-03-08 03:12:52,671 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:12:52,671 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:12:55,521 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:12:55,522 - api.main - INFO - New SSE connection with generated ID: 66aab1a3-d9cf-4865-b008-3f96dd0c3b76
+2025-03-08 03:12:55,522 - api.main - INFO - Registering client 66aab1a3-d9cf-4865-b008-3f96dd0c3b76 in sse_clients dictionary
+2025-03-08 03:12:55,523 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:13:00,573 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 03:13:00,578 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 03:13:00,579 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-08 03:15:20,743 - api.main - INFO - Client 66aab1a3-d9cf-4865-b008-3f96dd0c3b76 disconnected - connection cancelled
+2025-03-08 03:15:20,744 - api.main - INFO - Removing client 66aab1a3-d9cf-4865-b008-3f96dd0c3b76 from sse_clients dictionary
+2025-03-08 03:15:20,744 - api.main - INFO - Ping task cancelled for client 66aab1a3-d9cf-4865-b008-3f96dd0c3b76
+2025-03-08 03:15:23,753 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:15:23,753 - api.main - INFO - New SSE connection with generated ID: ee22efc5-b753-4f4d-b2e9-dbf14452e24b
+2025-03-08 03:15:23,754 - api.main - INFO - Registering client ee22efc5-b753-4f4d-b2e9-dbf14452e24b in sse_clients dictionary
+2025-03-08 03:15:23,755 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:15:31,254 - api.main - INFO - Client ee22efc5-b753-4f4d-b2e9-dbf14452e24b disconnected - connection cancelled
+2025-03-08 03:15:31,254 - api.main - INFO - Removing client ee22efc5-b753-4f4d-b2e9-dbf14452e24b from sse_clients dictionary
+2025-03-08 03:15:31,254 - api.main - INFO - Ping task cancelled for client ee22efc5-b753-4f4d-b2e9-dbf14452e24b
+2025-03-08 03:15:34,265 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:15:34,265 - api.main - INFO - New SSE connection with generated ID: 260c8c03-869a-4535-9561-a5a2022d2318
+2025-03-08 03:15:34,266 - api.main - INFO - Registering client 260c8c03-869a-4535-9561-a5a2022d2318 in sse_clients dictionary
+2025-03-08 03:15:34,267 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:15:38,808 - api.main - INFO - Client 260c8c03-869a-4535-9561-a5a2022d2318 disconnected - connection cancelled
+2025-03-08 03:15:38,808 - api.main - INFO - Removing client 260c8c03-869a-4535-9561-a5a2022d2318 from sse_clients dictionary
+2025-03-08 03:15:38,808 - api.main - INFO - Ping task cancelled for client 260c8c03-869a-4535-9561-a5a2022d2318
+2025-03-08 03:15:41,821 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:15:41,821 - api.main - INFO - New SSE connection with generated ID: 792cfae2-0e20-454d-88ba-9ea27159e176
+2025-03-08 03:15:41,822 - api.main - INFO - Registering client 792cfae2-0e20-454d-88ba-9ea27159e176 in sse_clients dictionary
+2025-03-08 03:15:41,823 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:17:20,724 - api.main - INFO - Client 792cfae2-0e20-454d-88ba-9ea27159e176 disconnected - connection cancelled
+2025-03-08 03:17:20,724 - api.main - INFO - Removing client 792cfae2-0e20-454d-88ba-9ea27159e176 from sse_clients dictionary
+2025-03-08 03:17:20,724 - api.main - INFO - Ping task cancelled for client 792cfae2-0e20-454d-88ba-9ea27159e176
+2025-03-08 03:17:26,464 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:17:26,464 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:17:30,000 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:17:30,000 - api.main - INFO - New SSE connection with generated ID: e1b1070e-0c57-43ea-a914-c28c8ec33908
+2025-03-08 03:17:30,001 - api.main - INFO - Registering client e1b1070e-0c57-43ea-a914-c28c8ec33908 in sse_clients dictionary
+2025-03-08 03:17:30,002 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:19:09,376 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:19:09,376 - api.main - INFO - New SSE connection with generated ID: 5717b6d5-734f-4951-b6d6-d253c53b2941
+2025-03-08 03:19:09,377 - api.main - INFO - Registering client 5717b6d5-734f-4951-b6d6-d253c53b2941 in sse_clients dictionary
+2025-03-08 03:19:09,379 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:20:05,802 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 03:20:05,809 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 03:20:05,811 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-08 03:20:47,199 - api.main - INFO - Client e1b1070e-0c57-43ea-a914-c28c8ec33908 disconnected - connection cancelled
+2025-03-08 03:20:47,199 - api.main - INFO - Removing client e1b1070e-0c57-43ea-a914-c28c8ec33908 from sse_clients dictionary
+2025-03-08 03:20:47,200 - api.main - INFO - Client 5717b6d5-734f-4951-b6d6-d253c53b2941 disconnected - connection cancelled
+2025-03-08 03:20:47,200 - api.main - INFO - Removing client 5717b6d5-734f-4951-b6d6-d253c53b2941 from sse_clients dictionary
+2025-03-08 03:20:47,200 - api.main - INFO - Ping task cancelled for client e1b1070e-0c57-43ea-a914-c28c8ec33908
+2025-03-08 03:20:47,200 - api.main - INFO - Ping task cancelled for client 5717b6d5-734f-4951-b6d6-d253c53b2941
+2025-03-08 03:20:50,217 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:20:50,217 - api.main - INFO - New SSE connection with generated ID: 09e9d9db-1c25-40ad-bbf6-5e24055f93c9
+2025-03-08 03:20:50,218 - api.main - INFO - Registering client 09e9d9db-1c25-40ad-bbf6-5e24055f93c9 in sse_clients dictionary
+2025-03-08 03:20:50,219 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:20:50,219 - api.main - INFO - New SSE connection with generated ID: 2d82c924-381e-4bf7-9ff3-68880f038ad6
+2025-03-08 03:20:50,220 - api.main - INFO - Registering client 2d82c924-381e-4bf7-9ff3-68880f038ad6 in sse_clients dictionary
+2025-03-08 03:20:50,221 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:20:50,222 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:21:43,053 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 03:21:43,058 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 03:21:43,059 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-08 03:22:31,261 - api.main - INFO - Client 09e9d9db-1c25-40ad-bbf6-5e24055f93c9 disconnected - connection cancelled
+2025-03-08 03:22:31,262 - api.main - INFO - Removing client 09e9d9db-1c25-40ad-bbf6-5e24055f93c9 from sse_clients dictionary
+2025-03-08 03:22:31,262 - api.main - INFO - Client 2d82c924-381e-4bf7-9ff3-68880f038ad6 disconnected - connection cancelled
+2025-03-08 03:22:31,262 - api.main - INFO - Removing client 2d82c924-381e-4bf7-9ff3-68880f038ad6 from sse_clients dictionary
+2025-03-08 03:22:31,262 - api.main - INFO - Ping task cancelled for client 09e9d9db-1c25-40ad-bbf6-5e24055f93c9
+2025-03-08 03:22:31,262 - api.main - INFO - Ping task cancelled for client 2d82c924-381e-4bf7-9ff3-68880f038ad6
+2025-03-08 03:22:34,275 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:22:34,275 - api.main - INFO - New SSE connection with generated ID: 1151c86e-8172-4d63-ba42-c969be3a0933
+2025-03-08 03:22:34,277 - api.main - INFO - Registering client 1151c86e-8172-4d63-ba42-c969be3a0933 in sse_clients dictionary
+2025-03-08 03:22:34,277 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:22:34,278 - api.main - INFO - New SSE connection with generated ID: fc96f3e0-a176-4801-956f-15cc3d49314a
+2025-03-08 03:22:34,278 - api.main - INFO - Registering client fc96f3e0-a176-4801-956f-15cc3d49314a in sse_clients dictionary
+2025-03-08 03:22:34,279 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:22:34,282 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:23:50,283 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 03:23:50,290 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 03:23:50,292 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-08 03:26:07,005 - api.main - INFO - Received command: Ajoute une section avec le titre "Nos services" et le contenu "Nous proposons des services de qualité." à la page avec l"ID 5
+2025-03-08 03:26:07,006 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:26:09,236 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:26:09,236 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:26:09,236 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:26:09,236 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:26:09,237 - api.main - ERROR - Error processing command: 1 validation error for CommandResponse
+operation
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type
+2025-03-08 03:26:19,410 - api.main - INFO - Received command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:26:19,410 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:26:19,410 - api.main - ERROR - Error processing command: 1 validation error for CommandResponse
+operation
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type
+2025-03-08 03:26:47,649 - __main__ - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:26:56,949 - api.main - INFO - Client 1151c86e-8172-4d63-ba42-c969be3a0933 disconnected - connection cancelled
+2025-03-08 03:26:56,949 - api.main - INFO - Removing client 1151c86e-8172-4d63-ba42-c969be3a0933 from sse_clients dictionary
+2025-03-08 03:26:56,949 - api.main - INFO - Client fc96f3e0-a176-4801-956f-15cc3d49314a disconnected - connection cancelled
+2025-03-08 03:26:56,950 - api.main - INFO - Removing client fc96f3e0-a176-4801-956f-15cc3d49314a from sse_clients dictionary
+2025-03-08 03:26:56,950 - api.main - INFO - Ping task cancelled for client 1151c86e-8172-4d63-ba42-c969be3a0933
+2025-03-08 03:26:56,950 - api.main - INFO - Ping task cancelled for client fc96f3e0-a176-4801-956f-15cc3d49314a
+2025-03-08 03:27:11,994 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:27:11,994 - api.main - INFO - New SSE connection with generated ID: 6e24cf3a-4196-4637-9b41-ce1fd96fc8d2
+2025-03-08 03:27:11,995 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:27:11,995 - api.main - INFO - New SSE connection with generated ID: 2d58004f-4d09-4e9f-99ed-15ce6f0badf6
+2025-03-08 03:27:11,996 - api.main - INFO - Registering client 6e24cf3a-4196-4637-9b41-ce1fd96fc8d2 in sse_clients dictionary
+2025-03-08 03:27:11,996 - api.main - INFO - Registering client 2d58004f-4d09-4e9f-99ed-15ce6f0badf6 in sse_clients dictionary
+2025-03-08 03:27:11,998 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:27:11,998 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:27:20,766 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:27:20,766 - api.main - WARNING - Client test-client not found in sse_clients. Auto-registering.
+2025-03-08 03:27:20,766 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:27:20,768 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:27:20,769 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:27:21,119 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:27:21,119 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:27:21,119 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:27:21,620 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:27:46,866 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:27:46,866 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:27:46,867 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:27:47,370 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:29:47,150 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:29:47,150 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:29:47,151 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:29:47,652 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:30:23,950 - api.main - INFO - Received command: {'command': 'Ajoute une section avec le titre "Nos services" et le contenu "Nous proposons des services de qualité." à la page avec l\'ID 5', 'client_id': 'test-client'}
+2025-03-08 03:30:23,950 - api.main - INFO - Natural language command: Ajoute une section avec le titre "Nos services" et le contenu "Nous proposons des services de qualité." à la page avec l'ID 5
+2025-03-08 03:30:23,951 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:30:24,452 - nlp.intent_parser - ERROR - Failed to extract intent: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-08 03:35:15,629 - api.main - INFO - Client 6e24cf3a-4196-4637-9b41-ce1fd96fc8d2 disconnected - connection cancelled
+2025-03-08 03:35:15,630 - api.main - INFO - Removing client 6e24cf3a-4196-4637-9b41-ce1fd96fc8d2 from sse_clients dictionary
+2025-03-08 03:35:15,630 - api.main - INFO - Client 2d58004f-4d09-4e9f-99ed-15ce6f0badf6 disconnected - connection cancelled
+2025-03-08 03:35:15,630 - api.main - INFO - Removing client 2d58004f-4d09-4e9f-99ed-15ce6f0badf6 from sse_clients dictionary
+2025-03-08 03:35:15,630 - api.main - INFO - Ping task cancelled for client 6e24cf3a-4196-4637-9b41-ce1fd96fc8d2
+2025-03-08 03:35:15,631 - api.main - INFO - Ping task cancelled for client 2d58004f-4d09-4e9f-99ed-15ce6f0badf6
+2025-03-08 03:35:21,904 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:35:21,904 - api.main - INFO - New SSE connection with generated ID: 3fd29c68-cde9-4378-9db3-fad34083ba4b
+2025-03-08 03:35:21,905 - api.main - INFO - Registering client 3fd29c68-cde9-4378-9db3-fad34083ba4b in sse_clients dictionary
+2025-03-08 03:35:21,905 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:35:21,906 - api.main - INFO - New SSE connection with generated ID: 84a6b243-0e45-4af6-98c9-44a7d5681524
+2025-03-08 03:35:21,906 - api.main - INFO - Registering client 84a6b243-0e45-4af6-98c9-44a7d5681524 in sse_clients dictionary
+2025-03-08 03:35:21,907 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:35:21,908 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:35:40,907 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:35:40,907 - api.main - INFO - New SSE connection with generated ID: 14be636d-d4d1-4695-a41a-4d375e8d21aa
+2025-03-08 03:35:40,908 - api.main - INFO - Registering client 14be636d-d4d1-4695-a41a-4d375e8d21aa in sse_clients dictionary
+2025-03-08 03:35:40,909 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:35:52,427 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:35:52,427 - api.main - WARNING - Client test-client not found in sse_clients. Auto-registering.
+2025-03-08 03:35:52,427 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:35:52,428 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:35:52,430 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:35:54,034 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:35:54,034 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:35:54,034 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:35:55,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:35:55,591 - openai._base_client - INFO - Retrying request to /completions in 0.378784 seconds
+2025-03-08 03:35:56,613 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:35:56,613 - openai._base_client - INFO - Retrying request to /completions in 0.879684 seconds
+2025-03-08 03:35:57,944 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:35:57,947 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 429 - {'error': {'message': 'Your account is not active, please check your billing details on our website.', 'type': 'billing_not_active', 'param': None, 'code': 'billing_not_active'}}
+2025-03-08 03:35:57,948 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-08 03:35:58,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:35:58,663 - openai._base_client - INFO - Retrying request to /completions in 0.382850 seconds
+2025-03-08 03:35:59,480 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:35:59,481 - openai._base_client - INFO - Retrying request to /completions in 0.981873 seconds
+2025-03-08 03:36:00,745 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2025-03-08 03:36:00,747 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 429 - {'error': {'message': 'Your account is not active, please check your billing details on our website.', 'type': 'billing_not_active', 'param': None, 'code': 'billing_not_active'}}
+2025-03-08 03:36:00,747 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-08 03:36:00,747 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'content'
+2025-03-08 03:37:57,763 - api.main - INFO - Client 3fd29c68-cde9-4378-9db3-fad34083ba4b disconnected - connection cancelled
+2025-03-08 03:37:57,763 - api.main - INFO - Removing client 3fd29c68-cde9-4378-9db3-fad34083ba4b from sse_clients dictionary
+2025-03-08 03:37:57,764 - api.main - INFO - Client 84a6b243-0e45-4af6-98c9-44a7d5681524 disconnected - connection cancelled
+2025-03-08 03:37:57,764 - api.main - INFO - Removing client 84a6b243-0e45-4af6-98c9-44a7d5681524 from sse_clients dictionary
+2025-03-08 03:37:57,764 - api.main - INFO - Client 14be636d-d4d1-4695-a41a-4d375e8d21aa disconnected - connection cancelled
+2025-03-08 03:37:57,764 - api.main - INFO - Removing client 14be636d-d4d1-4695-a41a-4d375e8d21aa from sse_clients dictionary
+2025-03-08 03:37:57,764 - api.main - INFO - Ping task cancelled for client 3fd29c68-cde9-4378-9db3-fad34083ba4b
+2025-03-08 03:37:57,764 - api.main - INFO - Ping task cancelled for client 84a6b243-0e45-4af6-98c9-44a7d5681524
+2025-03-08 03:37:57,765 - api.main - INFO - Ping task cancelled for client 14be636d-d4d1-4695-a41a-4d375e8d21aa
+2025-03-08 03:38:21,658 - mcp - INFO - Starting WordPress Middleware Control Panel
+2025-03-08 03:38:21,658 - api.main - INFO - Starting WordPress MCP API on http://0.0.0.0:8000
+2025-03-08 03:38:25,210 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:38:25,210 - api.main - INFO - New SSE connection with generated ID: 952e763b-e07e-4402-bb82-13c3e265aae5
+2025-03-08 03:38:25,211 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:38:25,211 - api.main - INFO - New SSE connection with generated ID: 35f059b1-c2fa-49e0-ab42-88fe8140c996
+2025-03-08 03:38:25,212 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:38:25,212 - api.main - INFO - New SSE connection with generated ID: ae9b4530-f41e-4045-b34a-d82ef69858fc
+2025-03-08 03:38:25,213 - api.main - INFO - Registering client 952e763b-e07e-4402-bb82-13c3e265aae5 in sse_clients dictionary
+2025-03-08 03:38:25,213 - api.main - INFO - Registering client 35f059b1-c2fa-49e0-ab42-88fe8140c996 in sse_clients dictionary
+2025-03-08 03:38:25,213 - api.main - INFO - Registering client ae9b4530-f41e-4045-b34a-d82ef69858fc in sse_clients dictionary
+2025-03-08 03:38:25,215 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:38:25,216 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:38:25,217 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:38:30,964 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:38:30,964 - api.main - WARNING - Client test-client not found in sse_clients. Auto-registering.
+2025-03-08 03:38:30,964 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:38:30,965 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:38:30,966 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:38:31,294 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:38:31,294 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:38:31,294 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:38:33,066 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:38:34,080 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:38:34,081 - nlp.intent_parser - ERROR - Failed to parse parameters JSON
+2025-03-08 03:38:34,081 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-08 03:38:34,082 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'content'
+2025-03-08 03:39:37,819 - api.main - INFO - Client 952e763b-e07e-4402-bb82-13c3e265aae5 disconnected - connection cancelled
+2025-03-08 03:39:37,819 - api.main - INFO - Removing client 952e763b-e07e-4402-bb82-13c3e265aae5 from sse_clients dictionary
+2025-03-08 03:39:37,819 - api.main - INFO - Client 35f059b1-c2fa-49e0-ab42-88fe8140c996 disconnected - connection cancelled
+2025-03-08 03:39:37,819 - api.main - INFO - Removing client 35f059b1-c2fa-49e0-ab42-88fe8140c996 from sse_clients dictionary
+2025-03-08 03:39:37,820 - api.main - INFO - Client ae9b4530-f41e-4045-b34a-d82ef69858fc disconnected - connection cancelled
+2025-03-08 03:39:37,820 - api.main - INFO - Removing client ae9b4530-f41e-4045-b34a-d82ef69858fc from sse_clients dictionary
+2025-03-08 03:39:37,820 - api.main - INFO - Ping task cancelled for client 952e763b-e07e-4402-bb82-13c3e265aae5
+2025-03-08 03:39:37,820 - api.main - INFO - Ping task cancelled for client 35f059b1-c2fa-49e0-ab42-88fe8140c996
+2025-03-08 03:39:37,821 - api.main - INFO - Ping task cancelled for client ae9b4530-f41e-4045-b34a-d82ef69858fc
+2025-03-08 03:39:40,845 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:40,845 - api.main - INFO - New SSE connection with generated ID: 0504a380-7188-4556-80b4-03a0b45d96f2
+2025-03-08 03:39:40,846 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:40,846 - api.main - INFO - New SSE connection with generated ID: 7b281753-a969-4f5a-a023-4bbfa33ea1d0
+2025-03-08 03:39:40,847 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:40,847 - api.main - INFO - New SSE connection with generated ID: 4b7b7c3b-cec1-4ed9-86c8-cf2e63e05af1
+2025-03-08 03:39:40,848 - api.main - INFO - Registering client 0504a380-7188-4556-80b4-03a0b45d96f2 in sse_clients dictionary
+2025-03-08 03:39:40,848 - api.main - INFO - Registering client 7b281753-a969-4f5a-a023-4bbfa33ea1d0 in sse_clients dictionary
+2025-03-08 03:39:40,849 - api.main - INFO - Registering client 4b7b7c3b-cec1-4ed9-86c8-cf2e63e05af1 in sse_clients dictionary
+2025-03-08 03:39:40,850 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:40,850 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:40,851 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:43,003 - api.main - INFO - Client 0504a380-7188-4556-80b4-03a0b45d96f2 disconnected - connection cancelled
+2025-03-08 03:39:43,003 - api.main - INFO - Removing client 0504a380-7188-4556-80b4-03a0b45d96f2 from sse_clients dictionary
+2025-03-08 03:39:43,003 - api.main - INFO - Client 7b281753-a969-4f5a-a023-4bbfa33ea1d0 disconnected - connection cancelled
+2025-03-08 03:39:43,003 - api.main - INFO - Removing client 7b281753-a969-4f5a-a023-4bbfa33ea1d0 from sse_clients dictionary
+2025-03-08 03:39:43,003 - api.main - INFO - Client 4b7b7c3b-cec1-4ed9-86c8-cf2e63e05af1 disconnected - connection cancelled
+2025-03-08 03:39:43,003 - api.main - INFO - Removing client 4b7b7c3b-cec1-4ed9-86c8-cf2e63e05af1 from sse_clients dictionary
+2025-03-08 03:39:43,004 - api.main - INFO - Ping task cancelled for client 0504a380-7188-4556-80b4-03a0b45d96f2
+2025-03-08 03:39:43,004 - api.main - INFO - Ping task cancelled for client 7b281753-a969-4f5a-a023-4bbfa33ea1d0
+2025-03-08 03:39:43,004 - api.main - INFO - Ping task cancelled for client 4b7b7c3b-cec1-4ed9-86c8-cf2e63e05af1
+2025-03-08 03:39:46,412 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:46,412 - api.main - INFO - New SSE connection with generated ID: d95a4e91-ebfa-4d14-b786-846b423db6b6
+2025-03-08 03:39:46,413 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:46,414 - api.main - INFO - New SSE connection with generated ID: 568045fc-579d-415e-990a-6a529e39bd7d
+2025-03-08 03:39:46,414 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:46,414 - api.main - INFO - New SSE connection with generated ID: b0a30550-11b3-4b14-9a7f-d0fcb1d6e1b8
+2025-03-08 03:39:46,415 - api.main - INFO - Registering client d95a4e91-ebfa-4d14-b786-846b423db6b6 in sse_clients dictionary
+2025-03-08 03:39:46,415 - api.main - INFO - Registering client 568045fc-579d-415e-990a-6a529e39bd7d in sse_clients dictionary
+2025-03-08 03:39:46,416 - api.main - INFO - Registering client b0a30550-11b3-4b14-9a7f-d0fcb1d6e1b8 in sse_clients dictionary
+2025-03-08 03:39:46,417 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:46,417 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:46,418 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:47,379 - api.main - INFO - Client d95a4e91-ebfa-4d14-b786-846b423db6b6 disconnected - connection cancelled
+2025-03-08 03:39:47,379 - api.main - INFO - Removing client d95a4e91-ebfa-4d14-b786-846b423db6b6 from sse_clients dictionary
+2025-03-08 03:39:47,379 - api.main - INFO - Client 568045fc-579d-415e-990a-6a529e39bd7d disconnected - connection cancelled
+2025-03-08 03:39:47,380 - api.main - INFO - Removing client 568045fc-579d-415e-990a-6a529e39bd7d from sse_clients dictionary
+2025-03-08 03:39:47,380 - api.main - INFO - Client b0a30550-11b3-4b14-9a7f-d0fcb1d6e1b8 disconnected - connection cancelled
+2025-03-08 03:39:47,381 - api.main - INFO - Removing client b0a30550-11b3-4b14-9a7f-d0fcb1d6e1b8 from sse_clients dictionary
+2025-03-08 03:39:47,381 - api.main - INFO - Ping task cancelled for client d95a4e91-ebfa-4d14-b786-846b423db6b6
+2025-03-08 03:39:47,381 - api.main - INFO - Ping task cancelled for client 568045fc-579d-415e-990a-6a529e39bd7d
+2025-03-08 03:39:47,382 - api.main - INFO - Ping task cancelled for client b0a30550-11b3-4b14-9a7f-d0fcb1d6e1b8
+2025-03-08 03:39:50,392 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:50,393 - api.main - INFO - New SSE connection with generated ID: 7ed1dba6-a1bf-41ac-aa6d-26e4ce71782d
+2025-03-08 03:39:50,393 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:50,393 - api.main - INFO - New SSE connection with generated ID: ffe40eaf-9e26-482a-bb46-d0207cedddb4
+2025-03-08 03:39:50,394 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:39:50,394 - api.main - INFO - New SSE connection with generated ID: 65a052e0-04c0-493f-b82b-008ca263151b
+2025-03-08 03:39:50,395 - api.main - INFO - Registering client 7ed1dba6-a1bf-41ac-aa6d-26e4ce71782d in sse_clients dictionary
+2025-03-08 03:39:50,395 - api.main - INFO - Registering client ffe40eaf-9e26-482a-bb46-d0207cedddb4 in sse_clients dictionary
+2025-03-08 03:39:50,396 - api.main - INFO - Registering client 65a052e0-04c0-493f-b82b-008ca263151b in sse_clients dictionary
+2025-03-08 03:39:50,397 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:50,397 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:50,399 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 03:39:56,167 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page avec l'ID 5", 'client_id': 'test-client'}
+2025-03-08 03:39:56,167 - api.main - WARNING - Client test-client not found in sse_clients. Auto-registering.
+2025-03-08 03:39:56,168 - api.main - INFO - Natural language command: Montre-moi le contenu de la page avec l'ID 5
+2025-03-08 03:39:56,170 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:39:56,172 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:39:56,494 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:39:56,494 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:39:56,494 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:39:57,972 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:39:58,610 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:39:58,704 - wordpress.connector - ERROR - Failed to get post 5: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:39:58,704 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:40:56,220 - api.main - INFO - Received command: {'command': 'affiche moi tout le html de l apage principale', 'client_id': 'test-client'}
+2025-03-08 03:40:56,221 - api.main - INFO - Natural language command: affiche moi tout le html de l apage principale
+2025-03-08 03:40:56,222 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:40:57,729 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:40:58,488 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:40:58,698 - wordpress.connector - ERROR - Failed to get post apage principale: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:40:58,699 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:41:10,823 - api.main - INFO - Received command: {'command': 'affiche moi tout le html de l apage principale', 'client_id': 'test-client'}
+2025-03-08 03:41:10,823 - api.main - INFO - Natural language command: affiche moi tout le html de l apage principale
+2025-03-08 03:41:10,824 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:41:12,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:41:13,234 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:41:13,431 - wordpress.connector - ERROR - Failed to get post apage principale: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:41:13,431 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 03:44:46,485 - api.main - INFO - Received command: {'command': 'Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d\'experts passionnés."'}
+2025-03-08 03:44:46,486 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-08 03:48:28,834 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 03:48:28,836 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:48:40,443 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 03:48:40,444 - api.main - INFO - New SSE connection with generated ID: e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc
+2025-03-08 03:48:40,445 - api.main - INFO - Registering client e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc in sse_clients dictionary
+2025-03-08 03:48:40,446 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 03:52:20,297 - api.main - INFO - Received command: {'command': 'Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d\'experts passionnés."', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 03:52:20,297 - api.main - INFO - Natural language command: Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d'experts passionnés."
+2025-03-08 03:52:20,299 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 03:52:20,300 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 03:52:22,115 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 03:52:22,115 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 03:52:22,115 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 03:52:23,547 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:52:24,468 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 03:52:24,638 - wordpress.connector - INFO - Post created with ID: 505
+2025-03-08 03:59:11,406 - api.main - INFO - GET /page/505 - 404 - 0.00s
+2025-03-08 04:00:44,238 - api.main - INFO - Received command: {'command': "Montre-moi le contenu de la page d'accueil", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:00:44,239 - api.main - INFO - Natural language command: Montre-moi le contenu de la page d'accueil
+2025-03-08 04:00:44,241 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:00:45,570 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:00:46,291 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:00:46,578 - wordpress.connector - ERROR - Failed to get post page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:00:46,578 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:02:05,102 - api.main - INFO - Received command: {'command': 'Dans le titre "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison", change l\'heure pour 15 heures', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:02:05,103 - api.main - INFO - Natural language command: Dans le titre "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison", change l'heure pour 15 heures
+2025-03-08 04:02:05,104 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:02:06,462 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:07,841 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:08,052 - wordpress.connector - ERROR - Failed to update post None: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:02:08,052 - nlp.command_processor - ERROR - Error processing command: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:02:19,951 - api.main - INFO - Received command: {'command': 'Trouve la page qui a pour titre "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:02:19,951 - api.main - INFO - Natural language command: Trouve la page qui a pour titre "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:02:19,952 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:02:21,027 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:22,176 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:22,359 - wordpress.connector - ERROR - Failed to get post À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:02:22,359 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:02:44,492 - api.main - INFO - Received command: {'command': 'Liste toutes les pages récentes', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:02:44,492 - api.main - INFO - Natural language command: Liste toutes les pages récentes
+2025-03-08 04:02:44,493 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:02:46,036 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:47,075 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:02:47,276 - wordpress.connector - ERROR - Failed to get post Liste toutes les pages récentes: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:02:47,276 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:04:57,393 - api.main - INFO - Received command: {'command': 'Sur la page d\'accueil https://jess-jeff.fr/, modifie le titre "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" pour "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:04:57,393 - api.main - INFO - Natural language command: Sur la page d'accueil https://jess-jeff.fr/, modifie le titre "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" pour "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:04:57,394 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:04:58,644 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:05:00,077 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:05:00,266 - wordpress.connector - ERROR - Failed to update post https://jess-jeff.fr/: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:05:00,266 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:06:23,890 - api.main - INFO - Received command: {'command': "Recherche la page d'accueil et modifie le titre de la cérémonie de 11 heures à 15 heures", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:06:23,891 - api.main - INFO - Natural language command: Recherche la page d'accueil et modifie le titre de la cérémonie de 11 heures à 15 heures
+2025-03-08 04:06:23,894 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:06:25,154 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:06:26,271 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:06:26,472 - wordpress.connector - ERROR - Failed to update post page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:06:26,472 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:06:50,586 - api.main - INFO - Received command: {'command': "Obtiens la liste de toutes les pages du site et trouve celle qui contient le titre avec l'heure de la cérémonie", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:06:50,586 - api.main - INFO - Natural language command: Obtiens la liste de toutes les pages du site et trouve celle qui contient le titre avec l'heure de la cérémonie
+2025-03-08 04:06:50,587 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:06:51,528 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:06:52,512 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:06:52,716 - wordpress.connector - ERROR - Failed to get post Obtiens la liste de toutes les pages du site et trouve celle qui contient le titre avec l'heure de la cérémonie: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:06:52,717 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:07:14,529 - api.main - INFO - Received command: {'command': 'Modifie le titre "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" pour "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" sur la page avec l\'ID 1', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:07:14,529 - api.main - INFO - Natural language command: Modifie le titre "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" pour "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" sur la page avec l'ID 1
+2025-03-08 04:07:14,530 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:07:15,591 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:07:16,679 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:07:17,007 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:07:40,222 - api.main - INFO - Received command: {'command': 'Récupère tous les articles et pages du site', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:07:40,222 - api.main - INFO - Natural language command: Récupère tous les articles et pages du site
+2025-03-08 04:07:40,224 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:07:41,110 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:07:41,767 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:07:41,930 - wordpress.connector - ERROR - Failed to get post all: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:07:41,930 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:07:59,795 - api.main - INFO - Received command: {'command': 'Sur la page d\'accueil (ID: 2), remplace le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:07:59,795 - api.main - INFO - Natural language command: Sur la page d'accueil (ID: 2), remplace le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:07:59,796 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:08:00,712 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:08:02,247 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:08:02,594 - wordpress.connector - INFO - Post 2 updated successfully
+2025-03-08 04:12:12,644 - api.main - INFO - Received command: {'command': 'Sur la page avec l\'ID 3, remplace le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:12:12,644 - api.main - INFO - Natural language command: Sur la page avec l'ID 3, remplace le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:12:12,645 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:12:13,875 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:12:14,868 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:12:15,165 - wordpress.connector - INFO - Post 3 updated successfully
+2025-03-08 04:12:50,035 - api.main - INFO - Received command: {'command': 'wp.getPosts avec filter post_type=page pour obtenir toutes les pages', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:12:50,036 - api.main - INFO - Natural language command: wp.getPosts avec filter post_type=page pour obtenir toutes les pages
+2025-03-08 04:12:50,037 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:12:50,912 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:12:51,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:12:51,733 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'filter'
+2025-03-08 04:13:03,803 - api.main - INFO - Received command: {'command': "Récupère le contenu de la page avec l'ID 4", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:13:03,803 - api.main - INFO - Natural language command: Récupère le contenu de la page avec l'ID 4
+2025-03-08 04:13:03,807 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:13:05,152 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:06,061 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:18,093 - api.main - INFO - Received command: {'command': 'Trouve la page qui contient exactement le titre "le Samedi 13 juillet 2024"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:13:18,093 - api.main - INFO - Natural language command: Trouve la page qui contient exactement le titre "le Samedi 13 juillet 2024"
+2025-03-08 04:13:18,093 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:13:19,628 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:20,102 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:20,278 - wordpress.connector - ERROR - Failed to get post le Samedi 13 juillet 2024: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:13:20,278 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:13:25,926 - api.main - INFO - Received command: {'command': 'Sur la page avec l\'ID 5, remplace le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:13:25,926 - api.main - INFO - Natural language command: Sur la page avec l'ID 5, remplace le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:13:25,927 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:13:27,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:28,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:13:28,764 - wordpress.connector - ERROR - Failed to update post 5: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:13:28,764 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:16:27,745 - api.main - INFO - Received command: {'command': 'Utilise la méthode wp.getPosts pour obtenir la liste des pages avec les paramètres suivants : post_type=page, post_status=publish', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:16:27,745 - api.main - INFO - Natural language command: Utilise la méthode wp.getPosts pour obtenir la liste des pages avec les paramètres suivants : post_type=page, post_status=publish
+2025-03-08 04:16:27,747 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:16:32,647 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:16:33,261 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:16:33,263 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'post_type'
+2025-03-08 04:17:08,266 - api.main - INFO - Received command: {'command': 'Mets à jour la page d\'accueil en remplaçant le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:17:08,266 - api.main - INFO - Natural language command: Mets à jour la page d'accueil en remplaçant le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:17:08,269 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:17:09,487 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:11,047 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:11,265 - wordpress.connector - ERROR - Failed to update post page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:11,265 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:22,614 - api.main - INFO - Received command: {'command': "Vérifie le contenu actuel de la page d'accueil", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:17:22,614 - api.main - INFO - Natural language command: Vérifie le contenu actuel de la page d'accueil
+2025-03-08 04:17:22,616 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:17:24,157 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:25,109 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:25,295 - wordpress.connector - ERROR - Failed to get post page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:25,295 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:34,716 - api.main - INFO - Received command: {'command': 'Utilise wp.getPosts pour obtenir la page avec le titre qui contient "église Saint-Pierre-Saint-Paul"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:17:34,716 - api.main - INFO - Natural language command: Utilise wp.getPosts pour obtenir la page avec le titre qui contient "église Saint-Pierre-Saint-Paul"
+2025-03-08 04:17:34,717 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:17:36,037 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:36,546 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:36,716 - wordpress.connector - ERROR - Failed to get post église Saint-Pierre-Saint-Paul: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:36,716 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:17:47,822 - api.main - INFO - Received command: {'command': 'Sur la page d\'accueil (ID: 1), remplace tout le texte qui contient "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:17:47,823 - api.main - INFO - Natural language command: Sur la page d'accueil (ID: 1), remplace tout le texte qui contient "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:17:47,824 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:17:49,450 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:50,780 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:17:51,093 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:18:00,337 - api.main - INFO - Received command: {'command': "Vérifie les permissions et l'état du système", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:18:00,338 - api.main - INFO - Natural language command: Vérifie les permissions et l'état du système
+2025-03-08 04:18:00,338 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:18:01,409 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:18:02,064 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:18:02,240 - wordpress.connector - ERROR - Failed to get post None: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:18:02,240 - nlp.command_processor - ERROR - Error processing command: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:18:21,095 - api.main - INFO - POST /tool/update_wordpress_content - 404 - 0.00s
+2025-03-08 04:18:35,339 - api.main - INFO - Received command: {'command': 'Utilise l\'outil update_wordpress_content avec les paramètres suivants : post_id=1, content="À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:18:35,339 - api.main - INFO - Natural language command: Utilise l'outil update_wordpress_content avec les paramètres suivants : post_id=1, content="À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:18:35,341 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:18:37,065 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:18:37,949 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:18:38,299 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:18:46,536 - api.main - INFO - Received command: {'command': "Utilise l'outil get_wordpress_content avec le paramètre post_id=1", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:18:46,537 - api.main - INFO - Natural language command: Utilise l'outil get_wordpress_content avec le paramètre post_id=1
+2025-03-08 04:18:46,539 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:18:47,632 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:18:48,241 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:19:01,952 - api.main - INFO - Received command: {'command': 'Remplace dans la page d\'accueil le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:19:01,952 - api.main - INFO - Natural language command: Remplace dans la page d'accueil le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:19:01,954 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:19:03,046 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:19:03,792 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:19:03,957 - wordpress.connector - ERROR - Failed to update post page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:19:03,958 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:20:16,807 - api.main - INFO - Client e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc disconnected - connection cancelled
+2025-03-08 04:20:16,807 - api.main - INFO - Removing client e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc from sse_clients dictionary
+2025-03-08 04:20:16,807 - api.main - INFO - Ping task cancelled for client e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc
+2025-03-08 04:20:16,829 - api.main - INFO - Client 7ed1dba6-a1bf-41ac-aa6d-26e4ce71782d disconnected - connection cancelled
+2025-03-08 04:20:16,833 - api.main - INFO - Removing client 7ed1dba6-a1bf-41ac-aa6d-26e4ce71782d from sse_clients dictionary
+2025-03-08 04:20:16,834 - api.main - INFO - Client ffe40eaf-9e26-482a-bb46-d0207cedddb4 disconnected - connection cancelled
+2025-03-08 04:20:16,834 - api.main - INFO - Removing client ffe40eaf-9e26-482a-bb46-d0207cedddb4 from sse_clients dictionary
+2025-03-08 04:20:16,834 - api.main - INFO - Client 65a052e0-04c0-493f-b82b-008ca263151b disconnected - connection cancelled
+2025-03-08 04:20:16,835 - api.main - INFO - Removing client 65a052e0-04c0-493f-b82b-008ca263151b from sse_clients dictionary
+2025-03-08 04:20:16,835 - api.main - INFO - Ping task cancelled for client 7ed1dba6-a1bf-41ac-aa6d-26e4ce71782d
+2025-03-08 04:20:16,836 - api.main - INFO - Ping task cancelled for client ffe40eaf-9e26-482a-bb46-d0207cedddb4
+2025-03-08 04:20:16,836 - api.main - INFO - Ping task cancelled for client 65a052e0-04c0-493f-b82b-008ca263151b
+2025-03-08 04:20:19,862 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 04:20:19,862 - api.main - INFO - New SSE connection with generated ID: dff44a3f-771b-450a-ac89-ed6507df7ed3
+2025-03-08 04:20:19,864 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 04:20:19,864 - api.main - INFO - New SSE connection with generated ID: be740129-f1d5-4fa7-865a-aa4d4887dc3a
+2025-03-08 04:20:19,864 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 04:20:19,865 - api.main - INFO - New SSE connection with generated ID: 387add4c-1389-4df3-b7c4-8b7055b8225f
+2025-03-08 04:20:19,865 - api.main - INFO - Registering client dff44a3f-771b-450a-ac89-ed6507df7ed3 in sse_clients dictionary
+2025-03-08 04:20:19,865 - api.main - INFO - Registering client be740129-f1d5-4fa7-865a-aa4d4887dc3a in sse_clients dictionary
+2025-03-08 04:20:19,866 - api.main - INFO - Registering client 387add4c-1389-4df3-b7c4-8b7055b8225f in sse_clients dictionary
+2025-03-08 04:20:19,867 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 04:20:19,868 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 04:20:19,868 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 04:20:30,836 - api.main - INFO - Received command: {'command': 'Utilise wp.editPost pour modifier le post avec l\'ID 1, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:20:30,837 - api.main - WARNING - Client e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc not found in sse_clients. Auto-registering.
+2025-03-08 04:20:30,837 - api.main - INFO - Natural language command: Utilise wp.editPost pour modifier le post avec l'ID 1, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:20:30,840 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:20:30,842 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-08 04:20:31,203 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-08 04:20:31,204 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-08 04:20:31,204 - nlp.command_processor - INFO - Command processor initialized
+2025-03-08 04:20:32,638 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:20:33,597 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:20:33,826 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:20:49,624 - api.main - INFO - Received command: {'command': 'Mets à jour le post avec l\'ID 1, remplace tout le contenu par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:20:49,625 - api.main - INFO - Natural language command: Mets à jour le post avec l'ID 1, remplace tout le contenu par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:20:49,626 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:20:50,774 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:20:51,724 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:20:52,064 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:21:00,501 - api.main - INFO - Received command: {'command': 'Récupère d\'abord le contenu du post avec l\'ID 1, puis remplace le texte "À 11 heures" par "À 15 heures" dans ce contenu', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:21:00,501 - api.main - INFO - Natural language command: Récupère d'abord le contenu du post avec l'ID 1, puis remplace le texte "À 11 heures" par "À 15 heures" dans ce contenu
+2025-03-08 04:21:00,503 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:21:01,451 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:02,696 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:02,987 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:21:11,753 - api.main - INFO - Received command: {'command': 'Utilise wp.getPosts pour lister tous les posts et pages, avec les paramètres number=10', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:21:11,753 - api.main - INFO - Natural language command: Utilise wp.getPosts pour lister tous les posts et pages, avec les paramètres number=10
+2025-03-08 04:21:11,755 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:21:12,971 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:13,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:13,535 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'number'
+2025-03-08 04:21:25,502 - api.main - INFO - Received command: {'command': 'Utilise la méthode XML-RPC wp.editPost avec les paramètres suivants : blog_id=1, post_id=1, content="À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:21:25,502 - api.main - INFO - Natural language command: Utilise la méthode XML-RPC wp.editPost avec les paramètres suivants : blog_id=1, post_id=1, content="À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:21:25,504 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:21:26,539 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:28,382 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:21:28,686 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:45:50,348 - api.main - INFO - Received command: {'command': 'Utilise wp.getPosts avec les paramètres post_type=page pour lister toutes les pages', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:45:50,349 - api.main - INFO - Natural language command: Utilise wp.getPosts avec les paramètres post_type=page pour lister toutes les pages
+2025-03-08 04:45:50,350 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:45:51,746 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:45:55,690 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:45:57,329 - wordpress.connector - ERROR - Failed to get post None: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:45:57,329 - nlp.command_processor - ERROR - Error processing command: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:45:57,332 - api.main - INFO - Received command: {'command': 'Liste toutes les pages du site avec leurs IDs', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:45:57,332 - api.main - INFO - Natural language command: Liste toutes les pages du site avec leurs IDs
+2025-03-08 04:45:57,333 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:45:58,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:45:59,992 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:00,131 - wordpress.connector - ERROR - Failed to get post ID: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:00,136 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:03,607 - api.main - INFO - Received command: {'command': "Vérifie quelle page est définie comme page d'accueil dans les réglages WordPress", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:03,607 - api.main - INFO - Natural language command: Vérifie quelle page est définie comme page d'accueil dans les réglages WordPress
+2025-03-08 04:46:03,608 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:04,600 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:05,365 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:05,470 - wordpress.connector - ERROR - Failed to get post Vérifie quelle page est définie comme page d'accueil dans les réglages WordPress: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:05,470 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:09,118 - api.main - INFO - Received command: {'command': "Récupère le contenu du post avec l'ID 2", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:09,118 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 2
+2025-03-08 04:46:09,119 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:10,199 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:10,949 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:14,238 - api.main - INFO - Received command: {'command': "Récupère le contenu du post avec l'ID 3", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:14,238 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 3
+2025-03-08 04:46:14,238 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:15,407 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:16,375 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:20,631 - api.main - INFO - Received command: {'command': 'Trouve tous les posts ou pages qui contiennent le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:20,631 - api.main - INFO - Natural language command: Trouve tous les posts ou pages qui contiennent le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:46:20,633 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:22,474 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:23,646 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:23,809 - wordpress.connector - ERROR - Failed to get post Trouve tous les posts ou pages qui contiennent le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison": <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:23,810 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:36,000 - api.main - INFO - Received command: {'command': 'Récupère le contenu complet du post avec l\'ID 1 et vérifie s\'il contient le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:36,000 - api.main - INFO - Natural language command: Récupère le contenu complet du post avec l'ID 1 et vérifie s'il contient le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:46:36,001 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:37,083 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:37,846 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:41,596 - api.main - INFO - Received command: {'command': 'Dans le post avec l\'ID 1, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:41,597 - api.main - INFO - Natural language command: Dans le post avec l'ID 1, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:46:41,598 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:42,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:43,458 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:43,686 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:46:46,331 - api.main - INFO - Received command: {'command': "Récupère le contenu du post avec l'ID 1", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:46,331 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 1
+2025-03-08 04:46:46,333 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:47,669 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:48,289 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:53,686 - api.main - INFO - Received command: {'command': 'Utilise wp.getPosts avec le paramètre post_type=page pour lister toutes les pages et leurs IDs', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:46:53,686 - api.main - INFO - Natural language command: Utilise wp.getPosts avec le paramètre post_type=page pour lister toutes les pages et leurs IDs
+2025-03-08 04:46:53,687 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:46:54,799 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:55,196 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:46:55,197 - nlp.intent_parser - WARNING - Missing required parameter: post_id
+2025-03-08 04:46:55,197 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-08 04:46:55,378 - wordpress.connector - ERROR - Failed to get post 5: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:46:55,378 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:50:09,350 - api.main - INFO - Received command: {'command': "Trouve l'ID de la page définie comme page d'accueil dans WordPress", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:09,350 - api.main - INFO - Natural language command: Trouve l'ID de la page définie comme page d'accueil dans WordPress
+2025-03-08 04:50:09,352 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:50:10,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:11,213 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:11,424 - wordpress.connector - ERROR - Failed to get post ID de la page définie comme page d'accueil: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:50:11,424 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:50:15,493 - api.main - INFO - Received command: {'command': 'Cherche dans tous les posts et pages le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" et retourne leurs IDs', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:15,493 - api.main - INFO - Natural language command: Cherche dans tous les posts et pages le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" et retourne leurs IDs
+2025-03-08 04:50:15,495 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:50:16,561 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:18,229 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:18,230 - nlp.command_processor - ERROR - Error processing command: WordPressContentManager.get_content() got an unexpected keyword argument 'text'
+2025-03-08 04:50:21,432 - api.main - INFO - Received command: {'command': "Récupère les options WordPress 'show_on_front' et 'page_on_front' pour identifier la page d'accueil", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:21,432 - api.main - INFO - Natural language command: Récupère les options WordPress 'show_on_front' et 'page_on_front' pour identifier la page d'accueil
+2025-03-08 04:50:21,433 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:50:22,964 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:24,369 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:24,548 - wordpress.connector - ERROR - Failed to get post page_on_front: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:50:24,548 - nlp.command_processor - ERROR - Error processing command: <Fault 404: 'Identifiant de l’article non valide.'>
+2025-03-08 04:50:27,805 - api.main - INFO - Received command: {'command': "Vérifie si le post avec l'ID 1 est la page d'accueil et retourne son titre et son URL", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:27,805 - api.main - INFO - Natural language command: Vérifie si le post avec l'ID 1 est la page d'accueil et retourne son titre et son URL
+2025-03-08 04:50:27,806 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:50:28,828 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:29,578 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:37,794 - api.main - INFO - Received command: {'command': 'Dans le post avec l\'ID 1, remplace toutes les occurrences du texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:37,794 - api.main - INFO - Natural language command: Dans le post avec l'ID 1, remplace toutes les occurrences du texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:50:37,796 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:50:39,110 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:43,889 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:44,190 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-08 04:50:47,134 - api.main - INFO - Received command: {'command': 'Récupère le contenu du post avec l\'ID 1 et vérifie s\'il contient le texte "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:50:47,134 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 1 et vérifie s'il contient le texte "À 15 heures"
+2025-03-08 04:50:47,136 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:50:48,112 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:50:48,789 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:20,321 - api.main - INFO - Received command: {'command': "Récupère le contenu du post avec l'ID 38", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:53:20,321 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 38
+2025-03-08 04:53:20,323 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:53:21,188 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:21,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:25,745 - api.main - INFO - Received command: {'command': 'Dans le post avec l\'ID 38, remplace toutes les occurrences du texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:53:25,746 - api.main - INFO - Natural language command: Dans le post avec l'ID 38, remplace toutes les occurrences du texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:53:25,747 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:53:26,730 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:27,755 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:28,081 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:53:31,015 - api.main - INFO - Received command: {'command': 'Récupère le contenu du post avec l\'ID 38 et vérifie s\'il contient le texte "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:53:31,015 - api.main - INFO - Natural language command: Récupère le contenu du post avec l'ID 38 et vérifie s'il contient le texte "À 15 heures"
+2025-03-08 04:53:31,016 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:53:32,106 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:33,080 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:37,533 - api.main - INFO - Received command: {'command': 'Utilise wp.editPost pour modifier le post avec l\'ID 38, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:53:37,533 - api.main - INFO - Natural language command: Utilise wp.editPost pour modifier le post avec l'ID 38, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:53:37,535 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:53:38,633 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:39,483 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:39,765 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:53:44,022 - api.main - INFO - Received command: {'command': 'Utilise l\'outil update_wordpress_content avec les paramètres suivants : post_id=38, content="À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:53:44,023 - api.main - INFO - Natural language command: Utilise l'outil update_wordpress_content avec les paramètres suivants : post_id=38, content="À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:53:44,025 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:53:44,958 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:45,989 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:53:46,285 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:54:20,484 - api.main - INFO - Received command: {'command': 'Dans la page Elementor avec l\'ID 38, trouve et remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:54:20,484 - api.main - INFO - Natural language command: Dans la page Elementor avec l'ID 38, trouve et remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:54:20,486 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:54:21,588 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:22,236 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:22,558 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:54:25,702 - api.main - INFO - Received command: {'command': "Récupère les métadonnées Elementor de la page avec l'ID 38", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:54:25,703 - api.main - INFO - Natural language command: Récupère les métadonnées Elementor de la page avec l'ID 38
+2025-03-08 04:54:25,704 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:54:26,777 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:27,398 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:31,904 - api.main - INFO - Received command: {'command': 'Utilise wp.editPost pour modifier la page avec l\'ID 38, cherche dans les meta_data d\'Elementor le texte "À 11 heures" et remplace-le par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:54:31,904 - api.main - INFO - Natural language command: Utilise wp.editPost pour modifier la page avec l'ID 38, cherche dans les meta_data d'Elementor le texte "À 11 heures" et remplace-le par "À 15 heures"
+2025-03-08 04:54:31,905 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:54:32,881 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:33,904 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:34,259 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:54:38,080 - api.main - INFO - Received command: {'command': 'Modifie la page Elementor avec l\'ID 38, remplace le texte "À 11 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l\'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:54:38,080 - api.main - INFO - Natural language command: Modifie la page Elementor avec l'ID 38, remplace le texte "À 11 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison" par "À 15 heures à l'église Saint-Pierre-Saint-Paul à Rueil-Malmaison"
+2025-03-08 04:54:38,082 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:54:39,127 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:40,370 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:54:40,696 - wordpress.connector - INFO - Post 38 updated successfully
+2025-03-08 04:57:24,411 - api.main - INFO - Received command: {'command': 'Vérifie si le middleware a des fonctionnalités spécifiques pour Elementor', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:57:24,412 - api.main - INFO - Natural language command: Vérifie si le middleware a des fonctionnalités spécifiques pour Elementor
+2025-03-08 04:57:24,413 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:57:26,039 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:57:26,651 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:57:26,807 - wordpress.connector - ERROR - Failed to get post None: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:57:26,807 - nlp.command_processor - ERROR - Error processing command: <Fault 400: 'Arguments insuffisants passés à cette méthode XML-RPC.'>
+2025-03-08 04:57:53,088 - api.main - INFO - Received command: {'command': "Récupère le contenu HTML complet de la page avec l'ID 38", 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:57:53,088 - api.main - INFO - Natural language command: Récupère le contenu HTML complet de la page avec l'ID 38
+2025-03-08 04:57:53,089 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:57:54,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:57:55,120 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:15,519 - api.main - INFO - Received command: {'command': 'Dans la page avec l\'ID 38, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:59:15,519 - api.main - INFO - Natural language command: Dans la page avec l'ID 38, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:59:15,520 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:59:16,419 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:17,249 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:17,560 - wordpress.connector - ERROR - Failed to update post 38: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 04:59:17,560 - nlp.command_processor - ERROR - Error processing command: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 04:59:21,174 - api.main - INFO - Received command: {'command': 'Récupère le contenu de la page avec l\'ID 38 et vérifie s\'il contient le texte "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:59:21,175 - api.main - INFO - Natural language command: Récupère le contenu de la page avec l'ID 38 et vérifie s'il contient le texte "À 15 heures"
+2025-03-08 04:59:21,176 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:59:22,058 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:22,980 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:27,859 - api.main - INFO - Received command: {'command': 'Utilise l\'outil update_wordpress_content pour modifier la page avec l\'ID 38, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:59:27,859 - api.main - INFO - Natural language command: Utilise l'outil update_wordpress_content pour modifier la page avec l'ID 38, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:59:27,862 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-08 04:59:28,926 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:29,943 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:30,198 - wordpress.connector - ERROR - Failed to update post 38: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 04:59:30,198 - nlp.command_processor - ERROR - Error processing command: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 04:59:35,316 - api.main - INFO - Received command: {'command': 'Utilise wp.editPost pour modifier la page avec l\'ID 38, blog_id=1, remplace le texte "À 11 heures" par "À 15 heures"', 'client_id': 'e27476ca-f1f3-4a61-a21f-6ff0ecfc29bc'}
+2025-03-08 04:59:35,316 - api.main - INFO - Natural language command: Utilise wp.editPost pour modifier la page avec l'ID 38, blog_id=1, remplace le texte "À 11 heures" par "À 15 heures"
+2025-03-08 04:59:35,317 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-08 04:59:36,541 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:37,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-08 04:59:38,084 - wordpress.connector - ERROR - Failed to update post 38: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 04:59:38,084 - nlp.command_processor - ERROR - Error processing command: <Fault 500: 'Modèle de page non valide.'>

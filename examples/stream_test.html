@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Connection Tester</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+            max-height: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .event {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-left: 3px solid #ddd;
+        }
+        .event-connected {
+            border-left-color: #4CAF50;
+            background-color: #f1f8e9;
+        }
+        .event-ping {
+            border-left-color: #2196F3;
+            background-color: #e3f2fd;
+        }
+        .event-result {
+            border-left-color: #FF9800;
+            background-color: #fff3e0;
+        }
+        .event-error {
+            border-left-color: #F44336;
+            background-color: #ffebee;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .connected {
+            color: #4CAF50;
+        }
+        .disconnected {
+            color: #F44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>SSE Connection Tester</h1>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Server Configuration</h2>
+            <div>
+                <label for="server-url">Server URL:</label>
+                <input type="text" id="server-url" value="http://localhost:8000">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>SSE Connection</h2>
+            <div>
+                <p>Status: <span id="connection-status" class="status disconnected">Disconnected</span></p>
+                <p>Client ID: <span id="client-id">-</span></p>
+                <button id="connect-btn">Connect</button>
+                <button id="disconnect-btn" disabled>Disconnect</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Send Command</h2>
+            <div>
+                <label for="command">Command:</label>
+                <textarea id="command" rows="3" placeholder="Enter your natural language command here" disabled></textarea>
+                <button id="send-command-btn" disabled>Send Command</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Direct Tool Call</h2>
+            <div>
+                <label for="tool-name">Tool Name:</label>
+                <select id="tool-name" disabled>
+                    <option value="">-- Select a tool --</option>
+                    <option value="add_wordpress_page">add_wordpress_page</option>
+                    <option value="update_wordpress_content">update_wordpress_content</option>
+                    <option value="add_wordpress_section">add_wordpress_section</option>
+                    <option value="get_wordpress_content">get_wordpress_content</option>
+                </select>
+                
+                <label for="tool-params">Parameters (JSON):</label>
+                <textarea id="tool-params" rows="5" placeholder="{}" disabled></textarea>
+                <button id="send-tool-btn" disabled>Call Tool</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Events Log</h2>
+            <button id="clear-events-btn">Clear Events</button>
+            <pre id="events-log"></pre>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const serverUrlInput = document.getElementById('server-url');
+        const connectionStatus = document.getElementById('connection-status');
+        const clientIdElement = document.getElementById('client-id');
+        const connectBtn = document.getElementById('connect-btn');
+        const disconnectBtn = document.getElementById('disconnect-btn');
+        const commandInput = document.getElementById('command');
+        const sendCommandBtn = document.getElementById('send-command-btn');
+        const toolNameSelect = document.getElementById('tool-name');
+        const toolParamsInput = document.getElementById('tool-params');
+        const sendToolBtn = document.getElementById('send-tool-btn');
+        const clearEventsBtn = document.getElementById('clear-events-btn');
+        const eventsLog = document.getElementById('events-log');
+
+        // Variables
+        let eventSource = null;
+        let clientId = null;
+
+        // Connect to SSE
+        connectBtn.addEventListener('click', () => {
+            const serverUrl = serverUrlInput.value.trim();
+            if (!serverUrl) {
+                alert('Please enter a server URL');
+                return;
+            }
+
+            try {
+                // Create EventSource connection
+                eventSource = new EventSource(`${serverUrl}/sse/connect`);
+                
+                // Update UI status
+                connectionStatus.textContent = 'Connecting...';
+                connectionStatus.className = 'status';
+                
+                // Connection opened
+                eventSource.onopen = () => {
+                    connectionStatus.textContent = 'Connected (waiting for client ID)';
+                    connectionStatus.className = 'status connected';
+                    addEventToLog('system', 'Connection opened', 'EventSource connection established');
+                };
+                
+                // Connection error
+                eventSource.onerror = (event) => {
+                    console.error('SSE Error:', event);
+                    addEventToLog('error', 'Connection Error', JSON.stringify(event));
+                    disconnectSSE();
+                };
+                
+                // Handle connected event
+                eventSource.addEventListener('connected', (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        clientId = data.client_id;
+                        clientIdElement.textContent = clientId;
+                        
+                        connectionStatus.textContent = 'Connected';
+                        connectionStatus.className = 'status connected';
+                        
+                        // Enable UI elements
+                        disconnectBtn.disabled = false;
+                        commandInput.disabled = false;
+                        sendCommandBtn.disabled = false;
+                        toolNameSelect.disabled = false;
+                        toolParamsInput.disabled = false;
+                        sendToolBtn.disabled = false;
+                        
+                        addEventToLog('connected', 'Connected', event.data);
+                    } catch (e) {
+                        console.error('Error parsing connected event:', e);
+                        addEventToLog('error', 'Error parsing connected event', e.toString());
+                    }
+                });
+                
+                // Handle ping event
+                eventSource.addEventListener('ping', (event) => {
+                    addEventToLog('ping', 'Ping', event.data);
+                });
+                
+                // Handle result event
+                eventSource.addEventListener('result', (event) => {
+                    addEventToLog('result', 'Result', event.data);
+                });
+                
+                // Handle error event
+                eventSource.addEventListener('error', (event) => {
+                    addEventToLog('error', 'Error', event.data);
+                });
+                
+                // Handle other events
+                eventSource.addEventListener('command_received', (event) => {
+                    addEventToLog('command_received', 'Command Received', event.data);
+                });
+                
+                eventSource.addEventListener('processing', (event) => {
+                    addEventToLog('processing', 'Processing', event.data);
+                });
+                
+                eventSource.addEventListener('complete', (event) => {
+                    addEventToLog('complete', 'Complete', event.data);
+                });
+                
+                // Disable connect button
+                connectBtn.disabled = true;
+                
+            } catch (error) {
+                console.error('Failed to connect to SSE:', error);
+                addEventToLog('error', 'Connection Failed', error.toString());
+                disconnectSSE();
+            }
+        });
+
+        // Disconnect from SSE
+        disconnectBtn.addEventListener('click', () => {
+            disconnectSSE();
+        });
+
+        function disconnectSSE() {
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+            }
+            
+            clientId = null;
+            clientIdElement.textContent = '-';
+            
+            connectionStatus.textContent = 'Disconnected';
+            connectionStatus.className = 'status disconnected';
+            
+            // Disable UI elements
+            connectBtn.disabled = false;
+            disconnectBtn.disabled = true;
+            commandInput.disabled = true;
+            sendCommandBtn.disabled = true;
+            toolNameSelect.disabled = true;
+            toolParamsInput.disabled = true;
+            sendToolBtn.disabled = true;
+            
+            addEventToLog('system', 'Disconnected', 'Connection closed');
+        }
+
+        // Send command
+        sendCommandBtn.addEventListener('click', () => {
+            const command = commandInput.value.trim();
+            if (!command) {
+                alert('Please enter a command');
+                return;
+            }
+            
+            if (!clientId) {
+                alert('Not connected to server');
+                return;
+            }
+            
+            sendRequest({
+                client_id: clientId,
+                command: command
+            });
+        });
+
+        // Send tool call
+        sendToolBtn.addEventListener('click', () => {
+            const toolName = toolNameSelect.value;
+            if (!toolName) {
+                alert('Please select a tool');
+                return;
+            }
+            
+            let toolParams;
+            try {
+                toolParams = JSON.parse(toolParamsInput.value);
+            } catch (e) {
+                alert('Invalid JSON for tool parameters');
+                return;
+            }
+            
+            if (!clientId) {
+                alert('Not connected to server');
+                return;
+            }
+            
+            sendRequest({
+                client_id: clientId,
+                tool_name: toolName,
+                parameters: toolParams
+            });
+        });
+
+        // Send request to server
+        async function sendRequest(data) {
+            const serverUrl = serverUrlInput.value.trim();
+            try {
+                sendCommandBtn.disabled = true;
+                sendToolBtn.disabled = true;
+                
+                addEventToLog('system', 'Sending Request', JSON.stringify(data, null, 2));
+                
+                const response = await fetch(`${serverUrl}/command/sse`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                addEventToLog('system', 'Request Result', JSON.stringify(result, null, 2));
+                
+            } catch (error) {
+                console.error('Error sending request:', error);
+                addEventToLog('error', 'Request Error', error.toString());
+            } finally {
+                if (clientId) {
+                    sendCommandBtn.disabled = false;
+                    sendToolBtn.disabled = false;
+                }
+            }
+        }
+
+        // Clear events log
+        clearEventsBtn.addEventListener('click', () => {
+            eventsLog.innerHTML = '';
+        });
+
+        // Add event to log
+        function addEventToLog(type, title, data) {
+            const event = document.createElement('div');
+            event.className = `event event-${type}`;
+            
+            const timestamp = new Date().toLocaleTimeString();
+            
+            let formattedData;
+            try {
+                // Try to parse and format JSON
+                const jsonData = typeof data === 'string' ? JSON.parse(data) : data;
+                formattedData = JSON.stringify(jsonData, null, 2);
+            } catch (e) {
+                // If not valid JSON, use as is
+                formattedData = data;
+            }
+            
+            event.innerHTML = `<strong>${timestamp} - ${title}</strong>\n${formattedData}`;
+            eventsLog.appendChild(event);
+            
+            // Scroll to bottom
+            eventsLog.scrollTop = eventsLog.scrollHeight;
+        }
+
+        // Initialize tool params based on selected tool
+        toolNameSelect.addEventListener('change', () => {
+            const toolName = toolNameSelect.value;
+            let defaultParams = '{}';
+            
+            switch(toolName) {
+                case 'add_wordpress_page':
+                    defaultParams = JSON.stringify({
+                        title: "Page title",
+                        content: "<p>Page content goes here</p>",
+                        status: "draft"
+                    }, null, 2);
+                    break;
+                    
+                case 'update_wordpress_content':
+                    defaultParams = JSON.stringify({
+                        post_id: 1,
+                        title: "Updated title",
+                        content: "<p>Updated content</p>"
+                    }, null, 2);
+                    break;
+                    
+                case 'add_wordpress_section':
+                    defaultParams = JSON.stringify({
+                        post_id: 1,
+                        title: "Section Title",
+                        content: "<p>Section content</p>",
+                        position: 0
+                    }, null, 2);
+                    break;
+                    
+                case 'get_wordpress_content':
+                    defaultParams = JSON.stringify({
+                        post_id: 1
+                    }, null, 2);
+                    break;
+            }
+            
+            toolParamsInput.value = defaultParams;
+        });
+    </script>
+</body>
+</html>
