@@ -71,7 +71,7 @@ uvicorn api.main:app --reload
    ```bash
    curl -N -X POST http://localhost:8000/command/sse \
      -H "Content-Type: application/json" \
-     -d "{\"command\": \"Ajoute une nouvelle page avec le titre \\\"Notre équipe\\\" et le contenu \\\"Notre équipe est composée d'experts passionnés.\\\"\", \"client_id\": \"votre-client-id\"}"
+     -d "{\"command\": \"Ajoute une nouvelle page avec le titre \\\"Notre équipe\\\" et le contenu \\\"Notre équipe est composée d'experts passionnés.\\\"\", \"client_id\": \"12def2ee-da84-4c6a-9a7f-c81786e69737\"}"
    ```
 
 3. **Observer les résultats** :

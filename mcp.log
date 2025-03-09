@@ -899,3 +899,70 @@ A detailed migration guide is available here: https://github.com/openai/openai-p
 2025-03-08 04:59:37,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
 2025-03-08 04:59:38,084 - wordpress.connector - ERROR - Failed to update post 38: <Fault 500: 'Modèle de page non valide.'>
 2025-03-08 04:59:38,084 - nlp.command_processor - ERROR - Error processing command: <Fault 500: 'Modèle de page non valide.'>
+2025-03-08 12:11:36,074 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 12:11:36,384 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-08 12:11:50,682 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-08 12:11:50,870 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-08 12:12:44,347 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 12:12:44,349 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 14:40:14,955 - api.main - INFO - Received command: {'command': 'add_wordpress_page', 'parameters': {'title': 'Ma Nouvelle Page', 'content': '<h1>Contenu de ma page</h1>', 'status': 'draft'}}
+2025-03-08 14:40:14,957 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-08 14:40:47,159 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 14:40:47,161 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-08 14:46:28,462 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-08 14:46:28,466 - api.main - INFO - GET /mcp/info - 200 - 0.01s
+2025-03-08 14:49:56,994 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-08 14:49:56,996 - api.main - INFO - New SSE connection with generated ID: 0e617476-bc98-4754-aa58-247b4e72346f
+2025-03-08 14:49:57,003 - api.main - INFO - Registering client 0e617476-bc98-4754-aa58-247b4e72346f in sse_clients dictionary
+2025-03-08 14:49:57,005 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-08 14:54:11,439 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-08 14:54:11,441 - api.main - INFO - POST /command/sse - 400 - 0.01s
+2025-03-08 14:54:32,714 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-08 14:54:32,716 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-08 15:01:20,949 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-09 13:59:27,480 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-09 13:59:27,872 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-09 14:10:03,974 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-09 14:10:03,974 - api.main - INFO - New SSE connection with generated ID: 108cd94b-b8c8-488f-8e33-2841158bc32d
+2025-03-09 14:10:03,976 - api.main - INFO - Registering client 108cd94b-b8c8-488f-8e33-2841158bc32d in sse_clients dictionary
+2025-03-09 14:10:03,977 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-09 14:10:32,830 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-09 14:10:32,830 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-09 14:12:09,447 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-09 14:12:09,898 - api.main - INFO - POST /command/sse - 400 - 0.45s
+2025-03-09 14:12:35,891 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-09 14:12:53,738 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-09 14:13:12,483 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-09 14:13:42,080 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-09 14:13:42,081 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-09 14:15:13,892 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 108: invalid continuation byte
+2025-03-09 14:15:13,893 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-09 14:16:18,365 - api.main - INFO - Received command: {'command': 'Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d\'experts passionnés."', 'client_id': '108cd94b-b8c8-488f-8e33-2841158bc32d'}
+2025-03-09 14:16:18,365 - api.main - INFO - Natural language command: Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d'experts passionnés."
+2025-03-09 14:16:18,366 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-09 14:16:18,368 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-09 14:16:20,516 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-09 14:16:20,516 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-09 14:16:20,517 - nlp.command_processor - INFO - Command processor initialized
+2025-03-09 14:16:22,584 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 14:16:23,569 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 14:16:23,680 - wordpress.connector - INFO - Post created with ID: 522
+2025-03-09 14:23:05,694 - api.main - INFO - Client 108cd94b-b8c8-488f-8e33-2841158bc32d disconnected - connection cancelled
+2025-03-09 14:23:05,694 - api.main - INFO - Removing client 108cd94b-b8c8-488f-8e33-2841158bc32d from sse_clients dictionary
+2025-03-09 14:23:05,695 - api.main - INFO - Ping task cancelled for client 108cd94b-b8c8-488f-8e33-2841158bc32d
+2025-03-09 14:34:28,274 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-09 14:34:28,275 - api.main - INFO - New SSE connection with generated ID: 12def2ee-da84-4c6a-9a7f-c81786e69737
+2025-03-09 14:34:28,276 - api.main - INFO - Registering client 12def2ee-da84-4c6a-9a7f-c81786e69737 in sse_clients dictionary
+2025-03-09 14:34:28,277 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-09 14:35:02,959 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 60: invalid continuation byte
+2025-03-09 14:35:02,960 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-09 14:35:59,601 - api.main - INFO - Received command: {'command': 'Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d\'experts passionnés."', 'client_id': '12def2ee-da84-4c6a-9a7f-c81786e69737'}
+2025-03-09 14:35:59,601 - api.main - INFO - Natural language command: Ajoute une nouvelle page avec le titre "Notre équipe" et le contenu "Notre équipe est composée d'experts passionnés."
+2025-03-09 14:35:59,602 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-09 14:35:59,603 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-09 14:36:00,020 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-09 14:36:00,020 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-09 14:36:00,021 - nlp.command_processor - INFO - Command processor initialized
+2025-03-09 14:36:01,129 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 14:36:02,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 14:36:02,388 - wordpress.connector - INFO - Post created with ID: 2262
