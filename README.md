@@ -71,8 +71,20 @@ uvicorn api.main:app --reload
    ```bash
    curl -N -X POST http://localhost:8000/command/sse \
      -H "Content-Type: application/json" \
-     -d "{\"command\": \"Ajoute une nouvelle page avec le titre \\\"Notre équipe\\\" et le contenu \\\"Notre équipe est composée d'experts passionnés.\\\"\", \"client_id\": \"12def2ee-da84-4c6a-9a7f-c81786e69737\"}"
+     -d "{\"command\": \"Ajoute une nouvelle page avec le titre \\\"test\\\" et le contenu \\\"Notre équipe est composée d'experts passionnés.\\\"\", \"client_id\": \"92fd97a6-050c-4737-82af-f901aa34bb17\"}"
    ```
+
+   curl -X POST http://87.106.247.230:8000/command/sse \
+   -H "Content-Type: application/json" \
+   -d '{
+     "tool_name": "add_wordpress_page",
+     "parameters": {
+       "title": "Nouvelle Page",
+       "content": "Contenu de la page",
+       "status": "publish"
+     },
+     "client_id": "92fd97a6-050c-4737-82af-f901aa34bb17"
+   }'
 
 3. **Observer les résultats** :
    Les résultats seront envoyés en temps réel via la connexion SSE établie à l'étape 1. Vous recevrez des événements pour :
@@ -135,3 +147,117 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou un
 ---
 
 Avec cette approche, on obtient un CMS intelligent contrôlé uniquement par des commandes textuelles ! 🚀💡
+
+
+
+rm /etc/nginx/sites-enabled/wp_mcpv2  # Supprimer la configuration par défaut
+
+
+curl -N -X POST http://87.106.247.230/command/sse -H "Content-Type: application/json" -d '{
+  "tool_name": "add_wordpress_page",
+  "parameters": {
+    "title": "herby-vps",
+    "content": "<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>",
+    "status": "publish"
+  },
+  "client_id": "e3c937a1-a062-4868-be63-ccca26609f1e"
+}'
+
+$ curl -N http://87.106.247.230/sse/connect -H "Accept: text/event-stream"
+
+
+# 1. Ajouter une authentification JWT
+- Implémenter un système de tokens JWT
+- Ajouter un endpoint de login/register
+- Protéger les routes sensibles
+
+# 2. Rate Limiting
+- Limiter le nombre de requêtes par IP/utilisateur
+- Ajouter des délais entre les requêtes
+
+# 3. Validation des entrées
+- Ajouter des validateurs pour le contenu HTML
+- Filtrer les scripts malveillants
+
+
+# 1. Ajouter des métriques
+- Temps de réponse
+- Nombre de requêtes
+- Taux de succès/échec
+
+# 2. Améliorer les logs
+- Logs structurés (JSON)
+- Rotation des logs
+- Niveau de log configurable
+
+
+# 1. Mise en cache
+- Cacher les réponses fréquentes
+- Utiliser Redis pour le cache
+
+# 2. Optimisation des requêtes
+- Pagination des résultats
+- Compression des réponses
+
+# 1. Gestion des médias
+- Upload d'images
+- Gestion de la bibliothèque média
+
+# 2. Gestion des versions
+- Historique des modifications
+- Restauration de versions
+
+# 3. Templates
+- Système de templates pour les pages
+- Composants réutilisables
+
+
+# 1. Dashboard d'administration
+- Interface web pour gérer les pages
+- Visualisation des métriques
+
+# 2. Éditeur visuel
+- Éditeur WYSIWYG
+- Prévisualisation en direct
+
+
+ # Base de données :
+
+# 1. Migration vers une base de données
+- PostgreSQL pour les données structurées
+- MongoDB pour les contenus
+- Gestion des migrations
+
+# 2. Backup automatique
+- Sauvegarde périodique
+- Restauration simplifiée
+
+
+Déploiement :
+# 1. CI/CD
+- GitHub Actions
+- Tests automatisés
+- Déploiement automatique
+
+# 2. Containerisation
+- Docker multi-stage builds
+- Docker Compose pour dev/prod
+- Kubernetes pour le scaling
+
+
+
+Pour toutes les autres requêtes, dans l'onglet "Authorization" :
+Type : Bearer Token
+Token : {{token}}
+Les routes protégées sont maintenant :
+/command - Pour les commandes simples
+/command/sse - Pour les commandes avec Server-Sent Events
+/wordpress/{tool_name} - Pour l'accès direct aux outils WordPress
+Les routes non protégées sont :
+/health - Pour vérifier l'état de l'API
+/auth/login - Pour se connecter
+/auth/register - Pour s'inscrire
+/auth/verify - Pour vérifier l'email
+/auth/forgot-password - Pour réinitialiser le mot de passe
+Si une requête est faite sans token valide, l'API retournera une erreur 401 Unauthorized.
+Voulez-vous que je vous montre comment tester une route protégée spécifique ou comment gérer les erreurs d'authentification côté client ?

@@ -10,3 +10,7 @@ spacy==3.7.2
 sse-starlette==1.6.5
 beautifulsoup4==4.12.2
 sseclient-py==1.7.2
+supabase
+python-jose[cryptography]
+passlib
+PyJWT

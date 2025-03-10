@@ -966,3 +966,139 @@ A detailed migration guide is available here: https://github.com/openai/openai-p
 2025-03-09 14:36:01,129 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
 2025-03-09 14:36:02,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
 2025-03-09 14:36:02,388 - wordpress.connector - INFO - Post created with ID: 2262
+2025-03-09 14:56:35,630 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-09 14:56:35,737 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-09 14:56:41,695 - api.main - INFO - SSE connect called with Accept header: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2025-03-09 14:56:41,698 - api.main - INFO - GET /mcp/info - 200 - 0.00s
+2025-03-09 14:56:41,724 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-09 15:33:52,996 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 83: invalid continuation byte
+2025-03-09 15:33:53,005 - api.main - INFO - POST /command/sse - 400 - 0.02s
+2025-03-09 15:34:18,206 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 88: invalid continuation byte
+2025-03-09 15:34:18,227 - api.main - INFO - POST /command/sse - 400 - 0.02s
+2025-03-09 15:34:30,742 - api.main - INFO - Received command: {'command': 'Ajoute une nouvelle page avec le titre "test" et le contenu "test composee d\'experts passionnes."', 'client_id': '92fd97a6-050c-4737-82af-f901aa34bb17'}
+2025-03-09 15:34:30,743 - api.main - WARNING - Client 92fd97a6-050c-4737-82af-f901aa34bb17 not found in sse_clients. Auto-registering.
+2025-03-09 15:34:30,743 - api.main - INFO - Natural language command: Ajoute une nouvelle page avec le titre "test" et le contenu "test composee d'experts passionnes."
+2025-03-09 15:34:30,744 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-09 15:34:32,766 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 15:34:33,837 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+2025-03-09 15:34:34,803 - wordpress.connector - INFO - Post created with ID: 2264
+2025-03-09 19:28:28,349 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish'}, 'client_id': '92fd97a6-050c-4737-82af-f901aa34bb17'}
+2025-03-09 19:28:28,696 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish'}
+2025-03-09 19:28:28,785 - api.main - INFO - POST /command/sse - 202 - 0.62s
+2025-03-09 19:28:33,281 - wordpress.connector - INFO - Post created with ID: 2266
+2025-03-09 19:36:27,999 - api.main - INFO - GET /command/sse - 405 - 0.02s
+2025-03-09 19:36:46,153 - api.main - INFO - GET /command/sse - 405 - 0.04s
+2025-03-09 19:36:51,256 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-09 19:37:56,875 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 125: invalid continuation byte
+2025-03-09 19:37:56,876 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-09 19:38:13,435 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}, 'client_id': 'test-123'}
+2025-03-09 19:38:13,436 - api.main - WARNING - Client test-123 not found in sse_clients. Auto-registering.
+2025-03-09 19:38:13,436 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}
+2025-03-09 19:38:13,437 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-09 19:38:16,261 - wordpress.connector - INFO - Post created with ID: 2268
+2025-03-09 19:39:04,321 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}, 'client_id': 'test-123'}
+2025-03-09 19:39:04,321 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}
+2025-03-09 19:39:04,609 - api.main - INFO - POST /command/sse - 202 - 0.29s
+2025-03-09 19:39:05,867 - wordpress.connector - INFO - Post created with ID: 2270
+2025-03-09 19:39:06,282 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}, 'client_id': '92fd97a6-050c-4737-82af-f901aa34bb17'}
+2025-03-09 19:39:06,282 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Services 2', 'content': '<h1>Nos Services</h1><p>Decouvrez nos services professionnels.</p>', 'status': 'publish'}
+2025-03-09 19:39:06,283 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-09 19:39:07,213 - wordpress.connector - INFO - Post created with ID: 2272
+2025-03-09 19:43:56,500 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-09 19:43:56,546 - api.main - INFO - New SSE connection with generated ID: 447fd3d5-a068-4b29-8cf5-38faef89a026
+2025-03-09 19:43:56,556 - api.main - INFO - Registering client 447fd3d5-a068-4b29-8cf5-38faef89a026 in sse_clients dictionary
+2025-03-09 19:43:56,557 - api.main - INFO - GET /sse/connect - 200 - 0.06s
+2025-03-09 19:44:31,099 - api.main - INFO - Client 447fd3d5-a068-4b29-8cf5-38faef89a026 disconnected - connection cancelled
+2025-03-09 19:44:31,099 - api.main - INFO - Removing client 447fd3d5-a068-4b29-8cf5-38faef89a026 from sse_clients dictionary
+2025-03-09 19:44:31,100 - api.main - INFO - Ping task cancelled for client 447fd3d5-a068-4b29-8cf5-38faef89a026
+2025-03-09 19:54:43,894 - api.main - INFO - Client 12def2ee-da84-4c6a-9a7f-c81786e69737 disconnected - connection cancelled
+2025-03-09 19:54:43,895 - api.main - INFO - Removing client 12def2ee-da84-4c6a-9a7f-c81786e69737 from sse_clients dictionary
+2025-03-09 19:54:43,896 - api.main - INFO - Ping task cancelled for client 12def2ee-da84-4c6a-9a7f-c81786e69737
+2025-03-10 11:25:15,986 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-10 11:34:21,385 - api.main - INFO - POST /auth/register - 404 - 0.00s
+2025-03-10 11:42:16,092 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 400 Bad Request"
+2025-03-10 11:42:16,095 - api.main - INFO - POST /auth/register - 400 - 0.51s
+2025-03-10 11:42:39,568 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 11:42:39,570 - api.main - INFO - POST /auth/register - 200 - 1.21s
+2025-03-10 11:43:14,275 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 429 Too Many Requests"
+2025-03-10 11:43:14,277 - api.main - INFO - POST /auth/register - 400 - 0.09s
+2025-03-10 11:43:32,341 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 429 Too Many Requests"
+2025-03-10 11:43:32,343 - api.main - INFO - POST /auth/register - 400 - 0.09s
+2025-03-10 11:43:43,019 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 400 Bad Request"
+2025-03-10 11:43:43,020 - api.main - INFO - POST /auth/register - 400 - 0.41s
+2025-03-10 11:43:59,404 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 11:43:59,405 - api.main - INFO - POST /auth/register - 200 - 0.87s
+2025-03-10 11:46:25,813 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 11:46:25,815 - api.main - INFO - POST /auth/register - 200 - 0.92s
+2025-03-10 11:46:32,450 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 429 Too Many Requests"
+2025-03-10 11:46:32,452 - api.main - INFO - POST /auth/register - 400 - 0.09s
+2025-03-10 11:47:26,178 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 11:47:26,179 - api.main - INFO - POST /auth/register - 200 - 0.76s
+2025-03-10 11:48:32,043 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 11:48:32,045 - api.main - INFO - POST /auth/register - 200 - 3.63s
+2025-03-10 11:48:54,241 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 400 Bad Request"
+2025-03-10 11:48:54,244 - api.main - INFO - POST /auth/login - 401 - 0.18s
+2025-03-10 11:50:06,118 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 200 OK"
+2025-03-10 11:50:06,120 - api.main - INFO - POST /auth/login - 200 - 0.17s
+2025-03-10 11:55:46,152 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup?redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fverify-email "HTTP/2 200 OK"
+2025-03-10 11:55:46,153 - api.main - INFO - POST /auth/register - 200 - 3.72s
+2025-03-10 11:56:43,047 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 200 OK"
+2025-03-10 11:56:43,049 - api.main - INFO - POST /auth/login - 200 - 0.17s
+2025-03-10 11:57:47,229 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/recover?redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Freset-password "HTTP/2 200 OK"
+2025-03-10 11:57:47,230 - api.main - INFO - POST /auth/forgot-password - 200 - 1.01s
+2025-03-10 12:23:13,419 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-10 13:52:40,693 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup?redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fverify-email "HTTP/2 200 OK"
+2025-03-10 13:52:40,695 - api.main - INFO - POST /auth/register - 200 - 1.63s
+2025-03-10 13:57:13,508 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 400 Bad Request"
+2025-03-10 13:57:13,512 - api.main - INFO - POST /auth/register - 400 - 0.35s
+2025-03-10 13:57:43,448 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/signup "HTTP/2 200 OK"
+2025-03-10 13:57:43,624 - httpx - INFO - HTTP Request: PATCH https://iqlksielmvejrlhzojms.supabase.co/rest/v1/users?id=eq.6e5ac2c2-3beb-47d2-80e4-b4e0a4c468d2 "HTTP/2 200 OK"
+2025-03-10 13:57:43,635 - api.main - INFO - POST /auth/register - 200 - 2.81s
+2025-03-10 13:59:57,914 - api.main - INFO - POST /auth/login - 422 - 0.00s
+2025-03-10 14:00:15,792 - api.main - INFO - POST /auth/login - 422 - 0.00s
+2025-03-10 14:01:07,950 - api.main - INFO - POST /auth/login - 422 - 0.00s
+2025-03-10 14:02:00,629 - api.main - INFO - POST /auth/login - 422 - 0.00s
+2025-03-10 14:03:31,201 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 400 Bad Request"
+2025-03-10 14:03:31,203 - api.main - INFO - POST /auth/login - 401 - 0.36s
+2025-03-10 14:03:40,970 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 400 Bad Request"
+2025-03-10 14:03:40,971 - api.main - INFO - POST /auth/login - 401 - 0.16s
+2025-03-10 14:03:59,785 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 200 OK"
+2025-03-10 14:03:59,899 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/rest/v1/users?select=%2A&id=eq.fc13ca37-1015-400f-8d4f-7be3c6cc69be "HTTP/2 406 Not Acceptable"
+2025-03-10 14:03:59,901 - api.main - INFO - POST /auth/login - 401 - 0.29s
+2025-03-10 14:07:06,993 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 200 OK"
+2025-03-10 14:07:07,095 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/rest/v1/users?select=%2A&id=eq.fc13ca37-1015-400f-8d4f-7be3c6cc69be "HTTP/2 406 Not Acceptable"
+2025-03-10 14:07:07,097 - api.main - INFO - POST /auth/login - 401 - 0.44s
+2025-03-10 14:08:32,432 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/auth/v1/token?grant_type=password "HTTP/2 200 OK"
+2025-03-10 14:08:32,537 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/rest/v1/users?select=%2A&id=eq.fc13ca37-1015-400f-8d4f-7be3c6cc69be "HTTP/2 406 Not Acceptable"
+2025-03-10 14:08:32,577 - httpx - INFO - HTTP Request: POST https://iqlksielmvejrlhzojms.supabase.co/rest/v1/users "HTTP/2 403 Forbidden"
+2025-03-10 14:08:32,579 - api.main - INFO - POST /auth/login - 200 - 0.33s
+2025-03-10 14:10:57,639 - api.main - INFO - POST /auth/profile - 405 - 0.00s
+2025-03-10 14:12:07,010 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-10 14:12:07,010 - api.main - INFO - New SSE connection with generated ID: b5bfea89-f86c-4235-a8ef-0748cf9c283f
+2025-03-10 14:12:07,012 - api.main - INFO - Registering client b5bfea89-f86c-4235-a8ef-0748cf9c283f in sse_clients dictionary
+2025-03-10 14:12:07,013 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-10 14:12:42,005 - api.main - INFO - POST /command/sse - 401 - 0.00s
+2025-03-10 14:13:41,255 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/auth/v1/user "HTTP/2 200 OK"
+2025-03-10 14:13:41,256 - api.main - INFO - Received command from user nerilus.h@gmail.com: {'client_id': 'b5bfea89-f86c-4235-a8ef-0748cf9c283f', 'tool_name': 'add_wordpress_section', 'parameters': {'post_id': 1, 'title': 'Nouvelle section', 'content': '<h2>Contenu de la section</h2>'}}
+2025-03-10 14:13:41,257 - api.main - WARNING - Client fc13ca37-1015-400f-8d4f-7be3c6cc69be_b5bfea89-f86c-4235-a8ef-0748cf9c283f not found in sse_clients. Auto-registering.
+2025-03-10 14:13:41,257 - api.main - INFO - Direct tool call: add_wordpress_section with params: {'post_id': 1, 'title': 'Nouvelle section', 'content': '<h2>Contenu de la section</h2>'}
+2025-03-10 14:13:41,258 - api.main - INFO - POST /command/sse - 202 - 0.25s
+2025-03-10 14:13:41,259 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-10 14:13:44,251 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-10 14:13:44,252 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-10 14:13:44,252 - nlp.command_processor - INFO - Command processor initialized
+2025-03-10 14:13:45,248 - wordpress.connector - INFO - Post 1 updated successfully
+2025-03-10 14:20:24,823 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/auth/v1/user "HTTP/2 200 OK"
+2025-03-10 14:20:24,826 - api.main - INFO - Received command from user nerilus.h@gmail.com: {'client_id': 'b5bfea89-f86c-4235-a8ef-0748cf9c283f', 'tool_name': 'add_wordpress_page', 'parameters': {'title': 'test via token', 'content': "Notre équipe est composée d'experts passionnés.", 'status': 'draft'}}
+2025-03-10 14:20:24,826 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'test via token', 'content': "Notre équipe est composée d'experts passionnés.", 'status': 'draft'}
+2025-03-10 14:20:24,827 - api.main - INFO - POST /command/sse - 202 - 0.24s
+2025-03-10 14:20:25,801 - wordpress.connector - INFO - Post created with ID: 2278
+2025-03-10 14:27:24,498 - api.main - INFO - POST /command/sse - 401 - 0.00s
+2025-03-10 14:27:29,621 - httpx - INFO - HTTP Request: GET https://iqlksielmvejrlhzojms.supabase.co/auth/v1/user "HTTP/2 200 OK"
+2025-03-10 14:27:29,623 - api.main - INFO - Received command from user nerilus.h@gmail.com: {'client_id': 'b5bfea89-f86c-4235-a8ef-0748cf9c283f', 'tool_name': 'add_wordpress_page', 'parameters': {'title': 'test via token', 'content': "Notre équipe est composée d'experts passionnés.", 'status': 'draft'}}
+2025-03-10 14:27:29,624 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'test via token', 'content': "Notre équipe est composée d'experts passionnés.", 'status': 'draft'}
+2025-03-10 14:27:29,626 - api.main - INFO - POST /command/sse - 202 - 0.25s
+2025-03-10 14:27:30,391 - wordpress.connector - INFO - Post created with ID: 2280
+2025-03-10 14:45:34,990 - api.main - INFO - Client b5bfea89-f86c-4235-a8ef-0748cf9c283f disconnected - connection cancelled
+2025-03-10 14:45:34,991 - api.main - INFO - Removing client b5bfea89-f86c-4235-a8ef-0748cf9c283f from sse_clients dictionary
+2025-03-10 14:45:34,992 - api.main - INFO - Ping task cancelled for client b5bfea89-f86c-4235-a8ef-0748cf9c283f

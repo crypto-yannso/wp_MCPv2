@@ -1,24 +1,37 @@
-# Utiliser une image officielle de Python
-FROM python:3.10-slim
+FROM python:3.11-slim as builder
 
-# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Créer le répertoire static avant de copier les fichiers
-RUN mkdir -p /app/static
+# Installation des dépendances système
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copier d'abord les requirements pour profiter du cache Docker
+# Copie des fichiers de dépendances
 COPY requirements.txt .
 
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt && \
-    python -m spacy download fr_core_news_md
+# Installation des dépendances Python
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copier le reste des fichiers de l'application
+# Stage final
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copie des dépendances du builder
+COPY --from=builder /usr/local/lib/python3.11/site-packages/ /usr/local/lib/python3.11/site-packages/
+
+# Copie du code source
 COPY . .
 
-# Exposer le port sur lequel l'application va tourner
+# Variables d'environnement
+ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
+ENV HOST=0.0.0.0
+
+# Exposition du port
 EXPOSE 8000
 
-# Lancer l'application
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Commande de démarrage
+CMD ["python", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

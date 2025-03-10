@@ -15,6 +15,8 @@ import uvicorn
 from sse_starlette.sse import EventSourceResponse
 from nlp.command_processor import CommandProcessor
 from utils.config import HOST, PORT
+from api.auth import router as auth_router, get_current_user
+from api.database import Database
 
 # Configure logging
 logging.basicConfig(
@@ -33,6 +35,9 @@ app = FastAPI(
     description="Middleware Control Panel API for WordPress",
     version="1.0.0"
 )
+
+# Include the auth router
+app.include_router(auth_router)
 
 # Mount static files
 static_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static")
@@ -456,16 +461,29 @@ async def openapi_spec(request: Request):
     }
 
 @app.post("/command")
-async def process_command(request: CommandRequest):
-    """
-    Process a natural language command for WordPress (REST API version)
-    """
+async def process_command(
+    request: CommandRequest,
+    current_user = Depends(get_current_user)
+):
     try:
-        logger.info(f"Received command: {request.command}")
+        logger.info(f"Received command from user {current_user.email}: {request.command}")
+        
+        # Sauvegarder la commande dans la base de données
+        command_record = await Database.save_command(
+            user_id=current_user.id,
+            command=request.command,
+            command_type="direct",
+            status="processing"
+        )
         
         # Get command processor
         processor = get_command_processor()
         if processor is None:
+            await Database.update_command_status(
+                command_record["id"],
+                "error",
+                {"error": "WordPressConnectionError"}
+            )
             return CommandResponse(
                 success=False,
                 message="Erreur de connexion à WordPress. Vérifiez vos paramètres de configuration (.env).",
@@ -487,6 +505,13 @@ async def process_command(request: CommandRequest):
                 del result["message"]
             if "command" in result:
                 del result["command"]
+            
+            # Mettre à jour le statut dans la base de données
+            await Database.update_command_status(
+                command_record["id"],
+                "completed" if success else "error",
+                result
+            )
                 
             return CommandResponse(
                 success=success,
@@ -495,6 +520,13 @@ async def process_command(request: CommandRequest):
                 results=result
             )
         else:
+            # Mettre à jour le statut dans la base de données
+            await Database.update_command_status(
+                command_record["id"],
+                "completed",
+                result
+            )
+            
             return CommandResponse(
                 success=True,
                 message="Command processed",
@@ -502,6 +534,15 @@ async def process_command(request: CommandRequest):
             )
     except Exception as e:
         logger.error(f"Error processing command: {str(e)}")
+        
+        # Mettre à jour le statut dans la base de données
+        if 'command_record' in locals():
+            await Database.update_command_status(
+                command_record["id"],
+                "error",
+                {"error": str(e)}
+            )
+            
         return CommandResponse(
             success=False,
             message=f"Erreur lors du traitement de la commande: {str(e)}",
@@ -510,14 +551,17 @@ async def process_command(request: CommandRequest):
         )
 
 @app.post("/command/sse")
-async def process_command_sse(request: Request, background_tasks: BackgroundTasks):
+async def process_command_sse(
+    request: Request, 
+    background_tasks: BackgroundTasks,
+    current_user = Depends(get_current_user)
+):
     """
     Process a natural language command with SSE updates
     """
-    # Parse request body
     try:
         body = await request.json()
-        logger.info(f"Received command: {body}")
+        logger.info(f"Received command from user {current_user.email}: {body}")
     except Exception as e:
         logger.error(f"Error parsing request body: {str(e)}")
         raise HTTPException(status_code=400, detail=f"Invalid JSON: {str(e)}")
@@ -527,11 +571,11 @@ async def process_command_sse(request: Request, background_tasks: BackgroundTask
     if not client_id:
         raise HTTPException(status_code=400, detail="Client ID is required for SSE")
     
-    # Check if client exists in sse_clients dictionary - DÉSACTIVÉ POUR TESTS
-    # Nous auto-enregistrons le client s'il n'existe pas déjà
+    # Associer le client_id avec l'utilisateur
+    client_id = f"{current_user.id}_{client_id}"
+    
     if client_id not in sse_clients:
         logger.warning(f"Client {client_id} not found in sse_clients. Auto-registering.")
-        # Créer une file pour ce client ID même s'il n'a pas de connexion SSE
         sse_clients[client_id] = asyncio.Queue()
     
     # Check if there's a tool_name in the request
@@ -936,9 +980,74 @@ async def sse_connect_new(request: Request):
 @app.get("/health")
 async def health_check():
     """
-    Health check endpoint
+    Health check endpoint (non protégé)
     """
     return {"status": "ok"}
+
+# Protéger la route des outils WordPress
+@app.post("/wordpress/{tool_name}")
+async def execute_wordpress_tool(
+    tool_name: str,
+    params: dict,
+    current_user = Depends(get_current_user)
+):
+    """
+    Execute a WordPress tool with authentication
+    """
+    try:
+        logger.info(f"User {current_user.email} executing tool: {tool_name}")
+        processor = get_command_processor()
+        if processor is None:
+            raise HTTPException(status_code=500, detail="WordPress connection error")
+            
+        # Vérifier si l'outil existe
+        if not hasattr(processor.wp_manager, tool_name):
+            raise HTTPException(status_code=404, detail=f"Tool {tool_name} not found")
+            
+        # Exécuter l'outil
+        tool = getattr(processor.wp_manager, tool_name)
+        result = tool(**params)
+        
+        return {
+            "success": True,
+            "tool": tool_name,
+            "result": result
+        }
+    except Exception as e:
+        logger.error(f"Error executing tool {tool_name}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Ajouter une nouvelle route pour récupérer l'historique des commandes
+@app.get("/commands/history")
+async def get_commands_history(current_user = Depends(get_current_user)):
+    """
+    Récupérer l'historique des commandes de l'utilisateur
+    """
+    try:
+        commands = await Database.get_user_commands(current_user.id)
+        return {
+            "success": True,
+            "commands": commands
+        }
+    except Exception as e:
+        logger.error(f"Error fetching commands history: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Ajouter une route pour récupérer les pages WordPress
+@app.get("/wordpress/pages")
+async def get_wordpress_pages(current_user = Depends(get_current_user)):
+    """
+    Récupérer toutes les pages WordPress de l'utilisateur
+    """
+    try:
+        pages = await Database.get_wordpress_pages(current_user.id)
+        return {
+            "success": True,
+            "pages": pages
+        }
+    except Exception as e:
+        logger.error(f"Error fetching WordPress pages: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 def start():
     """Start the FastAPI application using uvicorn"""
