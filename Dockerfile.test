@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copier les fichiers de requirements
+COPY requirements.txt .
+
+# Installer les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier le code source et les tests
+COPY api/ api/
+COPY tests/ tests/
+COPY pytest.ini .
+
+# Configurer PYTHONPATH
+ENV PYTHONPATH=/app
+
+# Commande par défaut pour exécuter les tests
+CMD ["pytest", "-v", "--cov=api", "--cov-report=term-missing"] 

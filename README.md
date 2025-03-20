@@ -55,6 +55,55 @@ Le WordPress MCP (Middleware Control Panel) est un middleware qui permet de cont
 uvicorn api.main:app --reload
 ```
 
+Ordre de test recommandé :
+Register
+Login
+Voir profil
+Mettre à jour profil
+Créer une page
+Voir les pages
+Mettre à jour une page
+Voir l'historique des commandes
+
+#Création d'un compte (si pas déjà fait)
+
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "votre_mot_de_passe",
+    "first_name": "John",
+    "last_name": "Doe"
+}
+
+###Connexion (pour obtenir le token)
+
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "username": "test@example.com",
+    "password": "votre_mot_de_passe"
+}
+
+#Voir son profil
+
+GET http://localhost:8000/auth/profile
+Authorization: Bearer votre_token_jwt
+
+###Mettre à jour son profil
+PUT http://localhost:8000/auth/profile
+Authorization: Bearer votre_token_jwt
+Content-Type: application/json
+
+{
+    "first_name": "John Updated",
+    "last_name": "Doe Updated",
+    "avatar_url": "https://example.com/avatar.jpg"
+}
+
+
 ### Utilisation avec Server-Sent Events (SSE)
 
 1. **Établir une connexion SSE et obtenir un client_id** :
@@ -243,6 +292,7 @@ Déploiement :
 - Docker multi-stage builds
 - Docker Compose pour dev/prod
 - Kubernetes pour le scaling
+
 
 
 

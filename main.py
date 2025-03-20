@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from utils.logger import setup_logger
 from api.main import start as start_api
 
+
 # Initialize logger
 logger = setup_logger(
     name="mcp", 

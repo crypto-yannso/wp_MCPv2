@@ -10,7 +10,15 @@ spacy==3.7.2
 sse-starlette==1.6.5
 beautifulsoup4==4.12.2
 sseclient-py==1.7.2
-supabase
+httpx>=0.23.0,<0.24.0
+supabase==1.0.3
 python-jose[cryptography]
-passlib
-PyJWT
+passlib==1.7.4
+PyJWT==2.8.0
+stripe==7.11.0
+
+# Testing dependencies
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0

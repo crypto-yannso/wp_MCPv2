@@ -8,8 +8,17 @@ services:
     environment:
       - SUPABASE_URL=${SUPABASE_URL}
       - SUPABASE_KEY=${SUPABASE_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - WP_URL=${WP_URL}
+      - WP_USERNAME=${WP_USERNAME}
+      - WP_PASSWORD=${WP_PASSWORD}
     volumes:
       - ./static:/app/static
+      - ./api:/app/api
+      - ./wordpress:/app/wordpress
+      - ./utils:/app/utils
+      - ./nlp:/app/nlp
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
     restart: unless-stopped
     networks:
       - app_network
@@ -17,13 +26,31 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
       - ./static:/usr/share/nginx/html/static
     depends_on:
       - api
     restart: unless-stopped
+    networks:
+      - app_network
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+    volumes:
+      - ./api:/app/api
+      - ./tests:/app/tests
     networks:
       - app_network
 

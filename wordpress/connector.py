@@ -7,7 +7,14 @@ from wordpress_xmlrpc.methods.taxonomies import GetTerms
 from wordpress_xmlrpc.methods import media
 import base64
 import requests
+from typing import Union, Dict, Any, Iterable
 from utils.config import WP_URL, WP_USERNAME, WP_PASSWORD
+
+# Patch pour wordpress-xmlrpc qui utilise l'ancien collections.Iterable
+import sys
+import collections
+if not hasattr(collections, 'Iterable'):
+    collections.Iterable = Iterable
 
 logger = logging.getLogger(__name__)
 
@@ -67,17 +74,41 @@ class WordPressConnector:
             logger.error(f"Failed to get post {post_id}: {str(e)}")
             raise
 
-    def get_posts(self, number=10):
-        """Get a list of posts"""
+    def get_posts(self, query: Union[Dict[str, Any], int, None] = None) -> list:
+        """Get a list of posts with query parameters"""
         if self.demo_mode:
             # Return mock data in demo mode
+            number = query.get('number', 10) if isinstance(query, dict) else 10
             logger.info(f"DEMO MODE: Returning {number} mock posts")
             return [self._create_mock_post(i) for i in range(1, number+1)]
             
         try:
-            return self.client.call(GetPosts({'number': number}))
+            # Vérifier la connexion
+            if not self.client:
+                raise ConnectionError("WordPress client not initialized")
+
+            # Normaliser la requête
+            if isinstance(query, dict):
+                final_query = query
+            elif isinstance(query, (int, float)):
+                final_query = {'number': int(query)}
+            else:
+                final_query = {'number': 10}
+
+            # Ajouter les paramètres par défaut si nécessaire
+            if 'post_type' not in final_query:
+                final_query['post_type'] = 'page'
+            
+            logger.debug(f"Sending query to WordPress: {final_query}")
+            posts = self.client.call(GetPosts(final_query))
+            logger.info(f"Retrieved {len(posts)} posts from WordPress")
+            return posts
+
         except Exception as e:
             logger.error(f"Failed to get posts: {str(e)}")
+            if "Iterable" in str(e):
+                logger.warning("WordPress XML-RPC compatibility issue, returning empty list")
+                return []
             raise
 
     def create_post(self, title, content, status='draft', categories=None, tags=None):
@@ -115,24 +146,27 @@ class WordPressConnector:
             return True
             
         try:
+            # Get existing post
             post = self.client.call(GetPost(post_id))
             
+            # Update only provided fields
             if title is not None:
                 post.title = title
             if content is not None:
                 post.content = content
             if status is not None:
                 post.post_status = status
-                
-            success = self.client.call(EditPost(post_id, post))
-            if success:
+            
+            # Save changes
+            result = self.client.call(EditPost(post_id, post))
+            if result:
                 logger.info(f"Post {post_id} updated successfully")
             else:
                 logger.warning(f"Post {post_id} update returned false")
-            return success
+            return result
         except Exception as e:
             logger.error(f"Failed to update post {post_id}: {str(e)}")
-            raise
+            return False
 
     def delete_post(self, post_id):
         """Delete a post by ID"""
@@ -204,3 +238,39 @@ class WordPressConnector:
         post.terms_names = {"category": ["Pages"], "post_tag": ["exemple", "demo"]}
         
         return post
+
+    def get_elementor_pages(self):
+        """Get a list of pages built with Elementor"""
+        try:
+            # Récupérer toutes les pages
+            query = {
+                'post_type': 'page',
+                'number': 100,  # Augmentez si nécessaire
+                'meta_key': '_elementor_edit_mode',  # Filtre pour les pages Elementor
+                'meta_value': 'builder'
+            }
+            
+            pages = self.get_posts(query)
+            
+            # Formater les résultats pour plus de clarté
+            elementor_pages = []
+            for page in pages:
+                elementor_pages.append({
+                    'id': page.id,
+                    'title': page.title,
+                    'status': page.post_status,
+                    'url': page.link if hasattr(page, 'link') else None
+                })
+            
+            logger.info(f"Found {len(elementor_pages)} Elementor pages")
+            return elementor_pages
+            
+        except Exception as e:
+            logger.error(f"Failed to get Elementor pages: {str(e)}")
+            if self.demo_mode:
+                # Retourner des données de démonstration
+                return [
+                    {'id': 1, 'title': 'Accueil', 'status': 'publish', 'url': '/'},
+                    {'id': 2, 'title': 'À propos', 'status': 'publish', 'url': '/about'},
+                ]
+            raise

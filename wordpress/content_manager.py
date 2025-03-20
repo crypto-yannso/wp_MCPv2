@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from .connector import WordPressConnector
 from utils.config import RESTRICTED_OPERATIONS
+from fastapi import HTTPException
 
 logger = logging.getLogger(__name__)
 
@@ -70,6 +71,59 @@ class WordPressContentManager:
             "content": post.content,
             "sections": sections
         }
+    
+    def get_pages(self, limit=10, offset=0, status="publish"):
+        """Get a list of WordPress pages"""
+        try:
+            # Récupérer les pages avec le statut spécifié
+            query = {
+                'number': int(limit),
+                'offset': int(offset),
+                'post_type': 'page',
+                'post_status': status
+            }
+            
+            logger.info(f"Fetching pages with query: {query}")
+            posts = self.wp.get_posts(query)
+            
+            if not posts:
+                logger.info("No pages found")
+                return {
+                    "total": 0,
+                    "offset": offset,
+                    "limit": limit,
+                    "pages": []
+                }
+            
+            pages = []
+            for post in posts:
+                try:
+                    content = getattr(post, 'content', '')
+                    sections = self.extract_sections(content) if content else []
+                    
+                    page_data = {
+                        "id": getattr(post, 'id', None),
+                        "title": getattr(post, 'title', ''),
+                        "status": getattr(post, 'post_status', status),
+                        "date": getattr(post, 'date', None),
+                        "modified": getattr(post, 'modified', None),
+                        "link": getattr(post, 'link', None),
+                        "sections": sections
+                    }
+                    pages.append(page_data)
+                except Exception as e:
+                    logger.warning(f"Error processing page: {str(e)}")
+                    continue
+                
+            return {
+                "total": len(pages),
+                "offset": offset,
+                "limit": limit,
+                "pages": pages
+            }
+        except Exception as e:
+            logger.error(f"Failed to get pages: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Failed to get pages: {str(e)}")
     
     def add_content(self, title, content, status='draft'):
         """Add new content to WordPress"""

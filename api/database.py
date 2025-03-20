@@ -2,17 +2,17 @@ from supabase import create_client
 import os
 from dotenv import load_dotenv
 from datetime import datetime
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 # Charger les variables d'environnement
 load_dotenv()
 
 # Configuration Supabase
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
 if not SUPABASE_URL or not SUPABASE_KEY:
-    raise Exception("SUPABASE_URL et SUPABASE_KEY doivent être définis dans le fichier .env")
+    raise Exception("SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY doivent être définis dans le fichier .env")
 
 # Initialisation du client Supabase
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -205,4 +205,130 @@ class Database:
     async def get_wordpress_pages(user_id: str):
         """Récupérer toutes les pages WordPress d'un utilisateur"""
         result = supabase.table("wordpress_pages").select("*").eq("user_id", user_id).execute()
-        return result.data 
+        return result.data
+
+    @staticmethod
+    async def get_user_credits(user_id: str) -> float:
+        """Obtenir le solde de crédits d'un utilisateur"""
+        try:
+            result = supabase.table("credits").select("amount").eq("user_id", user_id).single().execute()
+            return result.data["amount"] if result.data else 0
+        except Exception as e:
+            print(f"Erreur lors de la récupération des crédits: {str(e)}")
+            return 0
+
+    @staticmethod
+    async def add_user_credits(user_id: str, amount: float) -> Dict:
+        """Ajouter des crédits à un utilisateur"""
+        try:
+            # Vérifier si l'utilisateur a déjà des crédits
+            try:
+                result = supabase.table("credits").select("amount").eq("user_id", user_id).single().execute()
+                current_credits = result.data.get("amount", 0) if result.data else 0
+            except Exception:
+                current_credits = 0
+            
+            if current_credits > 0:
+                # Mettre à jour les crédits existants
+                result = supabase.table("credits").update({
+                    "amount": current_credits + amount,
+                    "updated_at": datetime.utcnow().isoformat()
+                }).eq("user_id", user_id).execute()
+            else:
+                # Créer une nouvelle entrée
+                result = supabase.table("credits").insert({
+                    "user_id": user_id,
+                    "amount": amount,
+                    "created_at": datetime.utcnow().isoformat(),
+                    "updated_at": datetime.utcnow().isoformat()
+                }).execute()
+            
+            if not result.data:
+                raise Exception("Erreur lors de la mise à jour des crédits")
+            
+            return {
+                "success": True,
+                "credits": result.data[0]
+            }
+        except Exception as e:
+            print(f"Erreur lors de l'ajout des crédits: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    @staticmethod
+    async def use_credits(user_id: str, amount: float) -> Dict:
+        """Utiliser des crédits"""
+        try:
+            current_credits = await Database.get_user_credits(user_id)
+            
+            if current_credits < amount:
+                return {
+                    "success": False,
+                    "error": "Crédits insuffisants"
+                }
+            
+            result = supabase.table("credits").update({
+                "amount": current_credits - amount,
+                "updated_at": datetime.utcnow().isoformat()
+            }).eq("user_id", user_id).execute()
+            
+            return {
+                "success": True,
+                "credits": result.data[0]
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    @staticmethod
+    async def create_transaction(
+        user_id: str,
+        amount: float,
+        type: str,
+        description: str,
+        stripe_payment_id: Optional[str] = None,
+        status: str = "completed"
+    ) -> Dict:
+        """Créer une nouvelle transaction"""
+        try:
+            data = {
+                "user_id": user_id,
+                "amount": amount,
+                "type": type,
+                "description": description,
+                "status": status,
+                "created_at": datetime.utcnow().isoformat()
+            }
+            
+            if stripe_payment_id:
+                data["stripe_payment_id"] = stripe_payment_id
+            
+            result = supabase.table("transactions").insert(data).execute()
+            
+            if not result.data:
+                raise Exception("Erreur lors de la création de la transaction")
+            
+            return {
+                "success": True,
+                "transaction": result.data[0]
+            }
+        except Exception as e:
+            print(f"Erreur lors de la création de la transaction: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    @staticmethod
+    async def get_user_transactions(user_id: str) -> List[Dict]:
+        """Récupérer l'historique des transactions d'un utilisateur"""
+        try:
+            result = supabase.table("transactions").select("*").eq("user_id", user_id).order("created_at", desc=True).execute()
+            return result.data
+        except Exception as e:
+            print(f"Erreur lors de la récupération des transactions: {str(e)}")
+            return [] 

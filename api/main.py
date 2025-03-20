@@ -17,6 +17,9 @@ from nlp.command_processor import CommandProcessor
 from utils.config import HOST, PORT
 from api.auth import router as auth_router, get_current_user
 from api.database import Database
+from api.payments import router as payments_router
+from api.wordpress import router as wordpress_router  # Ajout du nouveau router
+from api.events import register_client, remove_client
 
 # Configure logging
 logging.basicConfig(
@@ -38,6 +41,8 @@ app = FastAPI(
 
 # Include the auth router
 app.include_router(auth_router)
+app.include_router(payments_router)
+app.include_router(wordpress_router)  # Ajout du router WordPress
 
 # Mount static files
 static_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static")
@@ -779,12 +784,12 @@ async def process_command_form(command: str = Form(...)):
     request = CommandRequest(command=command)
     return await process_command(request)
 
-@app.get("/sse/connect/{client_id}")
-async def sse_connect(client_id: str, request: Request):
+@app.get("/sse/{client_id}")
+async def sse_endpoint(client_id: str, request: Request):
     """
-    Endpoint to establish a Server-Sent Events connection with a specified client ID
+    Point d'entrée pour les connexions SSE
     """
-    logger.info(f"New SSE connection with specified client ID: {client_id}")
+    logger.info(f"New SSE connection request with client ID: {client_id}")
     
     # Créer la réponse SSE avec des en-têtes explicites
     response = EventSourceResponse(sse_event_generator(client_id))
@@ -793,7 +798,7 @@ async def sse_connect(client_id: str, request: Request):
     response.headers["Content-Type"] = "text/event-stream"
     response.headers["Cache-Control"] = "no-cache"
     response.headers["Connection"] = "keep-alive"
-    response.headers["X-Accel-Buffering"] = "no"  # Désactive la mise en buffer par Nginx
+    response.headers["X-Accel-Buffering"] = "no"
     
     # Activer CORS pour cette réponse
     origin = request.headers.get("Origin", "*")
@@ -802,180 +807,122 @@ async def sse_connect(client_id: str, request: Request):
     
     return response
 
-@app.get("/sse/connect")
-@app.get("/mcp/info")  # Alias pour une meilleure découverte
-@app.get("/api/mcp")   # Autre alias couramment utilisé
-async def sse_connect_new(request: Request):
+@app.get("/mcp/info")
+@app.get("/api/mcp")
+async def get_mcp_info(request: Request):
     """
-    Endpoint to establish a Server-Sent Events connection with a generated client ID
-    or returns MCP compatibility information
+    Returns MCP compatibility information
     """
-    # Check if this is a client connection or MCP discovery request
-    accept_header = str(request.headers.get("accept", ""))
+    base_url = f"{request.url.scheme}://{request.url.netloc}"
     
-    logger.info(f"SSE connect called with Accept header: {accept_header}")
-    
-    # If client is requesting event-stream, establish SSE connection
-    if "text/event-stream" in accept_header:
-        client_id = str(uuid.uuid4())
-        logger.info(f"New SSE connection with generated ID: {client_id}")
-        
-        # Create SSE response with explicit headers
-        response = EventSourceResponse(sse_event_generator(client_id))
-        
-        # Configurer les en-têtes explicitement
-        response.headers["Content-Type"] = "text/event-stream"
-        response.headers["Cache-Control"] = "no-cache, no-transform"
-        response.headers["Connection"] = "keep-alive"
-        response.headers["X-Accel-Buffering"] = "no"  # Désactive la mise en buffer par Nginx
-        
-        # Activer CORS pour cette réponse
-        origin = request.headers.get("Origin", "*")
-        response.headers["Access-Control-Allow-Origin"] = origin
-        response.headers["Access-Control-Allow-Credentials"] = "true"
-        
-        return response
-    
-    # Otherwise, return MCP compatibility information
-    else:
-        # Define MCP tools - ces outils doivent être exposés dans différents formats pour compatibilité
-        mcp_tools = [
-            {
-                "name": "add_wordpress_page",
-                "description": "Ajouter une nouvelle page WordPress",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "title": {
-                            "type": "string",
-                            "description": "Titre de la page"
-                        },
-                        "content": {
-                            "type": "string",
-                            "description": "Contenu HTML de la page"
-                        },
-                        "status": {
-                            "type": "string",
-                            "description": "Statut de la page (draft, publish, etc.)",
-                            "default": "draft"
-                        }
+    # Define MCP tools
+    mcp_tools = [
+        {
+            "name": "add_wordpress_page",
+            "description": "Ajouter une nouvelle page WordPress",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "Titre de la page"
                     },
-                    "required": ["title", "content"]
-                }
-            },
-            {
-                "name": "update_wordpress_content",
-                "description": "Mettre à jour le contenu d'une page WordPress",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "post_id": {
-                            "type": "integer",
-                            "description": "ID de la page à modifier"
-                        },
-                        "title": {
-                            "type": "string",
-                            "description": "Nouveau titre (optionnel)"
-                        },
-                        "content": {
-                            "type": "string",
-                            "description": "Nouveau contenu HTML (optionnel)"
-                        }
+                    "content": {
+                        "type": "string",
+                        "description": "Contenu HTML de la page"
                     },
-                    "required": ["post_id"]
-                }
-            },
-            {
-                "name": "add_wordpress_section",
-                "description": "Ajouter une nouvelle section à une page WordPress",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "post_id": {
-                            "type": "integer",
-                            "description": "ID de la page"
-                        },
-                        "title": {
-                            "type": "string",
-                            "description": "Titre de la section"
-                        },
-                        "content": {
-                            "type": "string",
-                            "description": "Contenu HTML de la section"
-                        },
-                        "position": {
-                            "type": "integer",
-                            "description": "Position de la section (optionnel)"
-                        }
-                    },
-                    "required": ["post_id", "title", "content"]
-                }
-            },
-            {
-                "name": "get_wordpress_content",
-                "description": "Obtenir le contenu d'une page WordPress",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "post_id": {
-                            "type": "integer",
-                            "description": "ID de la page"
-                        }
-                    },
-                    "required": ["post_id"]
-                }
+                    "status": {
+                        "type": "string",
+                        "description": "Statut de la page (draft, publish, etc.)",
+                        "default": "draft"
+                    }
+                },
+                "required": ["title", "content"]
             }
-        ]
-        
-        # Format simplifié des outils pour certains clients
-        simplified_tools = [
-            {
-                "name": tool["name"],
-                "description": tool["description"]
-            } for tool in mcp_tools
-        ]
-        
-        # Return MCP compatibility information in multiple formats for maximum compatibility
-        base_url = f"{request.url.scheme}://{request.url.netloc}"
-        
-        # Format principal
-        mcp_response = {
-            "schema_version": "1.0",
-            "id": "wordpress_mcp_server",
-            "name": "WordPress MCP Server",
-            "description": "Middleware Control Panel pour WordPress via commandes en langage naturel",
-            "auth": {
-                "type": "none"
-            },
-            "api": {
-                "url": f"{base_url}/command/sse",
-                "type": "rest"
-            },
-            "tools": mcp_tools,
-            "streaming": {
-                "url": f"{base_url}/sse/connect",
-                "type": "sse"
-            },
-            "functions": mcp_tools,  # Certains clients s'attendent à 'functions' plutôt que 'tools'
-            
-            # Formats alternatifs intégrés
-            "capabilities": {
-                "tools": simplified_tools  # Format simplifié pour certains clients
-            },
-            "mcp": {
-                "tools": mcp_tools,
-                "version": "1.0",
-                "server_name": "wordpress_mcp"
-            },
-            
-            # Ajout de propriétés communes pour différentes implémentations MCP
-            "server_name": "wordpress_mcp_server",
-            "server_url": f"{base_url}/sse/connect",
-            "command_url": f"{base_url}/command/sse",
-            "version": "1.0.0"
+        },
+        {
+            "name": "update_wordpress_content",
+            "description": "Mettre à jour le contenu d'une page WordPress",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "post_id": {
+                        "type": "integer",
+                        "description": "ID de la page à modifier"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Nouveau titre (optionnel)"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Nouveau contenu HTML (optionnel)"
+                    }
+                },
+                "required": ["post_id"]
+            }
+        },
+        {
+            "name": "add_wordpress_section",
+            "description": "Ajouter une nouvelle section à une page WordPress",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "post_id": {
+                        "type": "integer",
+                        "description": "ID de la page"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Titre de la section"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Contenu HTML de la section"
+                    },
+                    "position": {
+                        "type": "integer",
+                        "description": "Position de la section (optionnel)"
+                    }
+                },
+                "required": ["post_id", "title", "content"]
+            }
+        },
+        {
+            "name": "get_wordpress_content",
+            "description": "Obtenir le contenu d'une page WordPress",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "post_id": {
+                        "type": "integer",
+                        "description": "ID de la page"
+                    }
+                },
+                "required": ["post_id"]
+            }
         }
-        
-        return mcp_response
+    ]
+    
+    return {
+        "schema_version": "1.0",
+        "id": "wordpress_mcp_server",
+        "name": "WordPress MCP Server",
+        "description": "Middleware Control Panel pour WordPress via commandes en langage naturel",
+        "auth": {
+            "type": "none"
+        },
+        "api": {
+            "url": f"{base_url}/command/sse",
+            "type": "rest"
+        },
+        "tools": mcp_tools,
+        "streaming": {
+            "url": f"{base_url}/sse",
+            "type": "sse"
+        },
+        "version": "1.0.0"
+    }
 
 @app.get("/health")
 async def health_check():
@@ -1052,7 +999,7 @@ async def get_wordpress_pages(current_user = Depends(get_current_user)):
 def start():
     """Start the FastAPI application using uvicorn"""
     logger.info(f"Starting WordPress MCP API on http://{HOST}:{PORT}")
-    uvicorn.run("api.main:app", host=HOST, port=PORT, reload=True)
+    uvicorn.run(app, host=HOST, port=PORT, reload=True)
 
 if __name__ == "__main__":
     start()
