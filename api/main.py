@@ -8,6 +8,7 @@ from fastapi import FastAPI, HTTPException, Depends, Request, Form, Response, Ba
 from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 import os
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel
@@ -30,8 +31,32 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="WordPress MCP API",
-    description="Middleware Control Panel API for WordPress",
-    version="1.0.0"
+    description="""
+    Middleware Control Panel API pour WordPress.
+    
+    Cette API permet de :
+    * Gérer le contenu WordPress via des commandes en langage naturel
+    * Manipuler les pages et les sections
+    * Gérer le SEO et les meta descriptions
+    * Recevoir des mises à jour en temps réel via SSE
+    
+    ## Commandes
+    
+    Vous pouvez utiliser des commandes en langage naturel comme :
+    * "crée une nouvelle page avec le titre 'Ma Page'"
+    * "ajoute une section 'Introduction' à la page avec ID 123"
+    * "montre moi les informations seo du site"
+    * "modifie la meta description de la page 456"
+    
+    ## Authentification
+    
+    L'API utilise l'authentification basique HTTP pour sécuriser les endpoints.
+    """,
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+    swagger_ui_parameters={"defaultModelsExpandDepth": -1}
 )
 
 # Mount static files
@@ -41,12 +66,38 @@ app.mount("/static", StaticFiles(directory=static_dir), name="static")
 # Add CORS middleware with explicit headers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Specify allowed origins in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS", "HEAD"],
     allow_headers=["Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With"],
     expose_headers=["Content-Type", "Content-Length"],
 )
+
+# Custom Swagger UI route
+@app.get("/docs", include_in_schema=False)
+async def custom_swagger_ui_html():
+    """
+    Interface Swagger UI personnalisée
+    """
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title=app.title + " - Documentation API",
+        oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
+        swagger_js_url="/static/swagger-ui-bundle.js",
+        swagger_css_url="/static/swagger-ui.css",
+    )
+
+# Custom ReDoc route
+@app.get("/redoc", include_in_schema=False)
+async def redoc_html():
+    """
+    Interface ReDoc personnalisée
+    """
+    return get_redoc_html(
+        openapi_url=app.openapi_url,
+        title=app.title + " - Documentation API",
+        redoc_js_url="/static/redoc.standalone.js",
+    )
 
 # Add middleware to add custom headers to all responses
 @app.middleware("http")
@@ -91,18 +142,51 @@ async def log_requests(request: Request, call_next):
     
     return response
 
-# Models
+# Models with enhanced documentation
 class CommandRequest(BaseModel):
+    """
+    Modèle pour les requêtes de commande
+    """
     command: str = None
-    client_id: str = None  # Optional client ID for SSE
-    tool_name: str = None  # For direct tool calls (MCP protocol)
-    parameters: dict = None  # Parameters for direct tool calls
+    client_id: str = None
+    tool_name: str = None
+    parameters: dict = None
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "command": "crée une nouvelle page avec le titre 'Ma Page'",
+                "client_id": "550e8400-e29b-41d4-a716-446655440000",
+                "tool_name": "add_content",
+                "parameters": {
+                    "title": "Ma Page",
+                    "content": "<p>Contenu de ma page</p>"
+                }
+            }
+        }
 
 class CommandResponse(BaseModel):
+    """
+    Modèle pour les réponses de commande
+    """
     success: bool
     message: str
     operation: str = None
     results: dict = None
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "success": True,
+                "message": "Page créée avec succès",
+                "operation": "add_content",
+                "results": {
+                    "id": 123,
+                    "title": "Ma Page",
+                    "status": "draft"
+                }
+            }
+        }
 
 # SSE Event types
 EVENT_RECEIVED = "command_received"
@@ -308,6 +392,38 @@ async def plugin_manifest(request: Request):
                 }
             },
             {
+                "name": "add_content_from_template",
+                "description": "Créer une page WordPress à partir d'un template prédéfini",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "template_name": {
+                            "type": "string",
+                            "description": "Nom du template à utiliser (page_standard ou article_blog)",
+                            "enum": ["page_standard", "article_blog"]
+                        },
+                        "variables": {
+                            "type": "object",
+                            "description": "Variables à injecter dans le template",
+                            "properties": {
+                                "name": {"type": "string", "description": "Nom de la page (pour page_standard)"},
+                                "introduction": {"type": "string", "description": "Texte d'introduction"},
+                                "services_description": {"type": "string", "description": "Description des services (pour page_standard)"},
+                                "services_list": {"type": "string", "description": "Liste HTML des services (pour page_standard)"},
+                                "contact_info": {"type": "string", "description": "Informations de contact (pour page_standard)"},
+                                "title": {"type": "string", "description": "Titre de l'article (pour article_blog)"},
+                                "section1_title": {"type": "string", "description": "Titre de la première section (pour article_blog)"},
+                                "section1_content": {"type": "string", "description": "Contenu de la première section (pour article_blog)"},
+                                "section2_title": {"type": "string", "description": "Titre de la deuxième section (pour article_blog)"},
+                                "section2_content": {"type": "string", "description": "Contenu de la deuxième section (pour article_blog)"},
+                                "conclusion": {"type": "string", "description": "Conclusion de l'article (pour article_blog)"}
+                            }
+                        }
+                    },
+                    "required": ["template_name", "variables"]
+                }
+            },
+            {
                 "name": "update_wordpress_content",
                 "description": "Mettre à jour le contenu d'une page WordPress",
                 "parameters": {
@@ -367,6 +483,75 @@ async def plugin_manifest(request: Request):
                         }
                     },
                     "required": ["post_id"]
+                }
+            },
+            {
+                "name": "get_meta_description",
+                "description": "Obtenir la meta description d'une page WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page"
+                        }
+                    },
+                    "required": ["post_id"]
+                }
+            },
+            {
+                "name": "update_meta_description",
+                "description": "Mettre à jour la meta description d'une page WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page"
+                        },
+                        "meta_description": {
+                            "type": "string",
+                            "description": "Nouvelle meta description"
+                        }
+                    },
+                    "required": ["post_id", "meta_description"]
+                }
+            },
+            {
+                "name": "get_seo_info",
+                "description": "Obtenir toutes les informations SEO d'une page ou du site entier",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page (optionnel - si non fourni, retourne les informations SEO du site)"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "get_all_pages",
+                "description": "Obtenir la liste de toutes les pages WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "integer",
+                            "description": "Nombre de pages à récupérer par page (défaut: 100)",
+                            "default": 100
+                        },
+                        "page": {
+                            "type": "integer",
+                            "description": "Numéro de la page pour la pagination (défaut: 1)",
+                            "default": 1
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Statut des pages à récupérer (publish, draft, private, any)",
+                            "default": "any"
+                        }
+                    }
                 }
             }
         ]
@@ -708,6 +893,80 @@ async def process_tool_background(tool_name: str, tool_params: dict, client_id: 
                 "results": result
             })
             
+        elif tool_name == "get_meta_description":
+            # Handle get_meta_description tool
+            post_id = tool_params.get("post_id")
+            
+            # Process the command with artificial delay
+            await asyncio.sleep(0.5)
+            result = processor.wp_manager.get_meta_description(post_id)
+            
+            await send_sse_event(client_id, EVENT_RESULT, {
+                "success": True,
+                "message": f"Meta description de la page {post_id} récupérée",
+                "results": result
+            })
+            
+        elif tool_name == "update_meta_description":
+            # Handle update_meta_description tool
+            post_id = tool_params.get("post_id")
+            meta_description = tool_params.get("meta_description")
+            
+            # Process the command with artificial delay
+            await asyncio.sleep(0.5)
+            result = processor.wp_manager.update_meta_description(post_id, meta_description)
+            
+            await send_sse_event(client_id, EVENT_RESULT, {
+                "success": result.get("success", False),
+                "message": result.get("message", "Meta description mise à jour"),
+                "results": result
+            })
+            
+        elif tool_name == "get_seo_info":
+            # Handle get_seo_info tool
+            post_id = tool_params.get("post_id")
+            
+            # Process the command with artificial delay
+            await asyncio.sleep(0.5)
+            result = processor.wp_manager.get_seo_info(post_id)
+            
+            await send_sse_event(client_id, EVENT_RESULT, {
+                "success": True,
+                "message": f"Informations SEO de la page {post_id} récupérées",
+                "results": result
+            })
+            
+        elif tool_name == "get_all_pages":
+            # Handle get_all_pages tool
+            number = tool_params.get("number", 100)
+            page = tool_params.get("page", 1)
+            status = tool_params.get("status", "any")
+            
+            # Process the command with artificial delay
+            await asyncio.sleep(0.5)
+            result = processor.wp_manager.get_all_pages(number, page, status)
+            
+            await send_sse_event(client_id, EVENT_RESULT, {
+                "success": True,
+                "message": "Liste des pages WordPress récupérée",
+                "results": result
+            })
+            
+        elif tool_name == "add_content_from_template":
+            # Handle add_content_from_template tool
+            template_name = tool_params.get("template_name")
+            variables = tool_params.get("variables", {})
+            
+            # Process the command with artificial delay
+            await asyncio.sleep(0.5)
+            result = processor.wp_manager.add_content_from_template(template_name, variables)
+            
+            await send_sse_event(client_id, EVENT_RESULT, {
+                "success": result.get("success", False),
+                "message": result.get("message", "Contenu créé à partir du template"),
+                "results": result
+            })
+            
         else:
             # Unknown tool
             await send_sse_event(client_id, EVENT_ERROR, {
@@ -820,6 +1079,38 @@ async def sse_connect_new(request: Request):
                 }
             },
             {
+                "name": "add_content_from_template",
+                "description": "Créer une page WordPress à partir d'un template prédéfini",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "template_name": {
+                            "type": "string",
+                            "description": "Nom du template à utiliser (page_standard ou article_blog)",
+                            "enum": ["page_standard", "article_blog"]
+                        },
+                        "variables": {
+                            "type": "object",
+                            "description": "Variables à injecter dans le template",
+                            "properties": {
+                                "name": {"type": "string", "description": "Nom de la page (pour page_standard)"},
+                                "introduction": {"type": "string", "description": "Texte d'introduction"},
+                                "services_description": {"type": "string", "description": "Description des services (pour page_standard)"},
+                                "services_list": {"type": "string", "description": "Liste HTML des services (pour page_standard)"},
+                                "contact_info": {"type": "string", "description": "Informations de contact (pour page_standard)"},
+                                "title": {"type": "string", "description": "Titre de l'article (pour article_blog)"},
+                                "section1_title": {"type": "string", "description": "Titre de la première section (pour article_blog)"},
+                                "section1_content": {"type": "string", "description": "Contenu de la première section (pour article_blog)"},
+                                "section2_title": {"type": "string", "description": "Titre de la deuxième section (pour article_blog)"},
+                                "section2_content": {"type": "string", "description": "Contenu de la deuxième section (pour article_blog)"},
+                                "conclusion": {"type": "string", "description": "Conclusion de l'article (pour article_blog)"}
+                            }
+                        }
+                    },
+                    "required": ["template_name", "variables"]
+                }
+            },
+            {
                 "name": "update_wordpress_content",
                 "description": "Mettre à jour le contenu d'une page WordPress",
                 "parameters": {
@@ -879,6 +1170,75 @@ async def sse_connect_new(request: Request):
                         }
                     },
                     "required": ["post_id"]
+                }
+            },
+            {
+                "name": "get_meta_description",
+                "description": "Obtenir la meta description d'une page WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page"
+                        }
+                    },
+                    "required": ["post_id"]
+                }
+            },
+            {
+                "name": "update_meta_description",
+                "description": "Mettre à jour la meta description d'une page WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page"
+                        },
+                        "meta_description": {
+                            "type": "string",
+                            "description": "Nouvelle meta description"
+                        }
+                    },
+                    "required": ["post_id", "meta_description"]
+                }
+            },
+            {
+                "name": "get_seo_info",
+                "description": "Obtenir toutes les informations SEO d'une page ou du site entier",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "post_id": {
+                            "type": "integer",
+                            "description": "ID de la page (optionnel - si non fourni, retourne les informations SEO du site)"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "get_all_pages",
+                "description": "Obtenir la liste de toutes les pages WordPress",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "integer",
+                            "description": "Nombre de pages à récupérer par page (défaut: 100)",
+                            "default": 100
+                        },
+                        "page": {
+                            "type": "integer",
+                            "description": "Numéro de la page pour la pagination (défaut: 1)",
+                            "default": 1
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Statut des pages à récupérer (publish, draft, private, any)",
+                            "default": "any"
+                        }
+                    }
                 }
             }
         ]

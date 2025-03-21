@@ -966,3 +966,700 @@ A detailed migration guide is available here: https://github.com/openai/openai-p
 2025-03-09 14:36:01,129 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
 2025-03-09 14:36:02,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
 2025-03-09 14:36:02,388 - wordpress.connector - INFO - Post created with ID: 2262
+2025-03-20 11:18:22,187 - api.main - INFO - POST /sse/connect - 405 - 0.00s
+2025-03-20 11:18:30,162 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-20 11:18:30,164 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 11:18:58,070 - api.main - INFO - SSE connect called with Accept header: */*
+2025-03-20 11:18:58,072 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 11:20:02,436 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 11:20:02,438 - api.main - INFO - New SSE connection with generated ID: 378286b0-cc16-402a-8a06-da03a82aa0e2
+2025-03-20 11:20:02,440 - api.main - INFO - Registering client 378286b0-cc16-402a-8a06-da03a82aa0e2 in sse_clients dictionary
+2025-03-20 11:20:02,440 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 11:22:29,481 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish'}, 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:22:29,482 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish'}
+2025-03-20 11:22:29,483 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:22:29,484 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 11:22:32,341 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 11:22:32,341 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 11:22:32,341 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 11:22:33,056 - wordpress.connector - INFO - Post created with ID: 2298
+2025-03-20 11:28:48,263 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'parameters': {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish', 'post_type': 'page'}, 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:28:48,264 - api.main - INFO - Direct tool call: add_wordpress_page with params: {'title': 'Nouvelle Page', 'content': 'Contenu de la page', 'status': 'publish', 'post_type': 'page'}
+2025-03-20 11:28:48,266 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:28:49,288 - wordpress.connector - INFO - Post created with ID: 2301
+2025-03-20 11:29:32,351 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 21: invalid continuation byte
+2025-03-20 11:29:32,351 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 11:29:58,954 - api.main - INFO - Received command: {'command': 'Cree une nouvelle page avec le titre "Nouvelle Page" et le contenu "Contenu de la page"', 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:29:58,954 - api.main - INFO - Natural language command: Cree une nouvelle page avec le titre "Nouvelle Page" et le contenu "Contenu de la page"
+2025-03-20 11:29:58,955 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:29:59,764 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:29:59,768 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:29:59,769 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:31:16,551 - api.main - INFO - Received command: {'command': 'Cree une nouvelle page avec le titre "Nouvelle Page" et le contenu "Contenu de la page"', 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:31:16,551 - api.main - INFO - Natural language command: Cree une nouvelle page avec le titre "Nouvelle Page" et le contenu "Contenu de la page"
+2025-03-20 11:31:16,552 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:31:17,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:31:17,312 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:31:17,312 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:32:17,962 - api.main - INFO - Client 378286b0-cc16-402a-8a06-da03a82aa0e2 disconnected - connection cancelled
+2025-03-20 11:32:17,963 - api.main - INFO - Removing client 378286b0-cc16-402a-8a06-da03a82aa0e2 from sse_clients dictionary
+2025-03-20 11:32:17,963 - api.main - INFO - Ping task cancelled for client 378286b0-cc16-402a-8a06-da03a82aa0e2
+2025-03-20 11:33:17,290 - api.main - INFO - Received command: {'command': 'ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"', 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:33:17,290 - api.main - WARNING - Client 378286b0-cc16-402a-8a06-da03a82aa0e2 not found in sse_clients. Auto-registering.
+2025-03-20 11:33:17,291 - api.main - INFO - Natural language command: ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"
+2025-03-20 11:33:17,292 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:33:18,212 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:33:18,213 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:33:18,213 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:33:18,352 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:33:18,353 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:33:18,353 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:33:18,640 - wordpress.connector - INFO - Post created with ID: 2303
+2025-03-20 11:33:27,232 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 11:33:27,232 - api.main - INFO - New SSE connection with generated ID: bd95db41-fc52-4877-9ca9-42cc38cebad3
+2025-03-20 11:33:27,233 - api.main - INFO - Registering client bd95db41-fc52-4877-9ca9-42cc38cebad3 in sse_clients dictionary
+2025-03-20 11:33:27,234 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 11:33:36,058 - api.main - INFO - Received command: {'command': 'ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"', 'client_id': '378286b0-cc16-402a-8a06-da03a82aa0e2'}
+2025-03-20 11:33:36,059 - api.main - INFO - Natural language command: ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"
+2025-03-20 11:33:36,060 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:33:36,845 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:33:36,846 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:33:36,846 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:33:37,032 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:33:37,033 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:33:37,033 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:33:37,464 - wordpress.connector - INFO - Post created with ID: 2305
+2025-03-20 11:34:25,161 - api.main - INFO - Received command: {'command': 'ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"', 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:34:25,161 - api.main - INFO - Natural language command: ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"
+2025-03-20 11:34:25,162 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:34:25,829 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:34:25,829 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:34:25,830 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:34:26,039 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:34:26,040 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:34:26,040 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:34:26,250 - wordpress.connector - INFO - Post created with ID: 2307
+2025-03-20 11:35:58,359 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 21: invalid continuation byte
+2025-03-20 11:35:58,360 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 11:36:38,847 - api.main - INFO - Received command: {'command': 'ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"', 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:36:38,848 - api.main - INFO - Natural language command: ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"
+2025-03-20 11:36:38,849 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:36:39,575 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:36:39,576 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:36:39,576 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:36:39,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:36:39,720 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:36:39,721 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:36:40,212 - wordpress.connector - INFO - Post created with ID: 2309
+2025-03-20 11:38:32,642 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe9 in position 62: invalid continuation byte
+2025-03-20 11:38:32,643 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 11:38:53,134 - api.main - INFO - Received command: {'tool_name': 'add_wordpress_page', 'command': 'ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"', 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:38:53,134 - api.main - INFO - Natural language command: ajoute une page avec le titre "Ma Nouvelle Page" et le contenu "Voici le contenu de ma nouvelle page"
+2025-03-20 11:38:53,135 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:38:53,856 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:38:53,857 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:38:53,858 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:38:54,002 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:38:54,003 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:38:54,003 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:38:54,535 - wordpress.connector - INFO - Post created with ID: 2311
+2025-03-20 11:43:19,021 - api.main - INFO - Received command: {'tool_name': 'update_wordpress_content', 'parameters': {'post_id': 966, 'title': 'Nouveau Titre', 'content': 'Nouveau contenu'}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:43:19,022 - api.main - INFO - Direct tool call: update_wordpress_content with params: {'post_id': 966, 'title': 'Nouveau Titre', 'content': 'Nouveau contenu'}
+2025-03-20 11:43:19,022 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:43:20,226 - wordpress.connector - INFO - Post 966 updated successfully
+2025-03-20 11:44:51,501 - api.main - INFO - Received command: {'tool_name': 'update_wordpress_content', 'parameters': {'post_id': 966, 'content': 'Nouveau sans titre contenu'}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:44:51,502 - api.main - INFO - Direct tool call: update_wordpress_content with params: {'post_id': 966, 'content': 'Nouveau sans titre contenu'}
+2025-03-20 11:44:51,502 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:44:52,577 - wordpress.connector - INFO - Post 966 updated successfully
+2025-03-20 11:47:26,177 - api.main - INFO - Received command: {'tool_name': 'add_section', 'parameters': {'post_id': 966, 'content': 'Mon nouveau contenu', 'position': 1}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:47:26,177 - api.main - INFO - Direct tool call: add_section with params: {'post_id': 966, 'content': 'Mon nouveau contenu', 'position': 1}
+2025-03-20 11:47:26,178 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:48:03,233 - api.main - INFO - Received command: {'tool_name': 'add_section', 'parameters': {'post_id': 5, 'title': 'Nouvelle Section', 'content': 'Mon nouveau contenu', 'position': 0}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:48:03,234 - api.main - INFO - Direct tool call: add_section with params: {'post_id': 5, 'title': 'Nouvelle Section', 'content': 'Mon nouveau contenu', 'position': 0}
+2025-03-20 11:48:03,235 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:49:22,888 - api.main - INFO - Received command: {'tool_name': 'update_wordpress_content', 'parameters': {'post_id': 966, 'content': 'CONTENU_EXISTANT <h2>Nouvelle Section</h2><p>Mon nouveau contenu</p>'}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:49:22,889 - api.main - INFO - Direct tool call: update_wordpress_content with params: {'post_id': 966, 'content': 'CONTENU_EXISTANT <h2>Nouvelle Section</h2><p>Mon nouveau contenu</p>'}
+2025-03-20 11:49:22,890 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:49:24,019 - wordpress.connector - INFO - Post 966 updated successfully
+2025-03-20 11:50:19,136 - api.main - INFO - Received command: {'tool_name': 'update_wordpress_content', 'parameters': {'post_id': 966, 'position': 0, 'content': 'CONTENU_EXISTANT2 <h2>Nouvelle Sec2tion</h2><p>Mon nouveau2 contenu</p>'}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:50:19,137 - api.main - INFO - Direct tool call: update_wordpress_content with params: {'post_id': 966, 'position': 0, 'content': 'CONTENU_EXISTANT2 <h2>Nouvelle Sec2tion</h2><p>Mon nouveau2 contenu</p>'}
+2025-03-20 11:50:19,138 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:50:20,243 - wordpress.connector - INFO - Post 966 updated successfully
+2025-03-20 11:51:02,285 - api.main - INFO - Received command: {'tool_name': 'get_wordpress_content', 'parameters': {'post_id': 5}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:51:02,286 - api.main - INFO - Direct tool call: get_wordpress_content with params: {'post_id': 5}
+2025-03-20 11:51:02,287 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:51:02,971 - wordpress.connector - ERROR - Failed to get post 5: <Fault 401: 'Désolé, vous n’avez pas l’autorisation de modifier cet article.'>
+2025-03-20 11:51:02,972 - api.main - ERROR - Error processing tool call: <Fault 401: 'Désolé, vous n’avez pas l’autorisation de modifier cet article.'>
+2025-03-20 11:51:20,173 - api.main - INFO - Received command: {'tool_name': 'get_wordpress_content', 'parameters': {'post_id': 966}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:51:20,173 - api.main - INFO - Direct tool call: get_wordpress_content with params: {'post_id': 966}
+2025-03-20 11:51:20,174 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:52:24,325 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xe0 in position 253: invalid continuation byte
+2025-03-20 11:52:24,326 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 11:53:10,513 - api.main - INFO - Received command: {'tool_name': 'update_wordpress_content', 'parameters': {'post_id': 966, 'content': 'CONTENU_EXISTANT2 <h2>Nouvelle Sec2tion</h2><p>Mon nouveau2 contenu</p><h2>Section Additionnelle</h2><p>Voici le nouveau contenu que je ajoute a la page existante</p>'}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:53:10,513 - api.main - INFO - Direct tool call: update_wordpress_content with params: {'post_id': 966, 'content': 'CONTENU_EXISTANT2 <h2>Nouvelle Sec2tion</h2><p>Mon nouveau2 contenu</p><h2>Section Additionnelle</h2><p>Voici le nouveau contenu que je ajoute a la page existante</p>'}
+2025-03-20 11:53:10,514 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:53:11,509 - wordpress.connector - INFO - Post 966 updated successfully
+2025-03-20 11:55:23,149 - api.main - INFO - Received command: {'tool_name': 'delete_wordpress_content', 'parameters': {'post_id': 966, 'force': True}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:55:23,149 - api.main - INFO - Direct tool call: delete_wordpress_content with params: {'post_id': 966, 'force': True}
+2025-03-20 11:55:23,151 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 11:55:56,183 - api.main - INFO - Received command: {'command': 'supprime la page avec ID 966', 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 11:55:56,183 - api.main - INFO - Natural language command: supprime la page avec ID 966
+2025-03-20 11:55:56,184 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 11:55:56,920 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:55:56,921 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:55:56,922 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 11:55:57,107 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 11:55:57,108 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 11:55:57,108 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 11:55:57,109 - wordpress.content_manager - WARNING - Attempted restricted operation: delete_content for post 966
+2025-03-20 11:59:53,743 - api.main - INFO - Client bd95db41-fc52-4877-9ca9-42cc38cebad3 disconnected - connection cancelled
+2025-03-20 11:59:53,743 - api.main - INFO - Removing client bd95db41-fc52-4877-9ca9-42cc38cebad3 from sse_clients dictionary
+2025-03-20 11:59:53,744 - api.main - INFO - Ping task cancelled for client bd95db41-fc52-4877-9ca9-42cc38cebad3
+2025-03-20 12:00:49,262 - api.main - INFO - Received command: {'tool_name': 'get_meta_description', 'parameters': {'post_id': 966}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 12:00:49,263 - api.main - WARNING - Client bd95db41-fc52-4877-9ca9-42cc38cebad3 not found in sse_clients. Auto-registering.
+2025-03-20 12:00:49,263 - api.main - INFO - Direct tool call: get_meta_description with params: {'post_id': 966}
+2025-03-20 12:00:49,264 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:00:49,265 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:00:49,694 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:00:49,694 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:00:49,695 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:00:59,733 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:00:59,733 - api.main - INFO - New SSE connection with generated ID: ca466d35-ea90-46db-bdf8-6729e03a8db1
+2025-03-20 12:00:59,735 - api.main - INFO - Registering client ca466d35-ea90-46db-bdf8-6729e03a8db1 in sse_clients dictionary
+2025-03-20 12:00:59,736 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:01:49,596 - api.main - INFO - Received command: {'tool_name': 'get_meta_description', 'parameters': {'post_id': 966}, 'client_id': 'ca466d35-ea90-46db-bdf8-6729e03a8db1'}
+2025-03-20 12:01:49,597 - api.main - INFO - Direct tool call: get_meta_description with params: {'post_id': 966}
+2025-03-20 12:01:49,598 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 12:01:49,599 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:01:50,045 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:01:50,046 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:01:50,046 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:02:28,101 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'ca466d35-ea90-46db-bdf8-6729e03a8db1'}
+2025-03-20 12:02:28,102 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 12:02:28,103 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:02:29,226 - wordpress.connector - ERROR - Failed to update post metadata for 966: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 12:02:29,227 - api.main - ERROR - Error processing tool call: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 12:06:20,024 - api.main - INFO - Received command: {'tool_name': 'get_meta_description', 'parameters': {'post_id': 966}, 'client_id': 'ca466d35-ea90-46db-bdf8-6729e03a8db1'}
+2025-03-20 12:06:20,024 - api.main - INFO - Direct tool call: get_meta_description with params: {'post_id': 966}
+2025-03-20 12:06:20,026 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:06:33,701 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'ca466d35-ea90-46db-bdf8-6729e03a8db1'}
+2025-03-20 12:06:33,702 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 12:06:33,703 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:06:34,604 - wordpress.connector - ERROR - Failed to update post metadata for 966: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 12:06:34,605 - api.main - ERROR - Error processing tool call: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 12:07:02,387 - api.main - INFO - Client ca466d35-ea90-46db-bdf8-6729e03a8db1 disconnected - connection cancelled
+2025-03-20 12:07:02,388 - api.main - INFO - Removing client ca466d35-ea90-46db-bdf8-6729e03a8db1 from sse_clients dictionary
+2025-03-20 12:07:02,388 - api.main - INFO - Ping task cancelled for client ca466d35-ea90-46db-bdf8-6729e03a8db1
+2025-03-20 12:07:26,232 - api.main - INFO - Received command: {'tool_name': 'get_meta_description', 'parameters': {'post_id': 966}, 'client_id': 'ca466d35-ea90-46db-bdf8-6729e03a8db1'}
+2025-03-20 12:07:26,233 - api.main - WARNING - Client ca466d35-ea90-46db-bdf8-6729e03a8db1 not found in sse_clients. Auto-registering.
+2025-03-20 12:07:26,233 - api.main - INFO - Direct tool call: get_meta_description with params: {'post_id': 966}
+2025-03-20 12:07:26,234 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:07:26,235 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:07:26,736 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:07:26,737 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:07:26,737 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:07:33,062 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:07:33,062 - api.main - INFO - New SSE connection with generated ID: 96ca8c84-86e9-4082-8ffc-2b2ed476871c
+2025-03-20 12:07:33,063 - api.main - INFO - Registering client 96ca8c84-86e9-4082-8ffc-2b2ed476871c in sse_clients dictionary
+2025-03-20 12:07:33,065 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:08:08,964 - api.main - INFO - Received command: {'tool_name': 'get_meta_description', 'parameters': {'post_id': 966}, 'client_id': '96ca8c84-86e9-4082-8ffc-2b2ed476871c'}
+2025-03-20 12:08:08,965 - api.main - INFO - Direct tool call: get_meta_description with params: {'post_id': 966}
+2025-03-20 12:08:08,966 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:08:38,598 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '96ca8c84-86e9-4082-8ffc-2b2ed476871c'}
+2025-03-20 12:08:38,598 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 12:08:38,599 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:08:39,589 - wordpress.connector - WARNING - Metadata update failed for post 966: {"code":"rest_post_invalid_id","message":"Identifiant de l\u2019article non valide.","data":{"status":404}}
+2025-03-20 12:10:04,751 - api.main - INFO - Client 96ca8c84-86e9-4082-8ffc-2b2ed476871c disconnected - connection cancelled
+2025-03-20 12:10:04,752 - api.main - INFO - Removing client 96ca8c84-86e9-4082-8ffc-2b2ed476871c from sse_clients dictionary
+2025-03-20 12:10:04,752 - api.main - INFO - Ping task cancelled for client 96ca8c84-86e9-4082-8ffc-2b2ed476871c
+2025-03-20 12:10:27,876 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:10:27,876 - api.main - INFO - New SSE connection with generated ID: 5cfedce8-74df-4c48-ab8f-e937819c0eed
+2025-03-20 12:10:27,877 - api.main - INFO - Registering client 5cfedce8-74df-4c48-ab8f-e937819c0eed in sse_clients dictionary
+2025-03-20 12:10:27,879 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:10:49,245 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '5cfedce8-74df-4c48-ab8f-e937819c0eed'}
+2025-03-20 12:10:49,245 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 12:10:49,246 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:10:49,247 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:10:49,908 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:10:49,908 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:10:49,908 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:10:50,887 - wordpress.connector - WARNING - Metadata update failed for post 966: Response: {"code":"rest_no_route","message":"Aucune route correspondante \u00e0 l\u2019URL et \u00e0 la m\u00e9thode de requ\u00eate n\u2019a \u00e9t\u00e9 trouv\u00e9e.","data":{"status":404}}, Yoast Response: {"code":"rest_no_route","message":"Aucune route correspondante \u00e0 l\u2019URL et \u00e0 la m\u00e9thode de requ\u00eate n\u2019a \u00e9t\u00e9 trouv\u00e9e.","data":{"status":404}}
+2025-03-20 12:12:36,195 - api.main - INFO - Client 5cfedce8-74df-4c48-ab8f-e937819c0eed disconnected - connection cancelled
+2025-03-20 12:12:36,196 - api.main - INFO - Removing client 5cfedce8-74df-4c48-ab8f-e937819c0eed from sse_clients dictionary
+2025-03-20 12:12:36,196 - api.main - INFO - Ping task cancelled for client 5cfedce8-74df-4c48-ab8f-e937819c0eed
+2025-03-20 12:13:28,732 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:13:28,732 - api.main - INFO - New SSE connection with generated ID: 7557b642-2156-4109-a35c-3156e690df14
+2025-03-20 12:13:28,733 - api.main - INFO - Registering client 7557b642-2156-4109-a35c-3156e690df14 in sse_clients dictionary
+2025-03-20 12:13:28,734 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:14:15,498 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {}, 'client_id': '7557b642-2156-4109-a35c-3156e690df14'}
+2025-03-20 12:14:15,499 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 12:14:55,425 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': 'bd95db41-fc52-4877-9ca9-42cc38cebad3'}
+2025-03-20 12:14:55,426 - api.main - WARNING - Client bd95db41-fc52-4877-9ca9-42cc38cebad3 not found in sse_clients. Auto-registering.
+2025-03-20 12:14:55,426 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 12:14:55,427 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:14:55,428 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:14:56,210 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:14:56,210 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:14:56,211 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:14:56,712 - api.main - ERROR - Error processing tool call: 'WordPressContentManager' object has no attribute 'get_seo_info'
+2025-03-20 12:15:27,737 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': '7557b642-2156-4109-a35c-3156e690df14'}
+2025-03-20 12:15:27,737 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 12:15:27,738 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:15:28,240 - api.main - ERROR - Error processing tool call: 'WordPressContentManager' object has no attribute 'get_seo_info'
+2025-03-20 12:16:33,821 - api.main - INFO - Client 7557b642-2156-4109-a35c-3156e690df14 disconnected - connection cancelled
+2025-03-20 12:16:33,821 - api.main - INFO - Removing client 7557b642-2156-4109-a35c-3156e690df14 from sse_clients dictionary
+2025-03-20 12:16:33,822 - api.main - INFO - Ping task cancelled for client 7557b642-2156-4109-a35c-3156e690df14
+2025-03-20 12:17:05,559 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:17:05,560 - api.main - INFO - New SSE connection with generated ID: b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc
+2025-03-20 12:17:05,562 - api.main - INFO - Registering client b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc in sse_clients dictionary
+2025-03-20 12:17:05,563 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:17:21,368 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': 'b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc'}
+2025-03-20 12:17:21,369 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 12:17:21,370 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 12:17:21,371 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:17:21,795 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:17:21,796 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:17:21,796 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:17:57,828 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {}, 'client_id': 'b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc'}
+2025-03-20 12:17:57,829 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 12:18:43,178 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {}, 'client_id': 'b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc'}
+2025-03-20 12:18:43,179 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 12:19:13,484 - api.main - INFO - Received command: {'command': 'obtenir les informations seo du site', 'client_id': 'b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc'}
+2025-03-20 12:19:13,485 - api.main - INFO - Natural language command: obtenir les informations seo du site
+2025-03-20 12:19:13,486 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:19:14,284 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:19:14,291 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:19:14,291 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 12:19:14,460 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:19:14,461 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:19:14,462 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 12:20:13,382 - api.main - INFO - Client b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc disconnected - connection cancelled
+2025-03-20 12:20:13,383 - api.main - INFO - Removing client b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc from sse_clients dictionary
+2025-03-20 12:20:13,383 - api.main - INFO - Ping task cancelled for client b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc
+2025-03-20 12:20:24,361 - api.main - INFO - Received command: {'command': 'montre moi les informations seo du site', 'client_id': 'b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc'}
+2025-03-20 12:20:24,361 - api.main - WARNING - Client b72f5b35-ec82-46fc-85ca-bb87e2c5d8bc not found in sse_clients. Auto-registering.
+2025-03-20 12:20:24,361 - api.main - INFO - Natural language command: montre moi les informations seo du site
+2025-03-20 12:20:24,362 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:20:24,363 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 12:20:24,973 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 12:20:24,973 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 12:20:24,973 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 12:20:25,731 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:20:25,734 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:20:25,734 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 12:20:25,933 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:20:25,934 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:20:25,934 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 12:20:42,151 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 12:20:42,152 - api.main - INFO - New SSE connection with generated ID: 63d8feff-cffd-4a53-b105-dda50c2d49b5
+2025-03-20 12:20:42,153 - api.main - INFO - Registering client 63d8feff-cffd-4a53-b105-dda50c2d49b5 in sse_clients dictionary
+2025-03-20 12:20:42,154 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 12:21:04,088 - api.main - INFO - Received command: {'command': 'montre moi les informations seo du site', 'client_id': '63d8feff-cffd-4a53-b105-dda50c2d49b5'}
+2025-03-20 12:21:04,088 - api.main - INFO - Natural language command: montre moi les informations seo du site
+2025-03-20 12:21:04,089 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:21:04,800 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:21:04,801 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:21:04,802 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 12:21:04,938 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:21:04,939 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:21:04,939 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 12:21:27,199 - api.main - INFO - Received command: {'command': 'montre moi les informations seo de la page 966', 'client_id': '63d8feff-cffd-4a53-b105-dda50c2d49b5'}
+2025-03-20 12:21:27,199 - api.main - INFO - Natural language command: montre moi les informations seo de la page 966
+2025-03-20 12:21:27,200 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 12:21:28,022 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:21:28,024 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:21:28,024 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 12:21:28,281 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 12:21:28,283 - nlp.intent_parser - ERROR - OpenAI API error in parameter extraction: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 12:21:28,283 - nlp.intent_parser - INFO - Using rule-based parameter extraction
+2025-03-20 12:22:01,348 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': '63d8feff-cffd-4a53-b105-dda50c2d49b5'}
+2025-03-20 12:22:01,349 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 12:22:01,350 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:36:18,827 - api.main - INFO - Client 63d8feff-cffd-4a53-b105-dda50c2d49b5 disconnected - connection cancelled
+2025-03-20 18:36:18,851 - api.main - INFO - Removing client 63d8feff-cffd-4a53-b105-dda50c2d49b5 from sse_clients dictionary
+2025-03-20 18:36:18,852 - api.main - INFO - Ping task cancelled for client 63d8feff-cffd-4a53-b105-dda50c2d49b5
+2025-03-20 18:40:10,665 - api.main - INFO - GET /docs - 200 - 0.00s
+2025-03-20 18:40:10,862 - api.main - INFO - GET /favicon.ico - 404 - 0.00s
+2025-03-20 18:40:28,804 - api.main - INFO - GET /redoc - 200 - 0.00s
+2025-03-20 18:42:17,871 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-20 18:42:22,193 - api.main - INFO - GET / - 200 - 0.00s
+2025-03-20 18:42:22,211 - api.main - INFO - GET /loginMsg.js - 404 - 0.00s
+2025-03-20 18:42:22,232 - api.main - INFO - GET /cgi/get.cgi - 404 - 0.00s
+2025-03-20 18:43:42,549 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:43:42,550 - api.main - INFO - New SSE connection with generated ID: 5146419e-9afc-40ba-bf19-273fb09d2b9b
+2025-03-20 18:43:42,551 - api.main - INFO - Registering client 5146419e-9afc-40ba-bf19-273fb09d2b9b in sse_clients dictionary
+2025-03-20 18:43:42,552 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:44:27,426 - api.main - INFO - Received command: get_all_pages
+2025-03-20 18:44:27,426 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:44:30,043 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:44:30,043 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:44:30,044 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:44:30,359 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 18:44:30,374 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 18:44:30,375 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 18:44:30,421 - api.main - ERROR - Error processing command: 1 validation error for CommandResponse
+operation
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type
+2025-03-20 18:44:57,079 - api.main - INFO - Received command: {'command': 'get_all_pages', 'client_id': '5146419e-9afc-40ba-bf19-273fb09d2b9b', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:44:57,080 - api.main - INFO - Natural language command: get_all_pages
+2025-03-20 18:44:57,081 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:44:57,844 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2025-03-20 18:44:57,845 - nlp.intent_parser - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************xtIA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-20 18:44:57,845 - nlp.intent_parser - INFO - Falling back to rule-based intent extraction
+2025-03-20 18:46:05,499 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': '5146419e-9afc-40ba-bf19-273fb09d2b9b', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:46:05,499 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:46:05,500 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:46:06,490 - wordpress.connector - ERROR - Failed to get pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:46:06,490 - wordpress.content_manager - ERROR - Error getting all pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:46:48,149 - api.main - INFO - Client 5146419e-9afc-40ba-bf19-273fb09d2b9b disconnected - connection cancelled
+2025-03-20 18:46:48,150 - api.main - INFO - Removing client 5146419e-9afc-40ba-bf19-273fb09d2b9b from sse_clients dictionary
+2025-03-20 18:46:48,151 - api.main - INFO - Ping task cancelled for client 5146419e-9afc-40ba-bf19-273fb09d2b9b
+2025-03-20 18:47:03,800 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': 'votre_client_id', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:47:03,800 - api.main - WARNING - Client votre_client_id not found in sse_clients. Auto-registering.
+2025-03-20 18:47:03,801 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:47:03,802 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:47:03,803 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:47:04,455 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:47:04,456 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:47:04,456 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:47:05,231 - wordpress.connector - ERROR - Failed to get pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:47:05,232 - wordpress.content_manager - ERROR - Error getting all pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:47:27,304 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:47:27,305 - api.main - INFO - New SSE connection with generated ID: d1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab
+2025-03-20 18:47:27,306 - api.main - INFO - Registering client d1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab in sse_clients dictionary
+2025-03-20 18:47:27,306 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:47:55,190 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': 'd1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:47:55,191 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:47:55,192 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:47:56,104 - wordpress.connector - ERROR - Failed to get pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:47:56,104 - wordpress.content_manager - ERROR - Error getting all pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:49:03,268 - api.main - INFO - Client d1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab disconnected - connection cancelled
+2025-03-20 18:49:03,269 - api.main - INFO - Removing client d1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab from sse_clients dictionary
+2025-03-20 18:49:03,269 - api.main - INFO - Ping task cancelled for client d1c9b7ec-ae1c-46b8-beb4-31f528f9e0ab
+2025-03-20 18:49:48,497 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:49:48,497 - api.main - INFO - New SSE connection with generated ID: ed58fdb3-79a2-42b8-bf89-85a1cd219a9f
+2025-03-20 18:49:48,499 - api.main - INFO - Registering client ed58fdb3-79a2-42b8-bf89-85a1cd219a9f in sse_clients dictionary
+2025-03-20 18:49:48,500 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:50:09,824 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': 'ed58fdb3-79a2-42b8-bf89-85a1cd219a9f', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:50:09,824 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:50:09,825 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:50:09,826 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:50:10,436 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:50:10,436 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:50:10,437 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:50:11,248 - wordpress.connector - ERROR - Failed to get pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:50:11,248 - wordpress.content_manager - ERROR - Error getting all pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:51:15,952 - api.main - INFO - Client ed58fdb3-79a2-42b8-bf89-85a1cd219a9f disconnected - connection cancelled
+2025-03-20 18:51:15,953 - api.main - INFO - Removing client ed58fdb3-79a2-42b8-bf89-85a1cd219a9f from sse_clients dictionary
+2025-03-20 18:51:15,954 - api.main - INFO - Ping task cancelled for client ed58fdb3-79a2-42b8-bf89-85a1cd219a9f
+2025-03-20 18:51:25,348 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:51:25,349 - api.main - INFO - New SSE connection with generated ID: bb2e418d-8c9c-42db-bb1f-c325052327a4
+2025-03-20 18:51:25,351 - api.main - INFO - Registering client bb2e418d-8c9c-42db-bb1f-c325052327a4 in sse_clients dictionary
+2025-03-20 18:51:25,352 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:51:48,161 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': 'bb2e418d-8c9c-42db-bb1f-c325052327a4', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:51:48,162 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:51:48,163 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:51:48,164 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:51:49,042 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:51:49,043 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:51:49,043 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:51:49,828 - wordpress.connector - ERROR - Error fetching pages from WordPress: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:51:49,828 - wordpress.connector - ERROR - Failed to get pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:51:49,828 - wordpress.content_manager - ERROR - Error getting all pages: module 'collections' has no attribute 'Iterable'
+2025-03-20 18:53:10,169 - api.main - INFO - Client bb2e418d-8c9c-42db-bb1f-c325052327a4 disconnected - connection cancelled
+2025-03-20 18:53:10,170 - api.main - INFO - Removing client bb2e418d-8c9c-42db-bb1f-c325052327a4 from sse_clients dictionary
+2025-03-20 18:53:10,170 - api.main - INFO - Ping task cancelled for client bb2e418d-8c9c-42db-bb1f-c325052327a4
+2025-03-20 18:53:57,501 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:53:57,502 - api.main - INFO - New SSE connection with generated ID: a9bf7f9a-b035-47a1-a77a-4368491bfc50
+2025-03-20 18:53:57,503 - api.main - INFO - Registering client a9bf7f9a-b035-47a1-a77a-4368491bfc50 in sse_clients dictionary
+2025-03-20 18:53:57,504 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:54:28,240 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': 'a9bf7f9a-b035-47a1-a77a-4368491bfc50', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:54:28,240 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:54:28,241 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 18:54:28,243 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:54:28,890 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:54:28,891 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:54:28,891 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:54:29,999 - api.main - ERROR - Error sending event to client a9bf7f9a-b035-47a1-a77a-4368491bfc50: Object of type SimpleNamespace is not JSON serializable
+2025-03-20 18:55:20,586 - api.main - INFO - Client a9bf7f9a-b035-47a1-a77a-4368491bfc50 disconnected - connection cancelled
+2025-03-20 18:55:20,587 - api.main - INFO - Removing client a9bf7f9a-b035-47a1-a77a-4368491bfc50 from sse_clients dictionary
+2025-03-20 18:55:20,588 - api.main - INFO - Ping task cancelled for client a9bf7f9a-b035-47a1-a77a-4368491bfc50
+2025-03-20 18:55:33,769 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:55:33,770 - api.main - INFO - New SSE connection with generated ID: 8e9184af-0e85-41d1-9a65-721cf59846a2
+2025-03-20 18:55:33,771 - api.main - INFO - Registering client 8e9184af-0e85-41d1-9a65-721cf59846a2 in sse_clients dictionary
+2025-03-20 18:55:33,773 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:56:37,650 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': '8e9184af-0e85-41d1-9a65-721cf59846a2', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:56:37,650 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:56:37,651 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 18:56:37,652 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:56:38,322 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:56:38,323 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:56:38,323 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:56:39,204 - wordpress.content_manager - ERROR - Error getting all pages: 'dict' object has no attribute 'id'
+2025-03-20 18:57:12,251 - api.main - INFO - Client 8e9184af-0e85-41d1-9a65-721cf59846a2 disconnected - connection cancelled
+2025-03-20 18:57:12,251 - api.main - INFO - Removing client 8e9184af-0e85-41d1-9a65-721cf59846a2 from sse_clients dictionary
+2025-03-20 18:57:12,252 - api.main - INFO - Ping task cancelled for client 8e9184af-0e85-41d1-9a65-721cf59846a2
+2025-03-20 18:57:24,404 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 18:57:24,404 - api.main - INFO - New SSE connection with generated ID: 0a226067-f570-4faf-8d3b-f491e515445a
+2025-03-20 18:57:24,406 - api.main - INFO - Registering client 0a226067-f570-4faf-8d3b-f491e515445a in sse_clients dictionary
+2025-03-20 18:57:24,406 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 18:57:49,169 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': '0a226067-f570-4faf-8d3b-f491e515445a', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:57:49,169 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:57:49,170 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 18:57:49,171 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 18:57:49,644 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 18:57:49,644 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 18:57:49,645 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 18:59:14,196 - api.main - INFO - Received command: {'tool_name': 'get_all_pages', 'client_id': '0a226067-f570-4faf-8d3b-f491e515445a', 'parameters': {'number': 10, 'page': 1, 'status': 'publish'}}
+2025-03-20 18:59:14,197 - api.main - INFO - Direct tool call: get_all_pages with params: {'number': 10, 'page': 1, 'status': 'publish'}
+2025-03-20 18:59:14,198 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:04:14,516 - api.main - INFO - Client 0a226067-f570-4faf-8d3b-f491e515445a disconnected - connection cancelled
+2025-03-20 19:04:14,517 - api.main - INFO - Removing client 0a226067-f570-4faf-8d3b-f491e515445a from sse_clients dictionary
+2025-03-20 19:04:14,517 - api.main - INFO - Ping task cancelled for client 0a226067-f570-4faf-8d3b-f491e515445a
+2025-03-20 19:06:03,649 - api.main - ERROR - Error parsing request body: 'utf-8' codec can't decode byte 0xc0 in position 186: invalid start byte
+2025-03-20 19:06:03,650 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 19:07:24,284 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:07:24,285 - api.main - INFO - New SSE connection with generated ID: 5896f570-1285-4567-860f-9d1c0b25e4f3
+2025-03-20 19:07:24,286 - api.main - INFO - Registering client 5896f570-1285-4567-860f-9d1c0b25e4f3 in sse_clients dictionary
+2025-03-20 19:07:24,289 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:07:51,761 - api.main - INFO - Received command: {'tool_name': 'add_content_from_template', 'client_id': '5896f570-1285-4567-860f-9d1c0b25e4f3', 'parameters': {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}}
+2025-03-20 19:07:51,761 - api.main - INFO - Direct tool call: add_content_from_template with params: {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}
+2025-03-20 19:07:51,763 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:07:51,764 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:07:53,665 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:07:53,666 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:07:53,666 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:08:06,215 - api.main - INFO - Received command: {'tool_name': 'add_content_from_template', 'client_id': '5896f570-1285-4567-860f-9d1c0b25e4f3', 'parameters': {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}}
+2025-03-20 19:08:06,215 - api.main - INFO - Direct tool call: add_content_from_template with params: {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}
+2025-03-20 19:08:06,216 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:08:45,147 - api.main - INFO - Client 5896f570-1285-4567-860f-9d1c0b25e4f3 disconnected - connection cancelled
+2025-03-20 19:08:45,147 - api.main - INFO - Removing client 5896f570-1285-4567-860f-9d1c0b25e4f3 from sse_clients dictionary
+2025-03-20 19:08:45,148 - api.main - INFO - Ping task cancelled for client 5896f570-1285-4567-860f-9d1c0b25e4f3
+2025-03-20 19:08:51,605 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:08:51,605 - api.main - INFO - New SSE connection with generated ID: 99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1
+2025-03-20 19:08:51,606 - api.main - INFO - Registering client 99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1 in sse_clients dictionary
+2025-03-20 19:08:51,608 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:09:11,568 - api.main - INFO - Received command: {'tool_name': 'add_content_from_template', 'client_id': '99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1', 'parameters': {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}}
+2025-03-20 19:09:11,568 - api.main - INFO - Direct tool call: add_content_from_template with params: {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}
+2025-03-20 19:09:11,569 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:09:11,570 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:09:12,064 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:09:12,064 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:09:12,065 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:09:12,753 - wordpress.connector - INFO - Post created with ID: 2318
+2025-03-20 19:12:10,214 - api.main - INFO - Client 99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1 disconnected - connection cancelled
+2025-03-20 19:12:10,214 - api.main - INFO - Removing client 99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1 from sse_clients dictionary
+2025-03-20 19:12:10,214 - api.main - INFO - Ping task cancelled for client 99e03b9a-ce21-4e89-bf99-4b8aa7e9cfc1
+2025-03-20 19:12:31,841 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:12:31,841 - api.main - INFO - New SSE connection with generated ID: c3ade929-e6bb-4a1c-9a6b-61b33f80de02
+2025-03-20 19:12:31,842 - api.main - INFO - Registering client c3ade929-e6bb-4a1c-9a6b-61b33f80de02 in sse_clients dictionary
+2025-03-20 19:12:31,843 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:13:10,818 - api.main - INFO - Received command: {'tool_name': 'add_content_from_template', 'client_id': 'c3ade929-e6bb-4a1c-9a6b-61b33f80de02', 'parameters': {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}}
+2025-03-20 19:13:10,818 - api.main - INFO - Direct tool call: add_content_from_template with params: {'template_name': 'page_standard', 'variables': {'name': 'A propos', 'introduction': 'Bienvenue sur notre page A propos', 'services_description': 'Nous proposons les services suivants', 'services_list': '<li>Service 1</li><li>Service 2</li><li>Service 3</li>', 'contact_info': 'Contactez-nous au 01 23 45 67 89'}}
+2025-03-20 19:13:10,819 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:13:10,820 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:13:11,489 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:13:11,489 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:13:11,490 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:13:12,199 - wordpress.connector - INFO - Post created with ID: 2320
+2025-03-20 19:17:12,473 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': 'c3ade929-e6bb-4a1c-9a6b-61b33f80de02'}
+2025-03-20 19:17:12,474 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 19:17:12,475 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:18:09,035 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'c3ade929-e6bb-4a1c-9a6b-61b33f80de02'}
+2025-03-20 19:18:09,035 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:18:09,036 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:18:10,229 - wordpress.connector - WARNING - Metadata update failed for post 966: Response: {"code":"rest_no_route","message":"Aucune route correspondante \u00e0 l\u2019URL et \u00e0 la m\u00e9thode de requ\u00eate n\u2019a \u00e9t\u00e9 trouv\u00e9e.","data":{"status":404}}, Yoast Response: {"code":"rest_no_route","message":"Aucune route correspondante \u00e0 l\u2019URL et \u00e0 la m\u00e9thode de requ\u00eate n\u2019a \u00e9t\u00e9 trouv\u00e9e.","data":{"status":404}}
+2025-03-20 19:19:35,658 - api.main - INFO - Client c3ade929-e6bb-4a1c-9a6b-61b33f80de02 disconnected - connection cancelled
+2025-03-20 19:19:35,659 - api.main - INFO - Removing client c3ade929-e6bb-4a1c-9a6b-61b33f80de02 from sse_clients dictionary
+2025-03-20 19:19:35,659 - api.main - INFO - Ping task cancelled for client c3ade929-e6bb-4a1c-9a6b-61b33f80de02
+2025-03-20 19:19:43,869 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'c3ade929-e6bb-4a1c-9a6b-61b33f80de02'}
+2025-03-20 19:19:43,870 - api.main - WARNING - Client c3ade929-e6bb-4a1c-9a6b-61b33f80de02 not found in sse_clients. Auto-registering.
+2025-03-20 19:19:43,870 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:19:43,871 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:19:43,872 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:19:44,363 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:19:44,363 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:19:44,363 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:19:45,219 - wordpress.connector - INFO - Metadata updated successfully for post 966
+2025-03-20 19:19:53,176 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:19:53,176 - api.main - INFO - New SSE connection with generated ID: 001010cd-7728-4238-8813-58aaa66dd77a
+2025-03-20 19:19:53,178 - api.main - INFO - Registering client 001010cd-7728-4238-8813-58aaa66dd77a in sse_clients dictionary
+2025-03-20 19:19:53,179 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:20:16,001 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '001010cd-7728-4238-8813-58aaa66dd77a'}
+2025-03-20 19:20:16,001 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:20:16,002 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:20:17,151 - wordpress.connector - INFO - Metadata updated successfully for post 966
+2025-03-20 19:21:12,544 - api.main - INFO - Received command: {'tool_name': 'get_seo_info', 'parameters': {'post_id': 966}, 'client_id': '001010cd-7728-4238-8813-58aaa66dd77a'}
+2025-03-20 19:21:12,545 - api.main - INFO - Direct tool call: get_seo_info with params: {'post_id': 966}
+2025-03-20 19:21:12,546 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:25:18,463 - api.main - INFO - Client 001010cd-7728-4238-8813-58aaa66dd77a disconnected - connection cancelled
+2025-03-20 19:25:18,464 - api.main - INFO - Removing client 001010cd-7728-4238-8813-58aaa66dd77a from sse_clients dictionary
+2025-03-20 19:25:18,464 - api.main - INFO - Ping task cancelled for client 001010cd-7728-4238-8813-58aaa66dd77a
+2025-03-20 19:25:51,236 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:25:51,236 - api.main - INFO - New SSE connection with generated ID: 900817e0-b4c0-40df-81ec-5230cb179703
+2025-03-20 19:25:51,238 - api.main - INFO - Registering client 900817e0-b4c0-40df-81ec-5230cb179703 in sse_clients dictionary
+2025-03-20 19:25:51,239 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:26:20,487 - api.main - ERROR - Error parsing request body: Expecting ',' delimiter: line 7 column 21 (char 197)
+2025-03-20 19:26:20,488 - api.main - INFO - POST /command/sse - 400 - 0.00s
+2025-03-20 19:26:58,972 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '00817e0-b4c0-40df-81ec-5230cb179703'}
+2025-03-20 19:26:58,973 - api.main - WARNING - Client 00817e0-b4c0-40df-81ec-5230cb179703 not found in sse_clients. Auto-registering.
+2025-03-20 19:26:58,973 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:26:58,974 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:26:58,975 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:26:59,421 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:26:59,421 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:26:59,421 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:27:00,217 - wordpress.connector - ERROR - Failed to update post metadata for 966: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:27:00,217 - api.main - ERROR - Error processing tool call: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:27:36,440 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '900817e0-b4c0-40df-81ec-5230cb179703'}
+2025-03-20 19:27:36,441 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:27:36,442 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:27:37,522 - wordpress.connector - ERROR - Failed to update post metadata for 966: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:27:37,523 - api.main - ERROR - Error processing tool call: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:28:25,110 - api.main - INFO - Client 900817e0-b4c0-40df-81ec-5230cb179703 disconnected - connection cancelled
+2025-03-20 19:28:25,111 - api.main - INFO - Removing client 900817e0-b4c0-40df-81ec-5230cb179703 from sse_clients dictionary
+2025-03-20 19:28:25,111 - api.main - INFO - Ping task cancelled for client 900817e0-b4c0-40df-81ec-5230cb179703
+2025-03-20 19:29:16,182 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:29:16,183 - api.main - INFO - New SSE connection with generated ID: ae4f88d9-7786-4b8f-aa11-972cd1595f7c
+2025-03-20 19:29:16,184 - api.main - INFO - Registering client ae4f88d9-7786-4b8f-aa11-972cd1595f7c in sse_clients dictionary
+2025-03-20 19:29:16,185 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:29:46,074 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'ae4f88d9-7786-4b8f-aa11-972cd1595f7c'}
+2025-03-20 19:29:46,074 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:29:46,075 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:29:46,076 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:29:46,565 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:29:46,565 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:29:46,566 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:29:47,642 - wordpress.connector - WARNING - Yoast REST API update failed: {"code":"rest_post_invalid_id","message":"Identifiant de l\u2019article non valide.","data":{"status":404}}
+2025-03-20 19:29:47,642 - wordpress.connector - INFO - Metadata updated successfully for post 966
+2025-03-20 19:32:07,509 - api.main - INFO - Client ae4f88d9-7786-4b8f-aa11-972cd1595f7c disconnected - connection cancelled
+2025-03-20 19:32:07,510 - api.main - INFO - Removing client ae4f88d9-7786-4b8f-aa11-972cd1595f7c from sse_clients dictionary
+2025-03-20 19:32:07,510 - api.main - INFO - Ping task cancelled for client ae4f88d9-7786-4b8f-aa11-972cd1595f7c
+2025-03-20 19:33:20,277 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:33:20,278 - api.main - INFO - New SSE connection with generated ID: 90ec59b3-9de5-4089-858e-0b2059cc53f3
+2025-03-20 19:33:20,279 - api.main - INFO - Registering client 90ec59b3-9de5-4089-858e-0b2059cc53f3 in sse_clients dictionary
+2025-03-20 19:33:20,280 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:33:40,581 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '90ec59b3-9de5-4089-858e-0b2059cc53f3'}
+2025-03-20 19:33:40,582 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:33:40,583 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 19:33:40,584 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:33:41,133 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:33:41,134 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:33:41,134 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:33:41,810 - wordpress.connector - ERROR - Failed to update page metadata for 966: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:33:41,811 - api.main - ERROR - Error processing tool call: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:34:37,302 - api.main - INFO - Client 90ec59b3-9de5-4089-858e-0b2059cc53f3 disconnected - connection cancelled
+2025-03-20 19:34:37,303 - api.main - INFO - Removing client 90ec59b3-9de5-4089-858e-0b2059cc53f3 from sse_clients dictionary
+2025-03-20 19:34:37,303 - api.main - INFO - Ping task cancelled for client 90ec59b3-9de5-4089-858e-0b2059cc53f3
+2025-03-20 19:34:41,298 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '90ec59b3-9de5-4089-858e-0b2059cc53f3'}
+2025-03-20 19:34:41,298 - api.main - WARNING - Client 90ec59b3-9de5-4089-858e-0b2059cc53f3 not found in sse_clients. Auto-registering.
+2025-03-20 19:34:41,299 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:34:41,300 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:34:41,300 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:34:41,812 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:34:41,812 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:34:41,813 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:34:42,483 - wordpress.connector - ERROR - Failed to update page metadata for 966: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:34:42,483 - api.main - ERROR - Error processing tool call: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:34:50,787 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:34:50,788 - api.main - INFO - New SSE connection with generated ID: 3206d829-4c78-447e-9881-3403221cc55a
+2025-03-20 19:34:50,789 - api.main - INFO - Registering client 3206d829-4c78-447e-9881-3403221cc55a in sse_clients dictionary
+2025-03-20 19:34:50,790 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:35:19,723 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '90ec59b3-9de5-4089-858e-0b2059cc53f3'}
+2025-03-20 19:35:19,723 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:35:19,724 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:35:20,624 - wordpress.connector - ERROR - Failed to update page metadata for 966: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:35:20,625 - api.main - ERROR - Error processing tool call: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:35:23,086 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '3206d829-4c78-447e-9881-3403221cc55a'}
+2025-03-20 19:35:23,086 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:35:23,087 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:35:23,757 - wordpress.connector - ERROR - Failed to update page metadata for 966: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:35:23,757 - api.main - ERROR - Error processing tool call: 'WordPressPost' object has no attribute 'content'
+2025-03-20 19:36:11,913 - api.main - INFO - Client 3206d829-4c78-447e-9881-3403221cc55a disconnected - connection cancelled
+2025-03-20 19:36:11,914 - api.main - INFO - Removing client 3206d829-4c78-447e-9881-3403221cc55a from sse_clients dictionary
+2025-03-20 19:36:11,914 - api.main - INFO - Ping task cancelled for client 3206d829-4c78-447e-9881-3403221cc55a
+2025-03-20 19:36:50,839 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:36:50,839 - api.main - INFO - New SSE connection with generated ID: 27d0478c-45d1-4939-964c-b34c5f933701
+2025-03-20 19:36:50,840 - api.main - INFO - Registering client 27d0478c-45d1-4939-964c-b34c5f933701 in sse_clients dictionary
+2025-03-20 19:36:50,842 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:37:09,235 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '27d0478c-45d1-4939-964c-b34c5f933701'}
+2025-03-20 19:37:09,243 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:37:09,244 - api.main - INFO - POST /command/sse - 202 - 0.01s
+2025-03-20 19:37:09,245 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:37:09,728 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:37:09,728 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:37:09,729 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:37:10,777 - wordpress.connector - ERROR - Failed to update page metadata for 966: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:37:10,778 - api.main - ERROR - Error processing tool call: <Fault 401: 'Ce type de publication ne peut pas être supprimé.'>
+2025-03-20 19:39:18,462 - api.main - INFO - Client 27d0478c-45d1-4939-964c-b34c5f933701 disconnected - connection cancelled
+2025-03-20 19:39:18,462 - api.main - INFO - Removing client 27d0478c-45d1-4939-964c-b34c5f933701 from sse_clients dictionary
+2025-03-20 19:39:18,463 - api.main - INFO - Ping task cancelled for client 27d0478c-45d1-4939-964c-b34c5f933701
+2025-03-20 19:39:31,130 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:39:31,131 - api.main - INFO - New SSE connection with generated ID: 38ddcca4-6365-41b7-b6c1-4ea221dc633a
+2025-03-20 19:39:31,132 - api.main - INFO - Registering client 38ddcca4-6365-41b7-b6c1-4ea221dc633a in sse_clients dictionary
+2025-03-20 19:39:31,133 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:40:36,026 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '38ddcca4-6365-41b7-b6c1-4ea221dc633a'}
+2025-03-20 19:40:36,026 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:40:36,027 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:40:36,028 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:40:36,664 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:40:36,665 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:40:36,665 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:40:37,431 - wordpress.connector - INFO - Metadata updated successfully for page 966
+2025-03-20 19:44:22,128 - api.main - INFO - Client 38ddcca4-6365-41b7-b6c1-4ea221dc633a disconnected - connection cancelled
+2025-03-20 19:44:22,128 - api.main - INFO - Removing client 38ddcca4-6365-41b7-b6c1-4ea221dc633a from sse_clients dictionary
+2025-03-20 19:44:22,129 - api.main - INFO - Ping task cancelled for client 38ddcca4-6365-41b7-b6c1-4ea221dc633a
+2025-03-20 19:44:52,159 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:44:52,159 - api.main - INFO - New SSE connection with generated ID: 26304251-c29f-4a71-a1e9-cfb31367b10c
+2025-03-20 19:44:52,161 - api.main - INFO - Registering client 26304251-c29f-4a71-a1e9-cfb31367b10c in sse_clients dictionary
+2025-03-20 19:44:52,163 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:45:11,300 - api.main - INFO - Client 26304251-c29f-4a71-a1e9-cfb31367b10c disconnected - connection cancelled
+2025-03-20 19:45:11,301 - api.main - INFO - Removing client 26304251-c29f-4a71-a1e9-cfb31367b10c from sse_clients dictionary
+2025-03-20 19:45:11,302 - api.main - INFO - Ping task cancelled for client 26304251-c29f-4a71-a1e9-cfb31367b10c
+2025-03-20 19:45:13,397 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:45:13,398 - api.main - INFO - New SSE connection with generated ID: 57d93a5d-0de7-4408-81c5-6544aa0742f8
+2025-03-20 19:45:13,401 - api.main - INFO - Registering client 57d93a5d-0de7-4408-81c5-6544aa0742f8 in sse_clients dictionary
+2025-03-20 19:45:13,403 - api.main - INFO - GET /sse/connect - 200 - 0.01s
+2025-03-20 19:46:42,832 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:46:42,832 - api.main - INFO - New SSE connection with generated ID: a4d44941-8e2c-44db-a8a5-50824feb6050
+2025-03-20 19:46:42,833 - api.main - INFO - Registering client a4d44941-8e2c-44db-a8a5-50824feb6050 in sse_clients dictionary
+2025-03-20 19:46:42,835 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:47:13,325 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'a4d44941-8e2c-44db-a8a5-50824feb6050'}
+2025-03-20 19:47:13,325 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:47:13,326 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:47:13,327 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:47:13,990 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:47:13,990 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:47:13,990 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:47:14,701 - wordpress.connector - WARNING - Failed to update metadata: 404 - {"code":"rest_no_route","message":"Aucune route correspondante \u00e0 l\u2019URL et \u00e0 la m\u00e9thode de requ\u00eate n\u2019a \u00e9t\u00e9 trouv\u00e9e.","data":{"status":404}}
+2025-03-20 19:48:20,075 - api.main - INFO - Client 57d93a5d-0de7-4408-81c5-6544aa0742f8 disconnected - connection cancelled
+2025-03-20 19:48:20,075 - api.main - INFO - Removing client 57d93a5d-0de7-4408-81c5-6544aa0742f8 from sse_clients dictionary
+2025-03-20 19:48:20,076 - api.main - INFO - Client a4d44941-8e2c-44db-a8a5-50824feb6050 disconnected - connection cancelled
+2025-03-20 19:48:20,076 - api.main - INFO - Removing client a4d44941-8e2c-44db-a8a5-50824feb6050 from sse_clients dictionary
+2025-03-20 19:48:20,077 - api.main - INFO - Ping task cancelled for client 57d93a5d-0de7-4408-81c5-6544aa0742f8
+2025-03-20 19:48:20,077 - api.main - INFO - Ping task cancelled for client a4d44941-8e2c-44db-a8a5-50824feb6050
+2025-03-20 19:49:06,795 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': 'a4d44941-8e2c-44db-a8a5-50824feb6050'}
+2025-03-20 19:49:06,795 - api.main - WARNING - Client a4d44941-8e2c-44db-a8a5-50824feb6050 not found in sse_clients. Auto-registering.
+2025-03-20 19:49:06,796 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:49:06,797 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:49:06,798 - nlp.intent_parser - INFO - Intent parser initialized
+2025-03-20 19:49:07,327 - wordpress.connector - INFO - WordPress connection established successfully
+2025-03-20 19:49:07,327 - wordpress.content_manager - INFO - WordPress Content Manager initialized (Demo mode: False)
+2025-03-20 19:49:07,328 - nlp.command_processor - INFO - Command processor initialized
+2025-03-20 19:49:08,080 - wordpress.connector - INFO - Metadata updated successfully for page 966
+2025-03-20 19:49:17,231 - api.main - INFO - SSE connect called with Accept header: text/event-stream
+2025-03-20 19:49:17,232 - api.main - INFO - New SSE connection with generated ID: 76fa0c70-b1be-422c-ad53-487bc0c9f82b
+2025-03-20 19:49:17,233 - api.main - INFO - Registering client 76fa0c70-b1be-422c-ad53-487bc0c9f82b in sse_clients dictionary
+2025-03-20 19:49:17,234 - api.main - INFO - GET /sse/connect - 200 - 0.00s
+2025-03-20 19:49:47,256 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}, 'client_id': '76fa0c70-b1be-422c-ad53-487bc0c9f82b'}
+2025-03-20 19:49:47,256 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la nouvelle meta description de ma page'}
+2025-03-20 19:49:47,257 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:49:48,242 - wordpress.connector - INFO - Metadata updated successfully for page 966
+2025-03-20 19:51:34,505 - api.main - INFO - Received command: {'tool_name': 'update_meta_description', 'parameters': {'post_id': 966, 'meta_description': 'Ceci est la chatte a thierry breton'}, 'client_id': '76fa0c70-b1be-422c-ad53-487bc0c9f82b'}
+2025-03-20 19:51:34,506 - api.main - INFO - Direct tool call: update_meta_description with params: {'post_id': 966, 'meta_description': 'Ceci est la chatte a thierry breton'}
+2025-03-20 19:51:34,507 - api.main - INFO - POST /command/sse - 202 - 0.00s
+2025-03-20 19:51:35,313 - wordpress.connector - INFO - Metadata updated successfully for page 966
+2025-03-20 19:53:42,577 - api.main - INFO - Client 76fa0c70-b1be-422c-ad53-487bc0c9f82b disconnected - connection cancelled
+2025-03-20 19:53:42,578 - api.main - INFO - Removing client 76fa0c70-b1be-422c-ad53-487bc0c9f82b from sse_clients dictionary
+2025-03-20 19:53:42,579 - api.main - INFO - Ping task cancelled for client 76fa0c70-b1be-422c-ad53-487bc0c9f82b

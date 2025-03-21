@@ -217,3 +217,155 @@ class WordPressContentManager:
             "message": f"Sections {'reordered successfully' if success else 'reorder failed'}",
             "sections": new_sections if success else None
         }
+
+    def get_meta_description(self, post_id):
+        """Get meta description for a post"""
+        meta = self.wp.get_post_meta(post_id)
+        return {
+            "success": True,
+            "post_id": post_id,
+            "meta_description": meta.get('meta_description') or meta.get('_yoast_wpseo_metadesc', '')
+        }
+
+    def update_meta_description(self, post_id, meta_description):
+        """Update meta description for a post"""
+        success = self.wp.update_post_meta(post_id, meta_description)
+        return {
+            "success": success,
+            "post_id": post_id,
+            "message": f"Meta description {'updated successfully' if success else 'update failed'}"
+        }
+
+    def get_seo_info(self, post_id=None):
+        """Get complete SEO information for a post or the entire site"""
+        try:
+            seo_data = self.wp.get_seo_info(post_id)
+            return {
+                "success": True,
+                "message": "SEO information retrieved successfully",
+                "data": seo_data
+            }
+        except Exception as e:
+            logger.error(f"Error getting SEO information: {str(e)}")
+            return {
+                "success": False,
+                "message": f"Failed to get SEO information: {str(e)}",
+                "error": str(e)
+            }
+
+    def get_all_pages(self, number=100, page=1, status='any'):
+        """Get all WordPress pages with pagination"""
+        try:
+            result = self.wp.get_all_pages(number, page, status)
+            
+            # Transform the pages to include sections
+            pages_data = []
+            for page in result["pages"]:
+                page_data = {
+                    "id": page["id"],
+                    "title": page["title"],
+                    "status": page["status"],
+                    "date": page["date"],
+                    "link": page.get("link", ""),
+                    "modified": page.get("modified", ""),
+                    "slug": page.get("slug", ""),
+                    "sections": self.extract_sections(page["content"])
+                }
+                pages_data.append(page_data)
+            
+            return {
+                "success": True,
+                "message": f"Retrieved {len(pages_data)} pages",
+                "pages": pages_data,
+                "pagination": {
+                    "total": result["total"],
+                    "page": result["page"],
+                    "per_page": result["per_page"],
+                    "total_pages": result.get("total_pages", 0)
+                }
+            }
+        except Exception as e:
+            logger.error(f"Error getting all pages: {str(e)}")
+            return {
+                "success": False,
+                "message": f"Failed to get pages: {str(e)}"
+            }
+
+    def add_content_from_template(self, template_name, variables=None):
+        """Créer du contenu à partir d'un template"""
+        if variables is None:
+            variables = {}
+            
+        try:
+            # Définir les templates disponibles
+            templates = {
+                "page_standard": {
+                    "title": "Nouvelle page {name}",
+                    "content": """
+                        <h2>Introduction</h2>
+                        <p>{introduction}</p>
+                        
+                        <h2>Nos Services</h2>
+                        <p>{services_description}</p>
+                        <ul>
+                            {services_list}
+                        </ul>
+                        
+                        <h2>Contact</h2>
+                        <p>{contact_info}</p>
+                    """,
+                    "status": "publish"
+                },
+                "article_blog": {
+                    "title": "{title}",
+                    "content": """
+                        <p class="introduction">{introduction}</p>
+                        
+                        <h2>{section1_title}</h2>
+                        <p>{section1_content}</p>
+                        
+                        <h2>{section2_title}</h2>
+                        <p>{section2_content}</p>
+                        
+                        <h2>Conclusion</h2>
+                        <p>{conclusion}</p>
+                    """,
+                    "status": "publish"
+                }
+            }
+            
+            # Vérifier si le template existe
+            if template_name not in templates:
+                return {
+                    "success": False,
+                    "message": f"Template '{template_name}' non trouvé. Templates disponibles: {', '.join(templates.keys())}"
+                }
+                
+            template = templates[template_name]
+            
+            # Formater le titre et le contenu avec les variables fournies
+            try:
+                title = template["title"].format(**variables)
+                content = template["content"].format(**variables)
+            except KeyError as e:
+                return {
+                    "success": False,
+                    "message": f"Variable manquante pour le template: {str(e)}"
+                }
+                
+            # Créer le contenu avec le template formaté
+            post_id = self.wp.create_post(title, content, template["status"])
+            
+            return {
+                "success": True,
+                "post_id": post_id,
+                "title": title,
+                "message": f"Contenu créé avec succès à partir du template '{template_name}'"
+            }
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de la création du contenu depuis le template: {str(e)}")
+            return {
+                "success": False,
+                "message": f"Erreur lors de la création du contenu: {str(e)}"
+            }

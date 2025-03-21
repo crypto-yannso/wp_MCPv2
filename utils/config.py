@@ -22,10 +22,15 @@ ALLOWED_OPERATIONS = [
     "update_content",
     "delete_content",
     "get_content",
+    "get_all_pages",
     "add_section",
     "update_section",
     "delete_section",
-    "reorder_sections"
+    "reorder_sections",
+    "get_meta_description",
+    "update_meta_description",
+    "get_seo_info",
+    "add_content_from_template"
 ]
 
 # Restrict operations that can modify content

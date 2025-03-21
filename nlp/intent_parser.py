@@ -48,15 +48,23 @@ class IntentParser:
             if not HAS_OPENAI:
                 logger.info("DEMO MODE: Simulating OpenAI call for intent extraction")
                 # Règles simples basées sur des mots-clés
-                if "ajoute" in command.lower() or "crée" in command.lower():
-                    return "add_content" if "page" in command.lower() else "add_section"
-                elif "mets à jour" in command.lower() or "modifie" in command.lower():
-                    return "update_content" if "page" in command.lower() else "update_section"
-                elif "supprime" in command.lower():
-                    return "delete_content" if "page" in command.lower() else "delete_section"
-                elif "réorganise" in command.lower():
+                command = command.lower()
+                if "seo" in command or "référencement" in command:
+                    return "get_seo_info"
+                elif "meta description" in command:
+                    if "modifie" in command or "change" in command or "mets à jour" in command:
+                        return "update_meta_description"
+                    else:
+                        return "get_meta_description"
+                elif "ajoute" in command or "crée" in command:
+                    return "add_content" if "page" in command else "add_section"
+                elif "mets à jour" in command or "modifie" in command:
+                    return "update_content" if "page" in command else "update_section"
+                elif "supprime" in command:
+                    return "delete_content" if "page" in command else "delete_section"
+                elif "réorganise" in command:
                     return "reorder_sections"
-                elif "montre" in command.lower() or "affiche" in command.lower():
+                elif "montre" in command or "affiche" in command:
                     return "get_content"
                 else:
                     return None
@@ -247,6 +255,16 @@ class IntentParser:
             "reorder_sections": {
                 "post_id": True,
                 "section_order": True
+            },
+            "get_meta_description": {
+                "post_id": True
+            },
+            "update_meta_description": {
+                "post_id": True,
+                "meta_description": True
+            },
+            "get_seo_info": {
+                "post_id": False
             }
         }
         
