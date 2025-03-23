@@ -30,7 +30,8 @@ ALLOWED_OPERATIONS = [
     "get_meta_description",
     "update_meta_description",
     "get_seo_info",
-    "add_content_from_template"
+    "add_content_from_template",
+    "analyze_llm"
 ]
 
 # Restrict operations that can modify content
@@ -38,3 +39,5 @@ RESTRICTED_OPERATIONS = [
     "delete_content",
     "delete_section"
 ]
+
+

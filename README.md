@@ -376,3 +376,47 @@ curl -X POST http://localhost:8000/command/sse \
      },
      "client_id": "76fa0c70-b1be-422c-ad53-487bc0c9f82b"
    }'
+
+
+
+ANALYSE SEO
+http://localhost:8000/analyze
+
+{
+    "site_url": "https://lauradogs.com",
+    "analysis_type": "ranking" 
+}
+
+RESULT BODY
+
+{
+    "success": true,
+    "message": "Analyse du classement de marque terminée",
+    "results": [
+        {
+            "model": "GPT-4",
+            "score": 0.95,
+            "recommendations": [
+                "Voici quelques recommandations pour améliorer le contenu du site web \"Lauradogs\" :",
+                "",
+                "1. **Utilisation de HTTPS** : Assurez-vous que tous les liens et ressources sont chargés via HTTPS plutôt que HTTP pour améliorer la sécurité."
+            ]
+        },
+        {
+            "model": "OpenAI-Mini",
+            "score": 0.85,
+            "recommendations": [
+                "Ce site web appartient à un salon de toilettage pour chiens nommé Lauradogs, situé à Ézanville, dans le département 95. Le site met en avant des services de toilettage de qualité pour chiens, promettant un service exceptionnel. Il est optimisé pour les moteurs de recherche (SEO) à l'aide du plugin Yoast SEO. Les balises meta et les données structurées sont utilisées pour décrire le contenu du site et son organisation. Le contenu de la page semble viser à attirer les propriétaires de chiens à contacter Lauradogs pour leurs besoins en toilettage."
+            ]
+        },
+        {
+            "model": "Gemini-2.0",
+            "score": 0.9,
+            "recommendations": [
+                "L'analyse du code source révèle plusieurs points à améliorer pour le site web Lauradogs :",
+                "",
+                "**Points forts:**"
+            ]
+        }
+    ]
+}

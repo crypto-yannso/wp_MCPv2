@@ -7,15 +7,28 @@ WORKDIR /app
 # Créer le répertoire static avant de copier les fichiers
 RUN mkdir -p /app/static
 
+# Installer les dépendances système nécessaires
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    libffi-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Installer pip et setuptools à jour
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
 # Copier d'abord les requirements pour profiter du cache Docker
 COPY requirements.txt .
 
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt && \
-    python -m spacy download fr_core_news_md
+# Installer les dépendances Python
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le reste des fichiers de l'application
 COPY . .
+
+# Vérifier l'installation des dépendances
+RUN python check_setup.py || echo "Certaines dépendances nécessitent des clés API"
 
 # Exposer le port sur lequel l'application va tourner
 EXPOSE 8000

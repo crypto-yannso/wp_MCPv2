@@ -553,6 +553,22 @@ async def plugin_manifest(request: Request):
                         }
                     }
                 }
+            },
+            {
+                "name": "analyze_llm",
+                "description": "Analyser le site avec LLMConsole",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "site_url": {"type": "string", "description": "URL du site à analyser"},
+                        "analysis_type": {
+                            "type": "string", 
+                            "description": "Type d'analyse (ranking ou recommendations)",
+                            "enum": ["ranking", "recommendations"]
+                        }
+                    },
+                    "required": ["site_url", "analysis_type"]
+                }
             }
         ]
     }
@@ -967,6 +983,26 @@ async def process_tool_background(tool_name: str, tool_params: dict, client_id: 
                 "results": result
             })
             
+        elif tool_name == "analyze_llm":
+            # Créer l'analyseur LLM
+            from wordpress.llm_analyzer import LLMAnalyzer
+            analyzer = LLMAnalyzer(tool_params["site_url"])
+            
+            # Effectuer l'analyse demandée
+            if tool_params["analysis_type"] == "ranking":
+                results = analyzer.get_brand_ranking()
+                message = "Analyse du classement de marque terminée"
+            else:
+                results = analyzer.get_recommendations()
+                message = "Analyse des recommandations terminée"
+                
+            # Envoyer les résultats
+            await send_sse_event(client_id, "result", {
+                "success": True,
+                "message": message,
+                "results": results
+            })
+            
         else:
             # Unknown tool
             await send_sse_event(client_id, EVENT_ERROR, {
@@ -1240,6 +1276,22 @@ async def sse_connect_new(request: Request):
                         }
                     }
                 }
+            },
+            {
+                "name": "analyze_llm",
+                "description": "Analyser le site avec LLMConsole",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "site_url": {"type": "string", "description": "URL du site à analyser"},
+                        "analysis_type": {
+                            "type": "string", 
+                            "description": "Type d'analyse (ranking ou recommendations)",
+                            "enum": ["ranking", "recommendations"]
+                        }
+                    },
+                    "required": ["site_url", "analysis_type"]
+                }
             }
         ]
         
@@ -1299,6 +1351,62 @@ async def health_check():
     Health check endpoint
     """
     return {"status": "ok"}
+
+@app.post("/analyze")
+async def analyze_site(request: Request):
+    """
+    Endpoint pour analyser un site avec différents modèles LLM
+    """
+    try:
+        # Parse request body
+        body = await request.json()
+        site_url = body.get("site_url")
+        analysis_type = body.get("analysis_type")
+        models = body.get("models", [])  # Liste optionnelle des modèles à utiliser
+        api_keys = body.get("api_keys", {})  # Clés API optionnelles
+        
+        if not site_url or not analysis_type:
+            raise HTTPException(
+                status_code=400, 
+                detail="Les paramètres 'site_url' et 'analysis_type' sont requis"
+            )
+            
+        # Créer l'analyseur LLM
+        from wordpress.llm_analyzer import LLMAnalyzer
+        analyzer = LLMAnalyzer(site_url, api_keys)
+        
+        # Effectuer l'analyse demandée avec les modèles spécifiés
+        if analysis_type == "ranking":
+            results = analyzer.get_brand_ranking()
+            message = "Analyse du classement de marque terminée"
+        elif analysis_type == "recommendations":
+            results = analyzer.get_recommendations()
+            message = "Analyse des recommandations terminée"
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Le type d'analyse doit être 'ranking' ou 'recommendations'"
+            )
+            
+        # Si une erreur est retournée dans les résultats
+        if isinstance(results, dict) and "error" in results:
+            raise HTTPException(
+                status_code=400,
+                detail=results.get("details", results["error"])
+            )
+            
+        return {
+            "success": True,
+            "message": message,
+            "results": results
+        }
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de l'analyse: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erreur lors de l'analyse: {str(e)}"
+        )
 
 def start():
     """Start the FastAPI application using uvicorn"""

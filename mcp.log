@@ -1663,3 +1663,320 @@ operation
 2025-03-20 19:53:42,577 - api.main - INFO - Client 76fa0c70-b1be-422c-ad53-487bc0c9f82b disconnected - connection cancelled
 2025-03-20 19:53:42,578 - api.main - INFO - Removing client 76fa0c70-b1be-422c-ad53-487bc0c9f82b from sse_clients dictionary
 2025-03-20 19:53:42,579 - api.main - INFO - Ping task cancelled for client 76fa0c70-b1be-422c-ad53-487bc0c9f82b
+2025-03-22 12:50:58,312 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-22 12:52:17,370 - wordpress.llm_analyzer - ERROR - Erreur lors de l'analyse LLM: 404 - <!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c25d3df806503555.js"/><script src="/_next/static/chunks/4bd1b696-629e9a6322e1d522.js" async=""></script><script src="/_next/static/chunks/684-a4bee519c11544a4.js" async=""></script><script src="/_next/static/chunks/main-app-86201a5c7b6d811b.js" async=""></script><meta name="robots" content="noindex"/><meta name="next-size-adjust" content=""/><title>404: This page could not be found.</title><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div style="font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class="next-error-h1" style="display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px">404</h1><div style="display:inline-block"><h2 style="font-size:14px;font-weight:400;line-height:49px;margin:0">This page could not be found.</h2></div></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-c25d3df806503555.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[9665,[],\"MetadataBoundary\"]\n6:I[9665,[],\"OutletBoundary\"]\n9:I[4911,[],\"AsyncMetadataOutlet\"]\nb:I[9665,[],\"ViewportBoundary\"]\nd:I[6614,[],\"\"]\ne:\"$Sreact.suspense\"\nf:I[4911,[],\"AsyncMetadata\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"JMkO9X2Tpy5qIeDbLEYhA\",\"p\":\"\",\"c\":[\"\",\"api\",\"analyze\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"/_not-found\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"html\",null,{\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[\"/_not-found\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[\"$\",\"$L4\",null,{\"children\":\"$L5\"}],null,[\"$\",\"$L6\",null,{\"children\":[\"$L7\",\"$L8\",[\"$\",\"$L9\",null,{\"promise\":\"$@a\"}]]}]]}],{},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[[\"$\",\"meta\",null,{\"name\":\"robots\",\"content\":\"noindex\"}],[\"$\",\"$1\",\"6Bmz3k-KGi2SD1ZTmgYWN\",{\"children\":[[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",\"$undefined\"],\"s\":false,\"S\":false}\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$e\",null,{\"fallback\":null,\"children\":[\"$\",\"$Lf\",null,{\"promise\":\"$@10\"}]}]\n8:null\n10:{\"metadata\":[],\"error\":null,\"digest\":\"$undefined\"}\na:{\"metadata\":\"$10:metadata\",\"error\":null,\"digest\":\"$undefined\"}\nc:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n7:null\n"])</script></body></html>
+2025-03-22 12:52:17,372 - api.main - INFO - POST /analyze - 200 - 0.51s
+2025-03-22 12:52:56,431 - wordpress.llm_analyzer - ERROR - Erreur lors de l'analyse LLM: 404 - <!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c25d3df806503555.js"/><script src="/_next/static/chunks/4bd1b696-629e9a6322e1d522.js" async=""></script><script src="/_next/static/chunks/684-a4bee519c11544a4.js" async=""></script><script src="/_next/static/chunks/main-app-86201a5c7b6d811b.js" async=""></script><meta name="robots" content="noindex"/><meta name="next-size-adjust" content=""/><title>404: This page could not be found.</title><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div style="font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class="next-error-h1" style="display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px">404</h1><div style="display:inline-block"><h2 style="font-size:14px;font-weight:400;line-height:49px;margin:0">This page could not be found.</h2></div></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-c25d3df806503555.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7555,[],\"\"]\n3:I[1295,[],\"\"]\n4:I[9665,[],\"MetadataBoundary\"]\n6:I[9665,[],\"OutletBoundary\"]\n9:I[4911,[],\"AsyncMetadataOutlet\"]\nb:I[9665,[],\"ViewportBoundary\"]\nd:I[6614,[],\"\"]\ne:\"$Sreact.suspense\"\nf:I[4911,[],\"AsyncMetadata\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"JMkO9X2Tpy5qIeDbLEYhA\",\"p\":\"\",\"c\":[\"\",\"api\",\"analyze\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"/_not-found\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"html\",null,{\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[\"/_not-found\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[\"$\",\"$L4\",null,{\"children\":\"$L5\"}],null,[\"$\",\"$L6\",null,{\"children\":[\"$L7\",\"$L8\",[\"$\",\"$L9\",null,{\"promise\":\"$@a\"}]]}]]}],{},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[[\"$\",\"meta\",null,{\"name\":\"robots\",\"content\":\"noindex\"}],[\"$\",\"$1\",\"OUNBDmZgIwQOPg1FpZQSm\",{\"children\":[[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",\"$undefined\"],\"s\":false,\"S\":false}\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$e\",null,{\"fallback\":null,\"children\":[\"$\",\"$Lf\",null,{\"promise\":\"$@10\"}]}]\n8:null\n10:{\"metadata\":[],\"error\":null,\"digest\":\"$undefined\"}\na:{\"metadata\":\"$10:metadata\",\"error\":null,\"digest\":\"$undefined\"}\nc:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n7:null\n"])</script></body></html>
+2025-03-22 12:52:56,433 - api.main - INFO - POST /analyze - 200 - 0.18s
+2025-03-22 12:54:29,729 - wordpress.llm_analyzer - ERROR - API endpoint introuvable. Vérifiez l'URL de l'API.
+2025-03-22 12:54:29,731 - api.main - INFO - POST /analyze - 200 - 0.22s
+2025-03-22 12:54:48,648 - wordpress.llm_analyzer - ERROR - API endpoint introuvable. Vérifiez l'URL de l'API.
+2025-03-22 12:54:48,650 - api.main - INFO - POST /analyze - 200 - 0.17s
+2025-03-22 12:55:30,751 - api.main - INFO - POST /api/v1/analyze - 404 - 0.00s
+2025-03-22 12:56:28,022 - wordpress.llm_analyzer - ERROR - API endpoint introuvable. Vérifiez l'URL de l'API.
+2025-03-22 12:56:28,024 - api.main - INFO - POST /analyze - 200 - 0.18s
+2025-03-22 13:06:31,431 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:06:31,433 - api.main - INFO - POST /analyze - 500 - 0.03s
+2025-03-22 13:07:17,681 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:07:17,682 - api.main - INFO - POST /analyze - 500 - 0.01s
+2025-03-22 13:08:53,229 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:08:53,231 - api.main - INFO - POST /analyze - 500 - 0.01s
+2025-03-22 13:09:35,401 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:09:35,402 - api.main - INFO - POST /analyze - 500 - 0.01s
+2025-03-22 13:20:47,574 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:20:47,575 - api.main - INFO - POST /analyze - 500 - 0.01s
+2025-03-22 13:20:54,716 - api.main - ERROR - Erreur lors de l'analyse: No module named 'google'
+2025-03-22 13:20:54,717 - api.main - INFO - POST /analyze - 500 - 0.01s
+2025-03-22 13:27:48,411 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-03-22 13:31:14,487 - wordpress.llm_analyzer - ERROR - Erreur lors de la récupération du contenu: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-03-22 13:31:14,488 - api.main - INFO - POST /analyze - 200 - 1.02s
+2025-03-22 13:32:31,498 - wordpress.llm_analyzer - WARNING - Tentative 1/3 échouée: 439 Client Error:  for url: http://ww1.votre-site.com/?usid=20&utid=15376484017
+2025-03-22 13:32:32,915 - wordpress.llm_analyzer - WARNING - Tentative 2/3 échouée: 439 Client Error:  for url: http://ww1.votre-site.com/?usid=20&utid=15376484343
+2025-03-22 13:32:34,345 - wordpress.llm_analyzer - ERROR - Erreur GPT-4: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-22 13:32:34,345 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle gpt4: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-22 13:32:34,345 - wordpress.llm_analyzer - ERROR - Erreur OpenAI-Mini: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-22 13:32:34,346 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle openai_mini: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-22 13:32:34,467 - wordpress.llm_analyzer - ERROR - Erreur Gemini: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-03-22 13:32:34,468 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle gemini: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-03-22 13:32:34,473 - wordpress.llm_analyzer - ERROR - Erreur Claude: 'ascii' codec can't encode character '\xe9' in position 8: ordinal not in range(128)
+2025-03-22 13:32:34,473 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle claude: 'ascii' codec can't encode character '\xe9' in position 8: ordinal not in range(128)
+2025-03-22 13:32:34,474 - api.main - INFO - POST /analyze - 200 - 3.99s
+2025-03-22 13:35:02,955 - wordpress.llm_analyzer - WARNING - Tentative 1/3 échouée: 410 Client Error: Gone for url: http://ww12.votre-site.com/?usid=20&utid=15376514813
+2025-03-22 13:35:19,232 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 13:35:20,508 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 13:35:37,497 - api.main - INFO - POST /analyze - 200 - 35.48s
+2025-03-22 13:35:52,425 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 13:35:53,849 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 13:36:10,221 - api.main - INFO - POST /analyze - 200 - 32.72s
+2025-03-23 17:38:52,653 - api.main - INFO - GET /command/sse - 405 - 0.00s
+2025-03-23 17:41:50,790 - api.main - INFO - GET /analyze - 405 - 0.00s
+2025-03-23 17:42:08,916 - wordpress.llm_analyzer - WARNING - Tentative 1/3 échouée: 439 Client Error:  for url: http://ww1.votre-site.com/?usid=25&utid=9786586425
+2025-03-23 17:42:10,428 - wordpress.llm_analyzer - WARNING - Tentative 2/3 échouée: 439 Client Error:  for url: http://ww1.votre-site.com/?usid=25&utid=9786588143
+2025-03-23 17:42:13,111 - wordpress.llm_analyzer - WARNING - Tentative 3/3 échouée: 410 Client Error: Gone for url: http://ww12.votre-site.com/?usid=25&utid=9786588433
+2025-03-23 17:42:13,111 - wordpress.llm_analyzer - ERROR - Impossible de récupérer le contenu après 3 tentatives
+2025-03-23 17:42:13,112 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site https://votre-site.com: contenu inaccessible
+2025-03-23 17:42:13,113 - api.main - INFO - POST /analyze - 200 - 12.69s
+2025-03-23 17:42:47,037 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:42:48,501 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:43:04,686 - api.main - INFO - POST /analyze - 200 - 35.48s
+2025-03-23 17:45:54,185 - api.main - INFO - OPTIONS /analyze - 200 - 0.00s
+2025-03-23 17:46:13,208 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:46:16,008 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:46:31,875 - api.main - INFO - POST /analyze - 200 - 37.69s
+2025-03-23 17:48:20,416 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:48:22,564 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:48:38,333 - api.main - INFO - POST /analyze - 200 - 34.48s
+2025-03-23 17:50:04,281 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:50:05,791 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:50:22,150 - api.main - INFO - POST /analyze - 200 - 33.53s
+2025-03-23 17:53:04,849 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:53:06,418 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 17:53:23,675 - api.main - INFO - POST /analyze - 200 - 36.36s
+2025-03-23 18:45:38,915 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:45:40,194 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:45:40,868 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:45:40,869 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:45:40,870 - api.main - INFO - POST /analyze - 200 - 20.03s
+2025-03-23 18:50:34,748 - api.main - INFO - OPTIONS /analyze - 200 - 0.00s
+2025-03-23 18:50:51,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:50:53,678 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:50:54,334 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:50:54,335 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:50:54,336 - api.main - INFO - POST /analyze - 200 - 19.58s
+2025-03-23 18:52:56,277 - wordpress.llm_analyzer - ERROR - URL invalide ou inaccessible: https:///www.materfrance.fr
+2025-03-23 18:52:56,278 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site https:///www.materfrance.fr: contenu inaccessible
+2025-03-23 18:52:56,279 - api.main - INFO - POST /analyze - 200 - 0.05s
+2025-03-23 18:53:07,310 - wordpress.llm_analyzer - ERROR - URL invalide ou inaccessible: https:///materfrance.fr
+2025-03-23 18:53:07,310 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site https:///materfrance.fr: contenu inaccessible
+2025-03-23 18:53:07,311 - api.main - INFO - POST /analyze - 200 - 0.04s
+2025-03-23 18:53:14,560 - wordpress.llm_analyzer - ERROR - URL invalide ou inaccessible: https:///materfrance.fr
+2025-03-23 18:53:14,561 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site https:///materfrance.fr: contenu inaccessible
+2025-03-23 18:53:14,562 - api.main - INFO - POST /analyze - 200 - 0.05s
+2025-03-23 18:53:52,231 - wordpress.llm_analyzer - ERROR - URL invalide ou inaccessible: https:///www.isoeco-france.com
+2025-03-23 18:53:52,232 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site https:///www.isoeco-france.com: contenu inaccessible
+2025-03-23 18:53:52,233 - api.main - INFO - POST /analyze - 200 - 0.06s
+2025-03-23 18:54:21,958 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:54:23,432 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:54:24,088 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:54:24,089 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:54:24,090 - api.main - INFO - POST /analyze - 200 - 25.45s
+2025-03-23 18:55:45,735 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:55:50,397 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:55:51,249 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:55:51,250 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:55:51,251 - api.main - INFO - POST /analyze - 200 - 26.27s
+2025-03-23 18:58:21,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:58:23,136 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 18:58:24,168 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:58:24,169 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 18:58:24,170 - api.main - INFO - POST /analyze - 200 - 18.03s
+2025-03-23 18:59:59,705 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:00:01,947 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:00:02,596 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:00:02,596 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:00:02,598 - api.main - INFO - POST /analyze - 200 - 24.30s
+2025-03-23 19:01:55,571 - api.main - INFO - OPTIONS /analyze - 200 - 0.00s
+2025-03-23 19:02:14,940 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:02:16,488 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:02:17,506 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:02:17,506 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:02:17,508 - api.main - INFO - POST /analyze - 200 - 21.93s
+2025-03-23 19:04:15,361 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:04:17,813 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:04:18,426 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:04:18,427 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:04:18,429 - api.main - INFO - POST /analyze - 200 - 23.86s
+2025-03-23 19:07:08,288 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:07:12,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:07:13,287 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:07:13,288 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:07:13,289 - api.main - INFO - POST /analyze - 200 - 23.05s
+2025-03-23 19:07:59,218 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:08:01,301 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:08:01,959 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:08:01,960 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:08:01,961 - api.main - INFO - POST /analyze - 200 - 23.89s
+2025-03-23 19:08:41,444 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:08:42,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:08:43,484 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:08:43,484 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:08:43,485 - api.main - INFO - POST /analyze - 200 - 21.83s
+2025-03-23 19:09:33,970 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:09:40,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:09:41,021 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:09:41,022 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:09:41,023 - api.main - INFO - POST /analyze - 200 - 34.40s
+2025-03-23 19:10:46,300 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:10:48,724 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:10:49,342 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:10:49,343 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:10:49,345 - api.main - INFO - POST /analyze - 200 - 18.55s
+2025-03-23 19:10:59,837 - api.main - INFO - OPTIONS /analyze - 200 - 0.00s
+2025-03-23 19:11:17,984 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:11:19,344 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:11:20,017 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:11:20,017 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:11:20,019 - api.main - INFO - POST /analyze - 200 - 20.18s
+2025-03-23 19:13:35,406 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:13:37,144 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:13:38,127 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:13:38,128 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:13:38,129 - api.main - INFO - POST /analyze - 200 - 18.09s
+2025-03-23 19:16:04,195 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:16:06,148 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:16:06,769 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:16:06,769 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:16:06,771 - api.main - INFO - POST /analyze - 200 - 21.79s
+2025-03-23 19:17:21,590 - wordpress.llm_analyzer - WARNING - Tentative 1/3 échouée: 403 Client Error: Forbidden for url: https://www.decathlon.fr/
+2025-03-23 19:17:22,699 - wordpress.llm_analyzer - WARNING - Tentative 2/3 échouée: 403 Client Error: Forbidden for url: https://www.decathlon.fr/
+2025-03-23 19:17:23,804 - wordpress.llm_analyzer - WARNING - Tentative 3/3 échouée: 403 Client Error: Forbidden for url: https://www.decathlon.fr/
+2025-03-23 19:17:23,804 - wordpress.llm_analyzer - ERROR - Impossible de récupérer le contenu après 3 tentatives
+2025-03-23 19:17:23,805 - wordpress.llm_analyzer - ERROR - Impossible d'analyser le site Decathlon.fr: contenu inaccessible
+2025-03-23 19:17:23,806 - api.main - INFO - POST /analyze - 200 - 2.46s
+2025-03-23 19:17:59,467 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:18:00,841 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:18:01,552 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:18:01,552 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:18:01,554 - api.main - INFO - POST /analyze - 200 - 19.89s
+2025-03-23 19:18:42,673 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:18:44,086 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:18:44,739 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:18:44,740 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:18:44,741 - api.main - INFO - POST /analyze - 200 - 22.60s
+2025-03-23 19:34:15,244 - api.main - INFO - OPTIONS /analyze - 200 - 0.00s
+2025-03-23 19:34:38,252 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:34:39,758 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:34:40,384 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:34:40,385 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:34:40,386 - api.main - INFO - POST /analyze - 200 - 25.14s
+2025-03-23 19:34:58,758 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:00,067 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:00,720 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:35:00,721 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:35:21,118 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:22,564 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:23,201 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:35:23,201 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:35:44,290 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:46,499 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:35:47,233 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:35:47,234 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:12,724 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:15,140 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:16,156 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:16,157 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:16,159 - api.main - INFO - POST /analyze - 200 - 95.77s
+2025-03-23 19:36:16,160 - api.main - INFO - POST /analyze - 200 - 95.77s
+2025-03-23 19:36:16,161 - api.main - INFO - POST /analyze - 200 - 95.77s
+2025-03-23 19:36:16,162 - api.main - INFO - POST /analyze - 200 - 95.77s
+2025-03-23 19:36:34,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:36,997 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:37,632 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:37,632 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:55,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:57,014 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:36:57,625 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:57,625 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:36:57,627 - api.main - INFO - POST /analyze - 200 - 41.47s
+2025-03-23 19:36:57,631 - api.main - INFO - POST /analyze - 200 - 41.47s
+2025-03-23 19:37:15,295 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:16,907 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:17,567 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:37:17,568 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:37:34,021 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:35,891 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:36,665 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:37:36,668 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:37:50,184 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:51,928 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:37:52,571 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:37:52,572 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:38:07,951 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:38:09,859 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:38:10,494 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:38:10,494 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:38:10,503 - api.main - INFO - POST /analyze - 200 - 92.87s
+2025-03-23 19:38:10,503 - api.main - INFO - POST /analyze - 200 - 92.87s
+2025-03-23 19:38:10,504 - api.main - INFO - POST /analyze - 200 - 92.87s
+2025-03-23 19:38:10,504 - api.main - INFO - POST /analyze - 200 - 92.87s
+2025-03-23 19:38:26,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:38:28,170 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:38:28,798 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:38:28,798 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:38:28,800 - api.main - ERROR - Erreur lors de l'analyse: 
+2025-03-23 19:38:28,804 - api.main - INFO - POST /analyze - 200 - 18.31s
+2025-03-23 19:38:28,806 - api.main - ERROR - Erreur lors de l'analyse: 
+2025-03-23 19:38:28,807 - api.main - INFO - POST /analyze - 500 - 18.31s
+2025-03-23 19:38:28,808 - api.main - INFO - POST /analyze - 500 - 18.30s
+2025-03-23 19:40:15,799 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:40:18,227 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:40:18,923 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:40:18,923 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:40:18,926 - api.main - INFO - POST /analyze - 200 - 26.67s
+2025-03-23 19:40:18,929 - api.main - ERROR - Erreur lors de l'analyse: 
+2025-03-23 19:40:18,931 - api.main - INFO - POST /analyze - 500 - 0.00s
+2025-03-23 19:40:58,023 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:40:59,733 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:41:00,382 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:41:00,383 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:41:00,387 - api.main - INFO - POST /analyze - 200 - 19.47s
+2025-03-23 19:41:30,750 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:41:32,393 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:41:33,420 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:41:33,420 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:41:33,421 - api.main - INFO - POST /analyze - 200 - 20.94s
+2025-03-23 19:41:57,835 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:41:59,593 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:42:00,231 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:42:00,231 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:42:00,232 - api.main - INFO - POST /analyze - 200 - 20.75s
+2025-03-23 19:42:26,051 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:42:27,432 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:42:28,061 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:42:28,061 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:42:28,062 - api.main - INFO - POST /analyze - 200 - 20.44s
+2025-03-23 19:43:29,064 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:43:30,380 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 19:43:31,013 - wordpress.llm_analyzer - ERROR - Erreur DeepSeek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:43:31,013 - wordpress.llm_analyzer - WARNING - Erreur avec le modèle deepseek: 402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions
+2025-03-23 19:43:31,016 - api.main - INFO - POST /analyze - 200 - 18.22s
